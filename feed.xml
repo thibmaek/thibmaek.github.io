@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thibault Maekelbergh&#39;s Blog</title>
+    <atom:link href="http://blog.thibmaekelbergh.be/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>http://blog.thibmaekelbergh.be/</link>
+    <description>A wide variation of opinions, code and tips</description>
+    <pubDate>Thu, 14 May 2015 15:07:38 +0200</pubDate>
+    
+      <item>
+        <title>Raspberry Pi login with SSH keys</title>
+        <link>http://blog.thibmaekelbergh.be/2015/05/07/rpi-ssh-keys.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/05/07/rpi-ssh-keys.html</guid>
+        <description>&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/&quot;&gt;SSH&lt;/a&gt; is a great networking protocol. Secure, fast and commonly-used are probably some of the reasons why it’s the default for communicating with your Raspberry Pi. But having to type in a password each time you log in sucks.&lt;/p&gt;
+
+&lt;p&gt;Luckily SSH has these things called keys which you can use for password-less logins. Using SSH keys is really simple if you have a basic understanding of networks (like really basic) and the shell.  Once you get the idea you could basically use SSH-keys for anything SSH related, from Github to Digital Ocean and Vagrant.&lt;/p&gt;
+
+&lt;h2 id=&quot;generating-ssh-keys&quot;&gt;Generating SSH keys&lt;/h2&gt;
+
+&lt;p&gt;Setting up SSH keys is always the first thing I do on new Raspberry Pi images, but before doing so I like to install Bonjour on the pi first because then you don’t have to lookup IP’s.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install avahi-daemon&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Safest way is to reboot your pi, but &lt;code&gt;sudo service avahi-daemon restart&lt;/code&gt; works just as well for our setting up right now.&lt;/p&gt;
+
+&lt;p&gt;Ok so now that is configured, it’s time to build the actual ssh keys.&lt;br /&gt;
+Everything we do will typically be stored in a hidden directory in the home folder called &lt;code&gt;.ssh&lt;/code&gt;. Generating a new key there is as easy as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ssh-keygen -t rsa -C &lt;span class=&quot;s2&quot;&gt;&amp;quot;example@example.com&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This creates a new key with the RSA type and creates it from the comment email address you provide. ssh-keygen will ask you for a password (make it secure) to create the new keys.&lt;/p&gt;
+
+&lt;p&gt;This will generate two new keys in the &lt;code&gt;~/.ssh&lt;/code&gt; directory, called &lt;code&gt;id_rsa&lt;/code&gt; and &lt;code&gt;id_rsa.pub&lt;/code&gt;. It’s important to pause and think about how they act.&lt;br /&gt;
+The first one is your private key and the .pub one is the public one. Typically, matching keys will require you to provide the public one to a service (Like Github, or the Pi login over SSH) so it can identify you. The first private key matches with the public one to authenticate you.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Never ever ever ever post the contens of id_rsa anywhere, this could lead to a huge security hole in your machine.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now there are two options to match keys with the pi.&lt;/p&gt;
+
+&lt;h3 id=&quot;ssh-copy-id&quot;&gt;ssh-copy-id&lt;/h3&gt;
+&lt;p&gt;There’s this great application called &lt;code&gt;ssh-copy-id&lt;/code&gt; which automatically matches the contents from the public key to a ssh host.  On Linux it’s mostly installed by default, but OS X can install it from brew with: &lt;code&gt;brew install ssh-copy-id&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now you can just match the key by running it and providing an ssh host:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ssh-copy-id pi@raspi.local&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Provide the password once more and keys should be matched. Try logging into your pi and you shouldn’t be asked for a password.&lt;/p&gt;
+
+&lt;h3 id=&quot;manually-copying-the-contents&quot;&gt;Manually copying the contents&lt;/h3&gt;
+&lt;p&gt;Get the contents of the public key with &lt;code&gt;cat ~/.ssh/id_rsa.pub&lt;/code&gt; and copy them somewhere.&lt;/p&gt;
+
+&lt;p&gt;Log in to your pi and enter the ssh directory. Create it if you dont have it with &lt;code&gt;mkdir ~/.ssh&lt;/code&gt;.&lt;br /&gt;
+Typically the key authenticator is not present on a new Raspbian install so create it with:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;touch ~/.ssh/authorized_keys &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nano ~/.ssh/authorized_keys&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Paste in the contents of id_rsa.pub you copied before, save and exit.&lt;br /&gt;
+Now log out of the pi and log back in. No password should be provided.&lt;/p&gt;
+
+&lt;h2 id=&quot;ssh-config&quot;&gt;SSH config&lt;/h2&gt;
+&lt;p&gt;As an extra you could provide some info in &lt;code&gt;~/.ssh/config&lt;/code&gt; on your main machine to make logging in even easier:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;host pi
+  hostname raspi.local
+  user pi
+  port 22&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now logging in is as simple as &lt;code&gt;ssh pi&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 07 May 2015 00:00:00 +0200</pubDate>
+      </item>
+    
+      <item>
+        <title>Using ext4 on OS X Yosemite, the long but safe way.</title>
+        <link>http://blog.thibmaekelbergh.be/2015/04/08/ext4-on-osx-yosemite.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/04/08/ext4-on-osx-yosemite.html</guid>
+        <description>&lt;p&gt;ext4 is not OS X compatible (which is stupid) and getting it to work is a big hassle. There are tools but their unsafe. Luckily I found a safer way.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-background-information&quot;&gt;Some background information&lt;/h3&gt;
+&lt;p&gt;I was configuring my Raspberry Pi file server and was looking for a way to get R/W, journaled and large block size for my external HDD’s connected.&lt;br /&gt;
+Turns out, anno 2015, there is no universal disk format that complies with all the above.&lt;/p&gt;
+
+&lt;p&gt;Thus, I formatted my drives to ext4 and set the server up fine. But I wanted to be able to connect my drives to OS X if I ever needed to.&lt;/p&gt;
+
+&lt;p&gt;Things like &lt;a href=&quot;https://www.paragon-software.com/nl/home/extfs-mac/&quot;&gt;Paragon extFS&lt;/a&gt; and &lt;a href=&quot;https://osxfuse.github.io&quot;&gt;OSXFUSE&lt;/a&gt; seemed promising, easy to install and easy to integrate with OS X applications.&lt;br /&gt;
+I installed extFS and everything worked, until…&lt;/p&gt;
+
+&lt;p&gt;Numerous kernel panics in one day, leading to random system reboots. Very irritating when you’re transferring 64GB of files from disk to disk.&lt;br /&gt;
+Searching the internet for a while I found that people were having &lt;a href=&quot;http://apple.stackexchange.com/questions/29842/how-can-i-mount-an-ext4-file-system-on-os-x&quot;&gt;the same issue&lt;/a&gt; using these applications.&lt;/p&gt;
+
+&lt;p&gt;I uninstalled extFS (which I spent 10 minutes to…) and searched for another solution.&lt;/p&gt;
+
+&lt;h3 id=&quot;linux-to-the-rescue&quot;&gt;Linux to the rescue&lt;/h3&gt;
+&lt;p&gt;Logical thinking brought me to the fact that Linux works great with ext4 and I still had Parallels 10 on my MacBook.&lt;br /&gt;
+Theoretically I could install a Linux distro, share the drive and still have a good transfer speed.&lt;/p&gt;
+
+&lt;p&gt;I pulled Ubuntu 14 Server from the net, installed it in a VM with the bare minimum because I didn’t want a huge 10GB VM eating up all the space on my MacBook’s SSD.&lt;br /&gt;
+Once setup it was time to mount the hdd to a folder, so it could be shared.&lt;/p&gt;
+
+&lt;p&gt;Listing the disks with &lt;code&gt;sudo fdisk -l&lt;/code&gt; I found that it was located at &lt;strong&gt;/dev/sdb1&lt;/strong&gt;. Great, now all I had to do is to mount the drive to a new folder (/mnt/hdd) and I could go on to sharing it:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo nano /etc/fstab
+
+&lt;span class=&quot;c&quot;&gt;# the line below goes in fstab&lt;/span&gt;
+/dev/sdb1 /mnt/hdd ext4 sync,noatime &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; 1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Save and exit and mount all volumes with &lt;code&gt;mount -a&lt;/code&gt;. Done for the mounting part, on to the sharing part.&lt;/p&gt;
+
+&lt;h3 id=&quot;get-yo-ssh-on&quot;&gt;Get yo’ SSH on.&lt;/h3&gt;
+&lt;p&gt;I searched for a way in Parallels, but apparently it has no sharing support for guest to host, only OS X to Linux. Damn, this meant I had to do wireless transfer to share the folder.&lt;/p&gt;
+
+&lt;p&gt;There are various ways of sharing the folder /mnt/hdd to my Mac.&lt;br /&gt;
+There’s SMB and AFP, which I’ve used before but have no idea about how fast they write, technically they should be faster than SSH (which I ended up using), but I have yet to tinker with it.&lt;/p&gt;
+
+&lt;p&gt;I set out for SFTP (SSH) to share the files because I have Transmit on OS X and it makes it easy to share files and because SSH was easy enough to configure.&lt;/p&gt;
+
+&lt;p&gt;Too my surprise there is no ssh server installed in Ubuntu 14.04 so I had to manually install it, pulling it from apt &lt;code&gt;sudo apt-get install ssh-server&lt;/code&gt;.&lt;br /&gt;
+Now some edits to the configuration file and I should be finished. The following lines were changed in &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;PubkeyAuthentication yes &lt;span class=&quot;c&quot;&gt;# change to no&lt;/span&gt;
+PermitEmptyPasswords no &lt;span class=&quot;c&quot;&gt;# change to yes&lt;/span&gt;
+PasswordAuthentication yes &lt;span class=&quot;c&quot;&gt;# make sure this is set to yes&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Don’t worry about the safety that’s turned off with those edits, you’re doing everything locally so there should be no outside access. Besides this VM is only used for sharing HDD mountpoint so no there’s no critical stuff to damage.&lt;/p&gt;
+
+&lt;p&gt;Restart the ssh server with &lt;code&gt;sudo service ssh restart&lt;/code&gt;, log in to the server on your Mac with either Transmit, Cyberduck or Terminal and voila, you got the share all set up.&lt;br /&gt;
+I got a solid 4-8MB/S transfer speed with this setup:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/sVLbx3r.png&quot; alt=&quot;screenshottransmit&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Edit 9/04: I just configured ftp instead of sftp and got 11MB write speed, seems like this is a better option!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Admitted, it’s kind of a bigger hassle to set up, has more overhead for the machine and eats more resources.&lt;br /&gt;
+Then again, it won’t be used that often and some tinkering with Linux never killed any dev ;)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you set your mount point to /mnt/hdd be sure to &lt;code&gt;chown -R yourusername hdd&lt;/code&gt; on the folder. Without this the user won’t have any write permissions since you’re at system root.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Wed, 08 Apr 2015 00:00:00 +0200</pubDate>
+      </item>
+    
+      <item>
+        <title>Setup r8188eu with Raspbian the easy way.</title>
+        <link>http://blog.thibmaekelbergh.be/2015/04/02/r8188eu-and-raspberry-pi.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/04/02/r8188eu-and-raspberry-pi.html</guid>
+        <description>&lt;h3 id=&quot;the-problem-with-r8188eu&quot;&gt;The problem with r8188eu&lt;/h3&gt;
+&lt;p&gt;An example of a usb network adapter that uses this chipset is the popular and cheap TL-WN752N which you can get for around 10 euros.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately though there’s both a v1 and a v2 of this dongle and the v2 uses the r8188eu which isn’t present in the kernel of each latest Raspbian. It still requires either manual compiling or installing of the kernel files.&lt;/p&gt;
+
+&lt;p&gt;Luckily things can be done really easily.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-an-installer-script-recommended-way&quot;&gt;Using an installer script (recommended way)&lt;/h3&gt;
+&lt;p&gt;Some guys over at the Raspberry Pi forums wrote a great documentation and installer script to automatically match a download of the kernel files with the kernel you’re using.&lt;/p&gt;
+
+&lt;p&gt;I like to create a new folder in ~ for this called drivers and then download the script there.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir drivers
+wget https://dl.dropboxusercontent.com/u/80256631/install-8188eu.tgz
+tar -zxvf install-8188eu.tgz
+sudo ./install-8188eu.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Running this will match kernel version retrieved from &lt;code&gt;uname -a&lt;/code&gt; with the downloads in the forum topic and put them in the right places and in the modules.&lt;br /&gt;
+It might be a good idea to &lt;a href=&quot;#Troubleshooting&quot;&gt;update your kernel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Warning: doesn’t work for 3.18.11+. See Troubleshooting section for more info.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;copying-over-the-required-files&quot;&gt;Copying over the required files&lt;/h3&gt;
+&lt;p&gt;One way I tried before is to download the kernel files and just copy them over to the right directories. This requires quite a lot of sudo so maybe log in as root with &lt;code&gt;sudo su&lt;/code&gt; or prefix commands with &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This requires you to get the files on the Pi so either use a wired connection or &lt;a href=&quot;http://blog.thibmaekelbergh.be/2015/02/16/bridging-wifi-to-ethernet-for-raspi.html&quot;&gt;hook it up to your MacBook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Download the files first with wget and then unzip them to get the files from the compressed archive.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget http://cdn.thibmaekelbergh.be/8188eu.zip
+unzip 8188eu.zip&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The uncompressed archive contains both a .ko (kernel object) and .bin (binary driver).&lt;/p&gt;
+
+&lt;p&gt;Now copy the .ko to it’s corresponding folder, automatically matching your kernel version with: &lt;code&gt;sudo cp 8188eu.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The same goes for the driver but in another path: &lt;code&gt;sudo cp rtl8188eufw.bin /lib/firmware/rtlwifi/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that both files are in the right directory, create the dependency for r8188eu by running &lt;code&gt;sudo depmod -a&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://weworkweplay.com/play/automatically-connect-a-raspberry-pi-to-a-wifi-network/&quot;&gt;Add your network&lt;/a&gt; to the interfaces and reboot and it should work.&lt;br /&gt;
+A green light should flash and output should be something like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cdn.thibmaekelbergh.be/r8188eu.gif&quot; alt=&quot;gif of the green light&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;DHCPDISCOVER on wlan0 to 255.255.255.255 &lt;span class=&quot;c&quot;&gt;# Discovery trough the subnetmask of your router.&lt;/span&gt;
+DCHPOFFER from 192.168.0.1 &lt;span class=&quot;c&quot;&gt;# Your router which is offering from a DHCP lease.&lt;/span&gt;
+bound to 192.168.0.101 &lt;span class=&quot;c&quot;&gt;#The IP assigned to the Raspberry Pi.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;building-and-compiling-from-source&quot;&gt;Building and compiling from source&lt;/h3&gt;
+&lt;p&gt;You can find the source for the kernel files at the &lt;a href=&quot;https://github.com/lwfinger/rtl8188eu&quot;&gt;Github repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;troubleshooting&quot;&gt;Troubleshooting&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Latest kernel 3.18.11+ has no drivers and kernel objects for r8188eu yet. My best solution is to downgrade to 3.18.10 with &lt;code&gt;sudo rpi-update 8751db9fd7138848c29cc55ec05f95c9eea80acb&lt;/code&gt; and using the first method. It’s just a matter of time until files are online for 3.18.11+ though.&lt;/li&gt;
+  &lt;li&gt;Make sure the adapter is connected by running &lt;code&gt;dmesg | grep r8188eu&lt;/code&gt;. Output should be something like: &lt;code&gt;[  128.432309] usbcore: registered new interface driver r8188eu&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Make sure you’re network has no MAC-filter or heavily configured firewall. If you’re network settings differ from those in the wpa_supplicant.conf, adjust them accordingly.&lt;/li&gt;
+  &lt;li&gt;Sometimes kernel versions might not match or you’re just better of updating the kernel. Use hexxeh’s built in kernel updater by running &lt;code&gt;rpi-update&lt;/code&gt;. If the command is unavailable to you, use hexxeh’s repo to manually install the &lt;a href=&quot;https://github.com/Hexxeh/rpi-update&quot;&gt;Raspberry Pi-update&lt;/a&gt; tool.&lt;/li&gt;
+  &lt;li&gt;Outputting the usb connection with &lt;code&gt;lsusb&lt;/code&gt; for the adapter &lt;a href=&quot;http://raspberrypi.stackexchange.com/questions/27462/wifi-dongle-not-appearing-in-lsusb&quot;&gt;will not work&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;You can check if the module is listed as dependency, active and recognised with &lt;code&gt;modprobe 8188eu&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 02 Apr 2015 00:00:00 +0200</pubDate>
+      </item>
+    
+      <item>
+        <title>Getting started with Surge as a CDN</title>
+        <link>http://blog.thibmaekelbergh.be/2015/03/27/surge-as-cdn.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/03/27/surge-as-cdn.html</guid>
+        <description>&lt;p&gt;&lt;a href=&quot;https://surge.sh&quot;&gt;Surge.sh&lt;/a&gt; is a brand new node module that allows anyone to get a CDN up and running in no time.&lt;br /&gt;
+&lt;em&gt;“Zero-bullshit, single–command, bring your own source control web publishing CDN”&lt;/em&gt; is what they call it. And you’ll believe them right away.&lt;/p&gt;
+
+&lt;h3 id=&quot;installing-surge&quot;&gt;Installing Surge&lt;/h3&gt;
+&lt;p&gt;Installing is easy as it’s just a node module.&lt;br /&gt;
+Just &lt;code&gt;npm install -g surge&lt;/code&gt; to install it globally and you’re done.&lt;/p&gt;
+
+&lt;p&gt;In theory you could use surge to host a complete website but the purpose we’re aiming at in this post is to get a CDN up and running to distribute files and keep the storage of media on your hosting to a minimum.&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-your-first-cdn&quot;&gt;Creating your first CDN&lt;/h3&gt;
+&lt;p&gt;Create a folder in your project or somewhere on your computer called CDN (or whatever you want it to be.)
+I’m going to use Surge to store the images for my blogpost on the CDN so just drop them right in the folder.&lt;/p&gt;
+
+&lt;p&gt;From here on, stuff gets ridiculously easy.&lt;br /&gt;
+Just run &lt;code&gt;surge&lt;/code&gt; in the folder and you’ll be prompted for a path.&lt;br /&gt;
+If you’re running this from within the cdn folder you can just hit enter, otherwise specify the folder you want to use as your CDN.&lt;/p&gt;
+
+&lt;p&gt;You have the option to specify a custom domain, and if you can I recommend you do this. (See below for more info about custom domains.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cdn.thibmaekelbergh.be/surge.png&quot; alt=&quot;screen&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it, surge is now up and running at the url surge or you provided.&lt;br /&gt;
+To upload new content just run &lt;code&gt;surge&lt;/code&gt; again in the folder. It’s recommended you use versioning like Git for the cdn folder.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-custom-domains&quot;&gt;Using custom domains&lt;/h3&gt;
+&lt;p&gt;I currently have cdn.thibmaekelbergh.be set up as my CDN domain.&lt;br /&gt;
+Creating custom domains with surge is almost too easy.&lt;br /&gt;
+Before initializing surge in a new folder, create a new file called CNAME without any extension and put you’re domain in it. e.g:&lt;br /&gt;
+&lt;code&gt;echo &quot;cdn.thibmaekelbergh.be&quot; &amp;gt; CNAME&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cdn.thibmaekelbergh.be/surge_custom.png&quot; alt=&quot;screen&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you run surge now, it’ll automatically recognize the CNAME and set the custom domain. Be sure to also set a CNAME record in your dashboard of your domain name provider and to point it to surge’s URL: &lt;code&gt;na-west1.surge.sh&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/1ZZowPu.png&quot; alt=&quot;screenshot of cname record&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h3&gt;
+&lt;p&gt;Surge does way more than this, it supports SSL, is available as a devdependency for your &lt;a href=&quot;https://surge.sh/#npm&quot;&gt;node&lt;/a&gt;, &lt;a href=&quot;https://surge.sh/#gulp&quot;&gt;gulp&lt;/a&gt; or &lt;a href=&quot;https://surge.sh/#grunt&quot;&gt;grunt&lt;/a&gt; projects and has support built in for &lt;a href=&quot;https://surge.sh/help/deploying-a-jekyll-project&quot;&gt;static site generators&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Be sure to visit &lt;a href=&quot;https://surge.sh&quot;&gt;their website&lt;/a&gt; for more info and ways to implement!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 Mar 2015 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>Easily download Boiler Room sets from the BRTV app</title>
+        <link>http://blog.thibmaekelbergh.be/2015/03/25/download-boilerroom-sets.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/03/25/download-boilerroom-sets.html</guid>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Edit 4/04: Apple has decided to safeguard these app folders from 3rd party applications like iMazing and iExplorer when you’re on iOS 8.3.&lt;/p&gt;
+
+  &lt;p&gt;There is no way to get the files if you’re on an iOS release higher than 8.3 😩&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If like me you’re a first-hour Boilerroom fan, you’ll often want to save the sets as an audio file.&lt;/p&gt;
+
+&lt;p&gt;You could download them from YouTube but more convenient would be to egt them from the BRTV app (which you’re probably already using right?).&lt;/p&gt;
+
+&lt;p&gt;Using a program like iExplorer, iMazing or iFunbox just connect your device and head over to the apps tab of the program. Search for the BRTV app and enter its contents.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cdn.thibmaekelbergh.be/br_step1.png&quot; alt=&quot;Step 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All the sets you stored offline are available from the &lt;strong&gt;Documents&lt;/strong&gt; folder inside of the app.&lt;/p&gt;
+
+&lt;p&gt;They will just have a random number hash, no descriptive name so you’ll have to listen to them to identify the sets.&lt;/p&gt;
+
+&lt;p&gt;Once found just drag or export them over to the desktop.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cdn.thibmaekelbergh.be/br_step2.png&quot; alt=&quot;Step 2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These are raw files, opening them with an audio player will most likely work, but for convenience just &lt;strong&gt;add an audio extension&lt;/strong&gt; like mp3 or wav.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cdn.thibmaekelbergh.be/jb5m7.gif&quot; alt=&quot;Step 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You’re all done. Play the file and you’ll hear the set just like it was recorded.&lt;/p&gt;
+
+&lt;p&gt;Take note though, since this is a compressed recording for iOS the quality is measured at 128kpbs. Certainly not great, but doable for sets like these!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cdn.thibmaekelbergh.be/br_step3.png&quot; alt=&quot;Screen&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Mar 2015 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>Sketch Template for website icons</title>
+        <link>http://blog.thibmaekelbergh.be/2015/03/24/sketch-webicon-template.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/03/24/sketch-webicon-template.html</guid>
+        <description>&lt;p&gt;Rewriting this blog meant I wanted to do it properly myself.
+And of course the finishing touch that needs to be applied is a nice cross-platform icon for the website.&lt;br /&gt;
+I needed both a favicon and an iOS icon to be covered on iOS, Android and browsers (boo fucking hoo-you IE for only including png support in IE11).&lt;/p&gt;
+
+&lt;p&gt;When I searched for a webicon template for Sketch I found none that had support for all platforms. I created one myself and you can download it below.&lt;/p&gt;
+
+&lt;p&gt;What I came up with is a template for Sketch with support for:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All iOS devices up to iPhone 6+ and iPad Air 2&lt;/li&gt;
+  &lt;li&gt;Android devices&lt;/li&gt;
+  &lt;li&gt;All modern browsers&lt;/li&gt;
+  &lt;li&gt;Windows 8 Tablets / PC’s&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/5ju4BIj.png&quot; alt=&quot;Screenshot of the Sketch template&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;installing-in-sketch&quot;&gt;Installing in Sketch&lt;/h3&gt;
+&lt;p&gt;As simple as opening the file and choosing &lt;code&gt;File &amp;gt; Save As Template&lt;/code&gt; in Sketch.&lt;br /&gt;
+Or drop it in &lt;code&gt;~/Library/Application Support/com.bohemiancoding.sketch3/Templates&lt;/code&gt; manually.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Download: &lt;a href=&quot;http://inft.ly/EFXxn2A&quot;&gt;via Infinit&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 24 Mar 2015 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>The BlueLounge Kickflip is amazing</title>
+        <link>http://blog.thibmaekelbergh.be/2015/03/03/the-bluelounge-kickflip-is-amazing.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/03/03/the-bluelounge-kickflip-is-amazing.html</guid>
+        <description>&lt;p&gt;I’m a big fan of accesories for my MacBook and iPhone. The latest addition to this is the BlueLounge Kickflip.&lt;br /&gt;
+And I must say it is certainly a big improvements for my coding and other typing work.&lt;/p&gt;
+
+&lt;p&gt;In its bare form it’s a strip that attaches to the MacBook which flips open to be a laptop stand, giving you a more ergonomic way of typing and working on the laptop.&lt;br /&gt;
+The good parts are that it uses a special adhesive gel instead of glue so that there is no residue, and the Kickflip is repositionable and removable.&lt;br /&gt;
+It gives you a good lifted angle to make coding and writing more enjoyable&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm9.staticflickr.com/8632/16061624034_a2f02a639c_k_d.jpg&quot; alt=&quot;FlickrImage&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Application is easy, just take off the protecting film and apply the Kickflip to the backside of your MacBook with light pressure.&lt;br /&gt;
+BlueLounge kept the form factor rather thin and the difference when not flipped out is not so big, this still makes it easy to use when just resting on a desk.&lt;br /&gt;
+Once applied just flip open and position on a desk to start boosting your typing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm9.staticflickr.com/8561/16682603981_a36aa64898_k_d.jpg&quot; alt=&quot;FlickrImage&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Attached neatly to the MacBook&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm9.staticflickr.com/8589/16476666437_2e48e15c6c_k_d.jpg&quot; alt=&quot;FlickrImage&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unflipped, not that much a difference with regular MacBook angle&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm9.staticflickr.com/8565/16683956595_6416df8978_k_d.jpg&quot; alt=&quot;FlickrImage&quot; /&gt;
+&lt;img src=&quot;https://farm9.staticflickr.com/8617/16497820009_e81a388d76_k_d.jpg&quot; alt=&quot;FlickrImage&quot; /&gt;
+&lt;img src=&quot;https://farm9.staticflickr.com/8579/16682947482_602a617583_k_d.jpg&quot; alt=&quot;FlickrImage&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Flipped out position&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Downsides?&lt;br /&gt;
+Sometimes when using a smoother surface (like the glass plate on my desk) it’s possible that you move the MacBook due to the Kickflip not having an anti-slip foot.
+But it’s very minor though and not that noticeable.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 03 Mar 2015 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>Supercharging the Raspberry Pi for terminal</title>
+        <link>http://blog.thibmaekelbergh.be/2015/02/23/supercharging-raspi-for-terminal.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/02/23/supercharging-raspi-for-terminal.html</guid>
+        <description>&lt;p&gt;I’m crazy about the Raspberry Pi, you might already know that.
+Another thing I’m crazy about is Bash &amp;amp; the terminal.&lt;/p&gt;
+
+&lt;p&gt;Working with these two combined is just plain fun for me, so I thought I’d be cool to share the way I work with them.
+Take notice however, I’m going in detail for terminal usage specifically for the Raspi.
+It rarely happens that I use my Raspberry Pi connected with HDMI or trough VNC, so I’m mostly running it headless (over SSH).
+Look at the tips below to supercharge your workflow!&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-rid-of-the-login-message&quot;&gt;Getting rid of the login message&lt;/h2&gt;
+&lt;p&gt;You’ve surely encountered this if you’re working over SSH with the raspi.
+It displays an obnoxious login message and disclaimer about GNU and some other stuff.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/zhnclFS.png&quot; alt=&quot;ScreenLoginSSHMessage&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To get rid of all those lines of text above you’ll have to create a dotfile in the home directory (~).
+Dotfiles are files that start with a dot and are hidden from the file browser or terminal.
+Working with &lt;code&gt;ls&lt;/code&gt; will not display them, &lt;code&gt;ls -a&lt;/code&gt; will.&lt;/p&gt;
+
+&lt;p&gt;If you’re not already located there, enter &lt;code&gt;cd&lt;/code&gt; in Terminal to get to the homedir.
+Then just create a new dotfile called .hushlogin by executing &lt;code&gt;touch .hushlogin&lt;/code&gt; and that’s it!
+Content in .hushlogin is not required, the presence of the file in ~ will disable the message.&lt;/p&gt;
+
+&lt;h2 id=&quot;working-with-aliases-in-terminal&quot;&gt;Working with aliases in terminal&lt;/h2&gt;
+&lt;p&gt;Some commands can take up some time to type and are hard to remember.
+Aliases come in handy here, they let you define an alias for a command.&lt;/p&gt;
+
+&lt;p&gt;To get started use the same method as above using &lt;code&gt;touch&lt;/code&gt; to create the .bash_aliases if you don’t have that file already.
+Open up a text editor inside terminal and edit the file using &lt;code&gt;nano .bash_aliases&lt;/code&gt;, it will display a blank file if you didn’t have it already.&lt;/p&gt;
+
+&lt;p&gt;Now using the syntax &lt;code&gt;alias shortcommand=&quot;command goes here&quot;&lt;/code&gt; (where shortcommand is the alias of your choice and your command goes between the quotes), create all the aliases you want.
+For example I have some set up for deleting, showing and editing files and some other system commands.
+An example of some aliases might be:
+     alias ..=”cd ../”
+     alias lsa=”ls -a”
+     alias rmrf=”sudo rm -rf”
+     alias lsapt=”dpkg –get-selections | grep”&lt;/p&gt;
+
+&lt;p&gt;*Check out the my &lt;a href=&quot;https://github.com/thibmaek/raspi-dotfiles&quot;&gt;git repo&lt;/a&gt; below in the resources for some useful stuff *&lt;/p&gt;
+
+&lt;h2 id=&quot;bashrc&quot;&gt;Bashrc&lt;/h2&gt;
+
+&lt;p&gt;I won’t really go into detail about the .bashrc file, since it should be already on your raspi by default.
+If it’s not there just copy it over from my repo and put it in the home directory.
+If .bashrc is not present, .bash_aliases won’t work either so make sure you have it.&lt;/p&gt;
+
+&lt;h1 id=&quot;functions&quot;&gt;Functions&lt;/h1&gt;
+
+&lt;p&gt;A custom functions file based on &lt;a href=&quot;https://github.com/mathiasbynens/dotfiles&quot;&gt;Mathias Bynens dotfiles&lt;/a&gt;.
+It creates the possibility to use custom-written functions in Bash and execute them elsewhere.
+Extremely useful is the one I put in there, &lt;code&gt;mkd()&lt;/code&gt; which creates a directory and enters it.
+Saves you more time than typing &lt;code&gt;mkdir temp &amp;amp;&amp;amp; cd temp&lt;/code&gt;. (And hey: &lt;code&gt;temp&lt;/code&gt; is an alias in .bash_aliases to do that using mkd function).&lt;/p&gt;
+
+&lt;h2 id=&quot;profile&quot;&gt;Profile&lt;/h2&gt;
+
+&lt;p&gt;.profile or .bash_profile is a file that modifies the shell environement and loads some other commands.
+I prefer to use .profile instead of .bash_profile, just because it’s shorter.
+I gave this files some extra commands to autocorrect cd typo’s and source the .functions dotifle.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-other-stuff&quot;&gt;Some other stuff&lt;/h3&gt;
+&lt;p&gt;I really don’t like working in Vim (maybe I should, but don’t really care) so still have pico, nano and emacs left.
+Since I like &lt;code&gt;nano&lt;/code&gt; the best, whenever a text file gets opened in a text editor I’d want to have nano as the default editor.
+For this you can export the environmental variable EDITOR using &lt;code&gt;env EDITOR=nano&lt;/code&gt;, and use nano from now on!&lt;/p&gt;
+
+&lt;p&gt;Terminal has autocompletion with the tab key, so please use it. Saves a lot of time (so does cycling trough commands with the up an down arrow).&lt;/p&gt;
+
+&lt;h3 id=&quot;cloning-my-git-repo&quot;&gt;Cloning my git repo&lt;/h3&gt;
+&lt;p&gt;To start using dotfiles I recommend installing &lt;a href=&quot;https://github.com/thibmaek/raspi-dotfiles&quot;&gt;my repo&lt;/a&gt; and running the builder with &lt;code&gt;./make.sh&lt;/code&gt;.&lt;br /&gt;
+This will move the dotfiles to the home directory. All you need to do after this is reload the shell with &lt;code&gt;exec $SHELL -l&lt;/code&gt;&lt;br /&gt;
+Everything should work, from here on just edit the files using nano or another edit to adjust to personal preference!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Feb 2015 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>Quickly installing a new Raspberry Pi with a boostrapping script</title>
+        <link>http://blog.thibmaekelbergh.be/2015/02/22/using-the-raspi-bootstrapper.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/02/22/using-the-raspi-bootstrapper.html</guid>
+        <description>&lt;p&gt;I’m thinking of buying a new Raspberry Pi A+ or either B+ as a separate webserver and fileserver so I can use my current Raspberry Pi B+ for &lt;a href=&quot;http://blog.petrockblock.com/retropie/&quot;&gt;RetroPie&lt;/a&gt; and &lt;a href=&quot;http://kodi.tv&quot;&gt;Kodi&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It got me thinking that installing Rasbian is fairly easy with &lt;code&gt;dd&lt;/code&gt; and I could be up an running in an hour or so, but what about all the packages I installed trough &lt;code&gt;apt-get&lt;/code&gt; or settings I adjusted, like &lt;a href=&quot;http://blog.thibmaekelbergh.be/supercharging-the-raspberry-pi-for-terminal&quot;&gt;my dotfiles&lt;/a&gt;.&lt;br /&gt;
+I could just copy over my current SD card, but when I buy a new one I would like to start with a clean slate and just install the things I really need.&lt;br /&gt;
+Copying the current SD wouldn’t be an option but what would?&lt;/p&gt;
+
+&lt;p&gt;I stumbled upon &lt;a href=&quot;https://github.com/brandonb927/dotfiles&quot;&gt;Brandon Brown’s marvellous dotfiles&lt;/a&gt; while browsing Github and noticed it aren’t actually dotfiles in there. It’s a bootstrapping script which takes a lot of tasks like installing, creating files and setting stuff in the shell.&lt;br /&gt;
+It was pretty clear what the commands in the file did, so I set out to the task and used this as a template to create my own bootstrapping script for the Raspberry Pi.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-the-script-with-a-new-pi&quot;&gt;Using the script with a new Pi.&lt;/h3&gt;
+&lt;p&gt;There’s not that much too it, basically you just run the file and go to each question.&lt;br /&gt;
+It installs my &lt;a href=&quot;dotfile repo&quot;&gt;https://github.com/thibmaek/raspi-dotfiles&lt;/a&gt; and then just installs PIP, a basic webserver with PHP &amp;amp; MySQL, along with the option to install &lt;a href=&quot;http://nodejs.org&quot;&gt;Node.js&lt;/a&gt; and common node modules.&lt;/p&gt;
+
+&lt;p&gt;The script is tested and works on the Raspberry Pi, you only need to clone it over from Github run it with &lt;code&gt;sudo ./install.sh&lt;/code&gt; (that sudo is required).&lt;br /&gt;
+If you get an error try &lt;code&gt;chmod +x install.sh&lt;/code&gt; to mod it and then try &lt;code&gt;sudo ./install.sh&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Github: &lt;a href=&quot;https://github.com/thibmaek/raspi-setup&quot;&gt;https://github.com/thibmaek/raspi-setup&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 22 Feb 2015 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>Bridging Wifi to the Raspberry Pi over Ethernet</title>
+        <link>http://blog.thibmaekelbergh.be/2015/02/16/bridging-wifi-to-ethernet-for-raspi.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/02/16/bridging-wifi-to-ethernet-for-raspi.html</guid>
+        <description>&lt;p&gt;With my various attempts to try and setup Wifi and internet on my pi I was going back&lt;br /&gt;
+to using it exclusively over ethernet with it directly hooked up to my router.&lt;/p&gt;
+
+&lt;p&gt;The pi was powered trough the USB port of my modem, which supplied just enough&lt;br /&gt;
+power to run the B+ and A+. Alas I didn’t thank and in an unfortunate attempt to&lt;br /&gt;
+update my older Raspbian distro to the new UI on my A+, I overcharged the USB port on my modem.&lt;/p&gt;
+
+&lt;p&gt;So now I was both out of power and out of internet on the pi.&lt;br /&gt;
+The network infrastructure is not that good in-house and I’m constantly working on it.&lt;br /&gt;
+I have enough power sockets at my desk but no wired connection to the internet.&lt;br /&gt;
+This got my thinking for a more creative solution to fix the issue.&lt;/p&gt;
+
+&lt;p&gt;I figured in theory it should be possible to hook up my pi to my MacBook and use my&lt;br /&gt;
+MacBook’s Wifi connection and tether it to the pi. Turns out all I needed was &lt;strong&gt;OS X 10.7+&lt;/strong&gt;&lt;br /&gt;
+and a &lt;strong&gt;UTP cable&lt;/strong&gt; (and a Thunderbolt to Ethernet adapter in my case of having a retina MacBook).&lt;/p&gt;
+
+&lt;p&gt;Hook up the cables to the pi while it is &lt;strong&gt;powered off&lt;/strong&gt;, go to &lt;code&gt;System Preferences → Sharing&lt;/code&gt; and enable the following settings:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/SpOPnNW.png&quot; alt=&quot;Sharing Preferences Screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Choose the Wifi on the MacBook as entry point and send out trough the Ethernet port / adapter.&lt;br /&gt;
+That’s all there is to do, doing this will create a new local network between just the two devices so
+&lt;strong&gt;any other device in your local network (other computers, printers, iPhone) will be outsourced for a moment&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t worry as soon as you turn internet sharing’s checkbox back off again, you’ll be back on the local network.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 16 Feb 2015 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>My todo-list method revised</title>
+        <link>http://blog.thibmaekelbergh.be/2015/01/28/todos-revised.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/01/28/todos-revised.html</guid>
+        <description>&lt;p&gt;Besides using Clear I also prefer to use old fashioned notebooks and pencils for my todos.&lt;br /&gt;
+But scribbling stars followed by tasks isn’t boosting my productivity so I came up&lt;br /&gt;
+with a new method I saw somewhere on the web and then adapted it to my own flow.&lt;/p&gt;
+
+&lt;p&gt;The only things you’ll need are a &lt;strong&gt;notebook&lt;/strong&gt; (I prefer those pocket sized ones), a set of
+&lt;strong&gt;pencils&lt;/strong&gt; (3 colours will work) and &lt;strong&gt;tasks&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/9EICAW3.png&quot; alt=&quot;link&quot; /&gt;
+&lt;img src=&quot;http://imgur.com/ucE1s5G.png&quot; alt=&quot;link&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;color-coding-tasks&quot;&gt;Color coding tasks.&lt;/h2&gt;
+
+&lt;p&gt;The way i do it is: draw a circle with the &lt;strong&gt;date of completion&lt;/strong&gt;.&lt;br /&gt;
+Then you draw your tasks as parts of a bigger circle around the center one. Adjust the &lt;strong&gt;height&lt;/strong&gt; so
+it doesn’t make a circle but a graph (this is just for fun though).&lt;br /&gt;
+The &lt;strong&gt;width&lt;/strong&gt; of the individual parts resembles the &lt;strong&gt;time&lt;/strong&gt; you’ll be spending on the task.&lt;br /&gt;
+The colours, I like to use red, orange and green, resemble the difficulty of the task.&lt;br /&gt;
+Red would be a &lt;strong&gt;difficult&lt;/strong&gt; task, orange would be &lt;strong&gt;mediocre&lt;/strong&gt; and green would be &lt;strong&gt;easy&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/pe886LB.png&quot; alt=&quot;link&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you have a complete circle tasks for the day are full, and additional ones are moved to the next day.&lt;br /&gt;
+Free space on the circle? Either this is &lt;strong&gt;spare time&lt;/strong&gt; or extra space for &lt;strong&gt;additional tasks&lt;/strong&gt; that you think of throughout the day.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/u3CeLNT.png&quot; alt=&quot;link&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you finish a task just &lt;strong&gt;color it in with a pencil&lt;/strong&gt;. This creates a nice overview of completed tasks and remaining ones!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/2u7vxkD.png&quot; alt=&quot;link&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 28 Jan 2015 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>Creating a package for Atom is dead easy</title>
+        <link>http://blog.thibmaekelbergh.be/2015/01/06/creating-atom-packages-is-easy.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2015/01/06/creating-atom-packages-is-easy.html</guid>
+        <description>&lt;p&gt;I’m pretty much in love with Atom (and ditched Sublime for it) and could go on an on about
+how amazing I think this text editor is. The way it handles snippets with CSON for example
+or how easy it is to manage packages or to sync your settings with Dropbox, etc.&lt;/p&gt;
+
+&lt;p&gt;One thing I did miss though was my trusted ToyChest theme from Coda.&lt;br /&gt;
+Jackson Gariety who made it brought support for a bunch of editors but sadly Atom didn’t have
+a good port of this so I decided to look up the Atom.io Docs to see how hard it was to port it myself.&lt;/p&gt;
+
+&lt;p&gt;Turns out it’s really really easy to convert a .tmTheme to an Atom theme (which is written in LESS) and
+then publish it on APM (Atom Package Manager, similiar to npm).&lt;br /&gt;
+All it took were some commands in Terminal, a git repo and a publish command.&lt;/p&gt;
+
+&lt;h3 id=&quot;converting-the-package&quot;&gt;Converting the package&lt;/h3&gt;
+&lt;p&gt;You need Atom’s commandline utils installed for this, on OS X this installs on default when you install Atom.&lt;br /&gt;
+If you don’t have apm, check the bottom of this page on how to install.&lt;br /&gt;
+It appears apm has a handy tool installed to easily convert any TextMate .tmTheme to Atom’s convenient LESS syntax.&lt;/p&gt;
+
+&lt;p&gt;All you have to do is run &lt;code&gt;apm init --theme ~/.atom/packages/atom-toychest --convert toychest.tmTheme&lt;/code&gt;&lt;br /&gt;
+Specify &lt;code&gt;toychest.tmTheme&lt;/code&gt; to the location of the .tmTheme you want to convert.&lt;br /&gt;
+All this command does,
+is parse the plist syntax from TextMate Themes and converts it to to LESS flavoured CSS.&lt;br /&gt;
+The beauty of it all is that using apm, Atom will automatically create a &lt;code&gt;package.json&lt;/code&gt; and other repo-required files.&lt;/p&gt;
+
+&lt;h3 id=&quot;publishing-to-apm&quot;&gt;Publishing to APM&lt;/h3&gt;
+&lt;p&gt;Now the theme is located in &lt;code&gt;~/.atom/packages&lt;/code&gt; it should appear in Atom’s preferences (mine took a reboot of Atom). Publishing it to APM, is really really easy.&lt;br /&gt;
+Just open the theme folder in terminal (e.g &lt;code&gt;cd ~/.atom/packages/myTheme&lt;/code&gt;) and create a new git repo with &lt;code&gt;git init&lt;/code&gt;.&lt;br /&gt;
+Next you’ll want to create a new repo on Github and add it as an origin with &lt;code&gt;git remote add origin https://github.com/…&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Before you sync, make sure you edit the &lt;code&gt;package.json&lt;/code&gt; so the default data becomes your data. APM writes some defaults and you’ll want to overwrite these.&lt;br /&gt;
+It’s important to edit the repository field to the repo on Github.&lt;/p&gt;
+
+&lt;p&gt;Almost there. All that rests now is to run &lt;code&gt;apm publish minor&lt;/code&gt; to publish it as a minor release (0.x.0) to apm.&lt;br /&gt;
+When published you’ll be greeted with a friendly message:&lt;/p&gt;
+
+&lt;p&gt;Be sure to check out my ToyChest port on apm by either:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Running &lt;code&gt;apm install atom-toychest&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Searching in Atom’s Themes in the preferences&lt;/li&gt;
+  &lt;li&gt;Checking out the repo: &lt;a href=&quot;https://atom.io/themes/atom-toychest&quot;&gt;https://atom.io/themes/atom-toychest&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 06 Jan 2015 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>I got a Raspberry Pi, here&#39;s how I configured it</title>
+        <link>http://blog.thibmaekelbergh.be/2014/12/31/configuring-my-raspi.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2014/12/31/configuring-my-raspi.html</guid>
+        <description>&lt;p&gt;I was instant fan from when the Raspberry Pi first was available for buying.
+To have so much hackability and uses and projects for a credit card sized computer is just amazing.
+So after a couple of years I finally decided to get one.
+I was looking around the internet for secondhand B model (don’t get an A model) but in the end I winded up
+buying a completely new B+ model in a retail computer store, and I don’t regret it!&lt;/p&gt;
+
+&lt;h2 id=&quot;unboxing-and-initial-setup&quot;&gt;Unboxing and initial setup.&lt;/h2&gt;
+&lt;p&gt;Very eager to start with my new toy I took it out of the box. I headed over to the official Raspberry Pi website and downloaded
+the latest Raspbian distro to put it on an SD card. I wanted to try raspi-sd-card builder but it didnt work on my mac so I just used &lt;code&gt;dd&lt;/code&gt; in terminal
+&lt;br /&gt;
+When it was done installing I booted up, connected to ethernet and a display. First thing you should do is set everything accordingly in &lt;code&gt;raspi-config&lt;/code&gt; from Terminal.
+Be sure to enable SSH, overscan and set locale settings.
+I did not plan to use the Raspberry Pi connected to a monitor, so I connected it to the modem in the garage to run it headless on my Mac.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring-the-essential-packages&quot;&gt;Configuring the essential packages&lt;/h2&gt;
+&lt;p&gt;Some packages are really essential to get started with Raspberry Pi. First things first, setting update.
+    &lt;code&gt;sudo apt-get update&lt;/code&gt;
+    &lt;code&gt;sudo apt-get upgrade&lt;/code&gt;
+will update all existing packages. Besides that I recommend you install Hexxeh’s Raspberry Pi-update to get latest firmware updates.
+I think it’s pretty essential to have vnc installed to so at any time you can run an X environment on any computer.
+Raspberry Pi’s official site has a great tutorial for this (just be sure to include -geometry when you want to start a new vncserver)&lt;/p&gt;
+
+&lt;h2 id=&quot;some-packages-i-really-need&quot;&gt;Some packages I really need.&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Avahi (configures zeroconf trough Bonjour so you can access raspberrypi.local instead of 192.168.0.x when ssh’ing or whatever) with &lt;code&gt;sudo apt-get instal  avahi-daemon&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Netatalk (package for AFP, which I really need to transfer files. I don’t like SSH for file transfer. Install once and Raspberry Pi will appear in OS X sidebar) &lt;code&gt;sudo apt-get install netatalk&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Webstack (I’m a webdev so this is pretty obvious, more convenient than running MAMP on my MacBook Pro) with &lt;code&gt;sudo apt-get install apache2 php5 libapache2-mod-php5 php5-mysql mysql-client&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Aircrack (haven’t really had time to tinker with it, but might use it later on, once I get a compatible network card), has to be built from source.&lt;/li&gt;
+  &lt;li&gt;Openssl (required for many things I use, like aircrack) with &lt;code&gt;sudo apt-get openssl&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Airplay (just wanted to try it out, works great but Raspberry Pi’s audiocard is one of the worst) has to be built from source&lt;/li&gt;
+  &lt;li&gt;Galileo (syncs with my Fitibit tracker so I don’t have to be reminded. Is a pip package so install pip first) &lt;code&gt;sudo pip install galileo&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Transmission (This thing is great as a torrent box, follow this tutorial) with &lt;code&gt;sudo apt-get install transmission-daemon&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;p&gt;If you install afp, the default shared folder is the home folder. Set other shared folders by editting &lt;code&gt;/etc/netatalk/AppleVolumes.default&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;commands-to-memorize&quot;&gt;Commands to memorize&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;sudo apt-get install&lt;/code&gt; to install any package&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;wget&lt;/code&gt; downloads files from the internet&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;git clone&lt;/code&gt; followed by a HTTPS address to clone a git repo (depends on git, duh!)&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;sudo nano&lt;/code&gt; to edit any file (which you’ll do often)&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;dpkg --get-selections | grep keyword&lt;/code&gt; to list all the installed packages, where grep is the keyword you’re searching for.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pictures&quot;&gt;Pictures&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/KymBPnF.jpg&quot; alt=&quot;Imgur&quot; /&gt;
+&lt;img src=&quot;http://i.imgur.com/zsSMOHl.jpg&quot; alt=&quot;Imgur&quot; /&gt;
+&lt;img src=&quot;http://i.imgur.com/AXYR8UU.jpg&quot; alt=&quot;Imgur&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 31 Dec 2014 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>Using Photoshop with a modular approach</title>
+        <link>http://blog.thibmaekelbergh.be/2014/12/22/modular-photoshop.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2014/12/22/modular-photoshop.html</guid>
+        <description>&lt;p&gt;With the current state of design and possible technologies and possibilities, some claim it’s time for Photoshop to hand over the throne.
+The fanbase for Sketch and Affinity is vastly growing and while those are great tools and I’ve tried working with them a lot, they still aren’t possible to beat Photoshop in a lot of ways.&lt;/p&gt;
+
+&lt;p&gt;Adobe knows Photoshop is a web designers home, so over the last year they made effort to improve it for designers, trying out new features and implementing stuff from Sketch and others.&lt;/p&gt;
+
+&lt;p&gt;For me, Photoshop feels &lt;strong&gt;more powerful than ever&lt;/strong&gt; and I’ve really learned to enjoy working with the new Photoshop.
+Following a &lt;strong&gt;modular&lt;/strong&gt; approach it’s now much easier to find specific layers, change states and alter appearance.&lt;/p&gt;
+
+&lt;p&gt;In this post I’ll be showing you an example of a modular approach on design in Photoshop.
+&lt;em&gt;The design project shown is a design for a whiteboard application I had to program in team. The PSD I made for this was a quick design of how everything should be placed and should look.
+(The link to the file is included too, so you can try out everything yourself.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;naming-and-grouping-layers&quot;&gt;Naming and grouping layers&lt;/h3&gt;
+&lt;p&gt;Something that’s extremely important when it comes to a good workflow.
+Surely, you can use the search options in the layers panel, but most of the time you’ll be looking at layer names anyways.
+Kinda derived from the BEM methodology in programming, I use layernames that &lt;strong&gt;‘tell me’ what the layer is or does.&lt;/strong&gt;
+For example designing a form with an input field for email, I would create a group &lt;em&gt;Login&lt;/em&gt; containing a group called &lt;em&gt;Email&lt;/em&gt;.
+In Email I would have both the shape layer for the input and a text layer for the placeholder, respectively named &lt;em&gt;Email Input Field&lt;/em&gt; and &lt;em&gt;Email Input Placeholder&lt;/em&gt;.
+Having multiple inputs I could even name them Input and Placeholder since the Email would be obvious enough to differentiate it from other input fields.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NEVER use the default layer name Photoshop uses when creating a layer. Things like Shape 1, Layer 2, Text 2 Duplicate are just bad. &lt;a href=&quot;http://psdcleaner.madebysource.com&quot;&gt;PSDCleaner&lt;/a&gt; is a great tool to help you&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I like to create lots of groups for layers and nest them in other groups. When I create navigation bars I mostly have a group structure like:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+-- Nav
+     -- Text
+          -- Home Text Layer
+          -- About Text Layer
+     -- Icons
+          -- Home Icon Layer
+          -- About Icon Layer
+          -- Logo Layer
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This way I can &lt;strong&gt;easily hide and unhide&lt;/strong&gt; complete sections of the thing I’m designing or move all the text layers. This could also be done with Smart Objects but Smart Objects always show the same in the document.
+If I have a duplicate of a Smart Object and edit the first one, the duplicate one will &lt;strong&gt;automatically adjust.&lt;/strong&gt;
+A good rule of thumb I use is to &lt;strong&gt;always group and create a Smart Object for the group if necessary or useful.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;use-layer-colors&quot;&gt;Use layer colors&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/mMGLccB.png&quot; alt=&quot;link&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At first to mee this seemed like pretty useless feature since PS doesn’t assign default colors like After Effects does for example.
+But when you know of a good use for layer colors they are actually very &lt;strong&gt;handy when searching for specific layers&lt;/strong&gt;, especially when using the filter option in the layer panel.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/HzGzY5t.png&quot; alt=&quot;link2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Get the habit of coloring the layers when creating them and you’ll be able to quickly find specific things like Brushes, Icons and Controls when you’re working with lots of layers.
+Just put the &lt;strong&gt;filter in the layers panel on Color&lt;/strong&gt; and select the color representing the item you’re looking for.
+PS will automatically only show the items you want.
+I lik to even leave this filter filled in even when not searching for specific things like Icons, because you can just hit that red switch to &lt;strong&gt;toggle the filter.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The color assigning I like to use is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Red: Photos and imported material&lt;/li&gt;
+  &lt;li&gt;Orange: Brush Layers&lt;/li&gt;
+  &lt;li&gt;Yellow: Icons&lt;/li&gt;
+  &lt;li&gt;Blue: Controls (adjustment layers)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Find one that you find easy to remember and use. It has certainly made working easier for me.&lt;/p&gt;
+
+&lt;h3 id=&quot;make-use-of-layer-comps&quot;&gt;Make use of Layer Comps&lt;/h3&gt;
+&lt;p&gt;This feature is extremely handy. Basically you’re able to set a &lt;strong&gt;couple of states&lt;/strong&gt; in this panel which take note of what layers to hide, what Layer FX to disable and position of a layer.
+Most of the times when I’m using this in my main PSD it’s to show different pages of a website (and the layercomp is just hiding or unhiding a group) or to show hover effects.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.giphy.com/5xaOcLtqMcjX6SAjGXC.gif&quot; alt=&quot;video1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since CC14 you have been able to use &lt;strong&gt;Layer Comps in Smart Objects&lt;/strong&gt; and this just opens a hole new array of possibilities.
+This comes in really handy when designing UI elements like modals or buttons.
+You’re able to select a Comp assigned inside of the Smart Object, in the main document’s Properties panel.
+For example this is really easy for quickly toggling a button state or different tabs inside of a modal window.
+The main document’s Layer Comps also apply the layer comps of smart objects inside their own. You might, for example, have a layer comp in the main document for a modal. When shown that modal should be defaulted on it’s Register tab.
+All you need to do is enable the modal layer comp and then enable the Registered user layer comp on the Smart Object, save the layer comp and it’ll be defaulted on Register when the modal is shown via the layer comp in the main document.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.giphy.com/28eeDzNVsToY8JLK8.gif&quot; alt=&quot;video2&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;place-linked-instead-of-embedding&quot;&gt;Place linked instead of embedding&lt;/h3&gt;
+&lt;p&gt;When importing assets like photos or logos it’s wise to take a moment and stand still on how this asset should be referenced.
+Anything you would drag into the PS window will just be embedded in the PSD, which will also result in it’s &lt;em&gt;*file size to increase.&lt;/em&gt;&lt;br /&gt;
+Get excited for Place Linked.&lt;/p&gt;
+
+&lt;p&gt;Not only does Place Linked &lt;strong&gt;take the weight of the PSD&lt;/strong&gt;, it also proves extremely efficient for changing documents.
+When working in a team with multiple designers you could for example have the logo or an asset like an iPhone mockup.
+Without Place Linked, the logo would have to be reimported into PS every time it changes. Place Linked doesn’t embed but just looks at a file path and then imports it. This way when updating e.g a color in the logo, it would be &lt;strong&gt;immediately updated in the main PS document&lt;/strong&gt;. This is really where all the modular magic happens in PS. I like to compare it to Sass @imports for partials, for those familiar with that.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I almost always use Place Linked&lt;/strong&gt; for logos, photos or other PSD. You’ll never know when you’re going to change something on the source document and it kinda takes the weight of Photoshop’s main PSD.&lt;/p&gt;
+
+&lt;h3 id=&quot;rounding-up-tldr&quot;&gt;Rounding Up (TL;DR)&lt;/h3&gt;
+&lt;p&gt;You might have to get used to changing your flow and working like this, but when you do you’ll find that it’s much easier, quicker and more redundant to changes.
+So to recap:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Name layers correctly&lt;/li&gt;
+  &lt;li&gt;Group multiple layers or create Smart Objects&lt;/li&gt;
+  &lt;li&gt;Colorcode layers for easier navigation in the Layers panel.&lt;/li&gt;
+  &lt;li&gt;Use the filter in the Layers panel to quickly ‘shy’ your colorcoded layers, shapes, smart objects, etc.&lt;/li&gt;
+  &lt;li&gt;Use Layer Comps and Layer Comps on Smart Objects to make states on objects or display different layouts.&lt;/li&gt;
+  &lt;li&gt;Place Linked is a gift the guys at Adobe PS Team gave us. Use it whenever applicable.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks for reading and if you’re interested or have questions be sure to hit me up on &lt;a href=&quot;https://twitter.com/thibmaekelbergh&quot;&gt;@thibmaekelbergh&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Example PSD: &lt;a href=&quot;http://inft.ly/TYs8nBD&quot;&gt;http://inft.ly/TYs8nBD&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Dec 2014 00:00:00 +0100</pubDate>
+      </item>
+    
+      <item>
+        <title>Executable HTTP Server Script</title>
+        <link>http://blog.thibmaekelbergh.be/2014/12/18/executable-http-server-script.html</link>
+        <guid isPermaLink="true">http://blog.thibmaekelbergh.be/2014/12/18/executable-http-server-script.html</guid>
+        <description>&lt;p&gt;Get cross-domain errors in the console because you’re running&lt;br /&gt;
+&lt;code&gt;file://&lt;/code&gt; instead of a real &lt;code&gt;http://&lt;/code&gt; server suck.&lt;br /&gt;
+I rarely use the file protocol anymore because it’s way simpler to just start a server from terminal, it’s baked into OS X!&lt;br /&gt;
+Also I hate starting MAMP for anything without a database.&lt;/p&gt;
+
+&lt;p&gt;The only real magic it requires is a python command: &lt;code&gt;python -m SimpleHTTPServer&lt;/code&gt; but I simplified
+this even more and created a noob-proof executable script, which you can just double click to start the server.&lt;/p&gt;
+
+&lt;p&gt;It will also check if you have an entry point (&lt;em&gt;index.html&lt;/em&gt; for example) and only run the server
+if the entry point file exists. Otherwise it will send a notification (10.8+) with the error message.&lt;br /&gt;
+If the entry file is found it starts the server and opens it in the browser.&lt;/p&gt;
+
+&lt;p&gt;Double clicking is the only required skill here!&lt;br /&gt;
+You an find it in the gist below or download the raw file on &lt;a href=&quot;https://gist.github.com/thibmaek/eadfae1c2549d0ee3899&quot;&gt;Github Gist&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;div class=&quot;gist&quot;&gt;&lt;script src=&quot;https://gist.github.com/eadfae1c2549d0ee3899.js?file=HTTPServer.command&quot;&gt; &lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;### Thibault Maekelbergh ###&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;### http://blog.thibmaekelbergh.be/executable-http-server-script ###&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(dirname &amp;quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;)&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Get current directory&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;ENTRY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;index.html &lt;span class=&quot;c&quot;&gt;#Set the entry point for the server&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -f &lt;span class=&quot;s2&quot;&gt;&amp;quot;$ENTRY&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Check if the entry exists then go on&lt;/span&gt;
+  sleep &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; open &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://localhost:8000/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Delay a second then open localhost&lt;/span&gt;
+  python -m SimpleHTTPServer&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Start the HTTP Server&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Send an alert&lt;/span&gt;
+  osascript -e &lt;span class=&quot;s1&quot;&gt;&amp;#39;display notification &amp;quot;No entry point found, quitting.&amp;quot; with title &amp;quot;Missing index.html&amp;quot;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://gist.github.com/eadfae1c2549d0ee3899&quot;&gt;This Gist&lt;/a&gt; hosted on &lt;a href=&quot;http://github.com/&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&lt;/noscript&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Getting errors?&lt;br /&gt;
+Try cd’ing to the directory where you placed the Server Script&lt;br /&gt;
+and use &lt;code&gt;chmod +x HTTPServer.command&lt;/code&gt; to make it executable again.
+Still getting errors? Tweet me &lt;a href=&quot;https://twitter.com/thibmaekelbergh&quot;&gt;@thibmaekelbergh&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;More about the python command it possible options&lt;br /&gt;
+like port specifying? &lt;a href=&quot;https://docs.python.org/2/library/simplehttpserver.html&quot;&gt;Read it here&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 18 Dec 2014 00:00:00 +0100</pubDate>
+      </item>
+    
+  </channel>
+</rss>
