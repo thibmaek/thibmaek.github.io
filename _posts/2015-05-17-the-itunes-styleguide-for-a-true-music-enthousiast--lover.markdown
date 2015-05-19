@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The iTunes Styleguide for a true music enthousiast & lover"
-date: "2015-10-09"
+date: "2014-10-09"
 ---
 
 I love order and organizing stuff. As a major music fan, you can already guess how organized my iTunes library is.  
