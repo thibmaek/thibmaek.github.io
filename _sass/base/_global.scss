@@ -158,6 +158,10 @@ a {
   }
 }
 
+a .fa:hover {
+  border-bottom: 0;
+}
+
 .nav {
   list-style: none;
   margin: 0;
