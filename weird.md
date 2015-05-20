@@ -20,3 +20,4 @@ permalink: /weird/
 - Git & Github
 - Burial
 - Atom
+- Harley Quinn

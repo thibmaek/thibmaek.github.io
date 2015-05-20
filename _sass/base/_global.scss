@@ -179,3 +179,17 @@ img[align=left] {
 img[align=right] {
   margin-left: 3%;
 }
+
+#search-container {
+  margin: 0 auto;
+  width: 80%;
+
+  input {
+    width: 100%;
+  }
+
+  #results-container {
+    margin-top: 20px;
+    list-style: none;
+  }
+}
