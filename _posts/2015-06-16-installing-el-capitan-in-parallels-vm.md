@@ -5,9 +5,11 @@ date: "2015-06-16"
 ---
 
 OS X 10.11 El Capitan (which is a ridiculous name, if you're not from America) was recently announced at WWDC15 a couple of weeks ago.  
+
 Not a lot of new features but mainly gimmicks (_shake to find cursor, really?_) and productivity upgrades like split screen working are included with this release of OS X.
 
 But there was one feature I was curious about, and that's the **completely revamped Web Inspector and the new Adaptive Viewer**. Chrome's DevTools are probably the most common used and the favourite of every webdev, but I seem to enjoy the way Web Inspector works way more (_grouped XHR folder anyone?_).  
+
 The new Adaptive Viewer is something you could compare to that device emulator Chrome has, and curious how Safari's looks like I decided to take a look at the first beta of OS X 10.11
 
 ## Finding a beta and creating the dmg
@@ -23,14 +25,19 @@ Looking at the .app's Contents folder and searching Spotlight for .dmg I found o
 After browsing for a while I found out there is a **RubyGem to create DMG files from the .app Installer**, called `iesd`. Installing was as easy as any other gem with:
 
 {% highlight ruby %}
+
 gem install iesd
+
 # or sudo gem install if that's your thing
+
 {% endhighlight %}
 
 This in place it was time to create it with a simple input/output task for iesd:
 
 {% highlight bash %}
+
 iesd -i Downloads/Install\ OS\ X\ 10.11\ Developer\ Beta.app/ -o Desktop/Capitan.dmg -t BaseSystem
+
 {% endhighlight %}
 
 This took about **5 minutes** to create the DMG on my desktop. Everything was now in place, and I could head over to the actual installing now.
@@ -57,7 +64,7 @@ To round up make sure to assign **at least 128MB VRAM** to the VM. At 128MB it w
 
 Make sure the **dmg is still loaded in the CD/DVD slot** and boot the VM. OS X install should become active and just install it like you would with any other OS X install. Ok so now I was pretty much at the point to test out the new Web Inspector.
 
-## Safari 8 Web Inspector
+## Safari 9 Web Inspector
 
 The new **tabbed view** will make it much easier to change views when debugging or inspecting. Feels great to quickly switch to console from the node inspector view with keyboard shortcuts.
 
