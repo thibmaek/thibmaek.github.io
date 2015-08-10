@@ -1,4 +1,4 @@
-var elements = document.getElementsByTagName('script')
+var elements = document.getElementsByTagName('script');
 
 Array.prototype.forEach.call(elements, function(element) {
   if (element.type.indexOf('math/tex') != -1) {
