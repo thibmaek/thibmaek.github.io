@@ -35,4 +35,4 @@ Removing the photo from Photos and reimporting the one on the desktop in the Alb
 
 So it seems this is a working and easy solution for Apple's stunningly stupid decision to remove this feature from Photos. While this method works, I hope that Apple brings it back in some future version of Photos.
 
-> PS: I submitted a PR to but GeoTag on Cask sinc it wasn't there yet, so you should be able to install it from there soon.
+> Update: I submitted GeoTag to Cask so you can install it with homebrew Cask.
