@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Wishlist
-permalink: /wishlist
+permalink: /wishlist/
 ---
 
 # Buy me stuff, start here
