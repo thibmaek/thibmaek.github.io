@@ -21,3 +21,5 @@ permalink: /weird/
 - Burial
 - Atom
 - Harley Quinn
+- Four Tet
+- Audio and sound
