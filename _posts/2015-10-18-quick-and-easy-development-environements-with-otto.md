@@ -22,7 +22,7 @@ Otto is available cross platform as a regular package installer. As I always do 
 
 Ok so otto is now installed and available on the command line. Try running it and you'll get a first glance of the commands that otto will serve you with:
 
-{% highlight bash %}
+{% highlight shell %}
 otto
 
 usage: otto [--version] [--help] <command> [<args>]
@@ -48,7 +48,7 @@ The cool thing about otto is that it's smart enough to guess the language enviro
 Download or clone the repo to a folder and enter it. All the files for our basic node app are here so we can start on the first step with Otto.  
 Running `otto compile` will let otto determine that it's a node app.
 
-{% highlight bash %}
+{% highlight shell %}
 ==> Compiling...
     Application:    node-js-sample (node)
     Project:        node-js-sample
@@ -70,7 +70,7 @@ Now otto has determined the language we can start on installing the node runtime
 
 `otto dev`
 
-{% highlight bash %}
+{% highlight shell %}
 ==> default: [otto] Downloading Node 4.1.0...
 ==> default: [otto] Untarring Node...
 ==> default: [otto] Setting up PATH...
@@ -80,7 +80,7 @@ Now otto has determined the language we can start on installing the node runtime
 
 You can see that otto also downloads one of the latest node versions and sets it up on the PATH for you. After this is done you should get the following message:
 
-{% highlight bash %}
+{% highlight shell %}
 ==> Development environment successfully created!
     IP address: 172.16.1.142
 
@@ -96,7 +96,7 @@ You can see that otto also downloads one of the latest node versions and sets it
 
 We now have everything installed to test our application in the environment and look at it in the browser. You'll have to ssh into the environment and start node from here. Take note of the IP address from the `otto dev` output or run `otto dev address`, we'll need it on the client.
 
-{% highlight bash %}
+{% highlight shell %}
 otto dev ssh
 npm install
 npm run start
