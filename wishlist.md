@@ -12,3 +12,5 @@ permalink: /wishlist/
 - [Kikkerland Wood Charging Station](http://www.asadventure.com/benl/kikkerland-gadget-wood-charging-station-2h11c52007)
 - [Hanging Sphere Airplant](http://www.etairnity-airplants.com/products/airplant-design-sphere?variant=1443452163)
 - [Cube Airplant](http://www.etairnity-airplants.com/products/airplant-design-cube?variant=4329132611)
+- [BookArc for MacBook Pro Retina 15"](http://www.lab9.be/nl/twelve-south-bookarc-voor-macbook-pro-3927.htm)
+- [Magic Trackpad 2](http://www.lab9.be/nl/apple-magic-trackpad-2-6061.htm)
