@@ -14,3 +14,4 @@ permalink: /wishlist/
 - [Cube Airplant](http://www.etairnity-airplants.com/products/airplant-design-cube?variant=4329132611)
 - [BookArc for MacBook Pro Retina 15"](http://www.lab9.be/nl/twelve-south-bookarc-voor-macbook-pro-3927.htm)
 - [Magic Trackpad 2](http://www.lab9.be/nl/apple-magic-trackpad-2-6061.htm)
+- [Bodum Chambord Goud / Brons](http://www.bodum.com/be/nl/shop/detail/11170-17/)
