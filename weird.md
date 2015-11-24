@@ -23,3 +23,5 @@ permalink: /weird/
 - Harley Quinn
 - Four Tet
 - Audio and sound
+- Christmas
+- Cable management
