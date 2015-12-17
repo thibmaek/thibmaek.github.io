@@ -106,7 +106,7 @@ function update() {
 	brew update # Update brew
 	brew upgrade --all # Update brew taps/bottles
 	brew cleanup # Make sure there's no cache or straying files
-  gem update # Update globally installed gems
+	gem update # Update globally installed gems
 }
 {% endhighlight %}
 
