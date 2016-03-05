@@ -13,20 +13,20 @@ Luckily SSH has these things called keys which you can use for password-less log
 Setting up SSH keys is always the first thing I do on new Raspberry Pi images, but before doing so I like to install Bonjour on the pi first because then you don’t have to lookup IP’s.  
 *Avahi sometimes requires an update first.*
 
-{% highlight bash %}
+```console
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install avahi-daemon --fix-missing #I had some errors without fix-missing flag
-{% endhighlight %}
+```
 
 Safest way is to reboot your pi, but `sudo service avahi-daemon` restart works just as well for our setting up right now.
 
 Ok so now that is configured, it’s time to build the actual ssh keys.  
 Everything we do will typically be stored in a hidden directory in the home folder called `.ssh`. Generating a new key there is as easy as:
 
-{% highlight bash %}
+```console
 ssh-keygen -t rsa -C "example@example.com"
-{% endhighlight %}
+```
 
 This creates a new key with the RSA type and creates it from the comment email address you provide.   ssh-keygen will ask you for a password (make it secure) to create the new keys.
 
@@ -44,9 +44,9 @@ On Linux it’s mostly installed by default, but OS X can install it from brew w
 
 Now you can just match the key by running it and providing an ssh host:
 
-{% highlight bash %}
+```console
 ssh-copy-id pi@raspi.local
-{% endhighlight %}
+```
 
 Provide the password once more and keys should be matched. Try logging into your pi and you shouldn’t be asked for a password.
 
@@ -57,9 +57,9 @@ Get the contents of the public key with `cat ~/.ssh/id_rsa.pub` and copy them so
 Log in to your pi and enter the ssh directory. Create it if you dont have it with `mkdir ~/.ssh`.
 Typically the key authenticator is not present on a new Raspbian install so create it with:
 
-{% highlight bash %}
+```console
 touch ~/.ssh/authorized_keys && nano ~/.ssh/authorized_keys
-{% endhighlight %}
+```
 
 Paste in the contents of id_rsa.pub you copied before, save and exit.
 Now log out of the pi and log back in. No password should be provided.
@@ -68,11 +68,11 @@ Now log out of the pi and log back in. No password should be provided.
 
 As an extra you could provide some info in ~/.ssh/config on your main machine to make logging in even easier:
 
-{% highlight bash %}
+```console
 host pi
   hostname raspi.local
   user pi
   port 22
-{% endhighlight %}
+```
 
 Now logging in is as simple as `ssh pi`.

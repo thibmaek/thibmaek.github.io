@@ -16,12 +16,12 @@ Some guys over at the Raspberry Pi forums wrote a great documentation and instal
 
 I like to create a new folder in ~ for this called drivers and then download the script there.
 
-{% highlight bash %}
+```bash
 mkdir drivers
 wget https://dl.dropboxusercontent.com/u/80256631/install-8188eu.tgz
 tar -zxvf install-8188eu.tgz
 sudo ./install-8188eu.sh
-{% endhighlight %}
+```
 
 Running this will match kernel version retrieved from `uname -a` with the downloads in the forum topic and put them in the right places and in the modules.  
 It might be a good idea to [update your kernel](http://blog.thibmaekelbergh.be/2015/04/02/r8188eu-and-raspberry-pi.html#Troubleshooting).
@@ -36,10 +36,10 @@ This requires you to get the files on the Pi so either use a wired connection or
 
 Download the files first with wget and then unzip them to get the files from the compressed archive.
 
-{% highlight bash %}
+```console
 wget http://cdn.thibmaekelbergh.be/8188eu.zip
 unzip 8188eu.zip
-{% endhighlight %}
+```
 
 The uncompressed archive contains both a .ko (kernel object) and .bin (binary driver).
 
@@ -52,11 +52,11 @@ Now that both files are in the right directory, create the dependency for r8188e
 [Add your network](http://weworkweplay.com/play/automatically-connect-a-raspberry-pi-to-a-wifi-network/) to the interfaces and reboot and it should work.
 A green light should flash now and dmesg output should be like:
 
-{% highlight bash %}
+```console
 DHCPDISCOVER on wlan0 to 255.255.255.255 # Discovery trough the subnetmask of your router.
 DCHPOFFER from 192.168.0.1 # Your router which is offering from a DHCP lease.
 bound to 192.168.0.101 #The IP assigned to the Raspberry Pi.
-{% endhighlight %}
+```
 
 ### Building and compiling from source
 

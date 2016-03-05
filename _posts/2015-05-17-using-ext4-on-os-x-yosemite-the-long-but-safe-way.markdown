@@ -31,12 +31,12 @@ Once setup it was time to mount the hdd to a folder, so it could be shared.
 
 Listing the disks with `sudo fdisk -l` I found that it was located at `/dev/sdb1`. Great, now all I had to do is to mount the drive to a new folder (/mnt/hdd) and I could go on to sharing it:
 
-{% highlight bash %}
+```bash
 sudo nano /etc/fstab
 
 # the line below goes in fstab
 /dev/sdb1 /mnt/hdd ext4 sync,noatime 0 1
-{% endhighlight %}
+```
 
 Save and exit and mount all volumes with `mount -a`. Done for the mounting part, on to the sharing part.
 
@@ -52,11 +52,11 @@ I set out for SFTP (SSH) to share the files because I have Transmit on OS X and 
 Too my surprise there is no ssh server installed in Ubuntu 14.04 so I had to manually install it, pulling it from apt `sudo apt-get install ssh-server`.  
 Now some edits to the configuration file and I should be finished. The following lines were changed in `/etc/ssh/sshd_config`:
 
-{% highlight bash %}
+```console
 PubkeyAuthentication yes # change to no
 PermitEmptyPasswords no # change to yes
 PasswordAuthentication yes # make sure this is set to yes
-{% endhighlight %}
+```
 
 Don’t worry about the safety that’s turned off with those edits, you’re doing everything locally so there should be no outside access. Besides this VM is only used for sharing HDD mountpoint so no there’s no critical stuff to damage.
 

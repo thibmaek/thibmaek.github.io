@@ -54,9 +54,9 @@ Ruby comes pre installed on OS X but it's not prefered though. Remember I said t
 
 rbenv resides in your home directory by default which makes it differ from the OS X ruby that resides in /usr. Because /usr is at root level you need to prefix ruby commands like installing with sudo. Your home directory is owned by your user so you have full control over what's installed and gems don't have access outside that scope. Long story short, this is great security-wise and makes it possible to just run:
 
-{% highlight console %}
+```ruby
 gem update
-{% endhighlight %}
+```
 
 to update every globally installed gem.
 
@@ -71,20 +71,20 @@ Sadly there's no way to override your current node install with a new one and al
 
 So if you have a version of node installed, let's say 4.2.1, you'll have to install a newer one and then manually uninstall your previous 4.2.1 to replace it:
 
-{% highlight console %}
+```console
 nvm install v4.2.3
 nvm alias default v4.2.3
 nvm uninstall v4.2.1
-{% endhighlight %}
+```
 
 That `alias default` is an important part.  
 You can alias stuff yourself like `nvm alias experimental v5.3.0` to use it as an alias instead of a semver version number, but the default is part of nvm itself and will make sure that this version is the default to use in the shell.
 
 Besides clean installing I mostly want to migrate the global modules in my newer node version. nvm has a flag that you can pass to install to keep the global modules:
 
-{% highlight console %}
+```console
 nvm install v4.2.3 --reinstall-packages-from=v4.2.1
-{% endhighlight %}
+```
 
 This is the flow that works the quickest when using nvm but it feels like a hassle to me. There's a small 'workaround' though…
 
@@ -98,7 +98,7 @@ What I find the quickest is to create a function in your dotfiles (or .bash_prof
 
 It runs all of the commands above synchronously, take a look at how it works, this one resides in my `~/.functions`:
 
-{% highlight bash %}
+```bash
 function update() {
 	npm install npm -g # Update npm itself
 	npm update -g # Update globally installed modules
@@ -108,13 +108,13 @@ function update() {
 	brew cleanup # Make sure there's no cache or straying files
 	gem update # Update globally installed gems
 }
-{% endhighlight %}
+```
 
 So just running `update` from time to time (or putting it in a cronjob) will make sure you're at the latest update at all time.
 
 nvm of course is a seperate thing, but I found this was the easiest way for me to update it:
 
-{% highlight bash %}
+```bash
 function nvmi() {
   # $NOW grabs the current node version and then installs
   # a newer version and also migrating global modules to the new one  
@@ -127,6 +127,6 @@ function nvmi() {
     nvm uninstall $NOW
   fi;
 }
-{% endhighlight %}
+```
 
 So whenever a patch or minor update is available for my node version I just run `nvmi v4.2.3 --replace` to install the new version and replace my old version.

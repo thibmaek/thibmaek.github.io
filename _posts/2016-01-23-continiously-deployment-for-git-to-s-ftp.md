@@ -22,7 +22,7 @@ Now each point in the flow stays the same but the tools used for them are indepe
 # Setting up your Git repository.
 So when you've `git init`-ed a repo and linked it to your Github repo as a remote there's little stuff to adjust in this step. I like to add in a special ignorefile so Codeship knows which files to disregard when looking for files to send to the server. It's just a regular plain text file which we will later read from:
 
-{% highlight console %}
+```console
 # In project root, create the ignorefile:
 touch .codeshipignore
 
@@ -32,7 +32,7 @@ echo -e "node_modules\n.git\npackage.json" > .codeshipignore
 # Add and commit the file to the repo
 git add .codeshipignore
 git commit -m "Ignorefile for Continuous Deployment"
-{% endhighlight %}
+```
 
 You may want to wait with actually pushing the local git repo to your remote Github repo, since Codeship will only deploy on a push. I made the mistake of integrating this flow halfway trough my project which made my server lacking behind my code, since I was still working on a develop branch. I think it's a better idea to deploy on the first push of your codebase.
 
@@ -61,11 +61,11 @@ We can now configure the pipelines for our product. Here it's possible to add ex
 The script executes in a shell so it's not limited to just bash. The [Codeship Docs](https://codeship.com/documentation/) offer an extensive explanation of what commands are available to this shell. We want to deploy to an SFTP server and the best way to do so is with [rsync](http://linux.die.net/man/1/rsync) (regular FTP users will want to use [lftp](http://linux.die.net/man/1/lftp) here). Rsync does a great job of versioned syncing while maintaining security, over SSH in this case.
 The script below is a one-liner, but here's some explanation to it:
 
-{% highlight console %}
+```console
 rsync -av --exclude-from '~/clone/.codeshipignore' ~/clone/ user@server:/path/to/end/folder
 
 # Plain english: use rsync in archive mode to clone source to destination at path, ignore everything from given file, and be verbose about it.
-{% endhighlight %}
+```
 
 - Codeship clones your project to a folder called clone in Codeships VM's home directory. This is the source.
 - We're using the flags `-av` to make sure all files are sent in archive mode and the output is verbose.

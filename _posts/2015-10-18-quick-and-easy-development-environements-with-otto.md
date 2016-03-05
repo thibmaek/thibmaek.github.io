@@ -22,7 +22,7 @@ Otto is available cross platform as a regular package installer. As I always do 
 
 Ok so otto is now installed and available on the command line. Try running it and you'll get a first glance of the commands that otto will serve you with:
 
-{% highlight console %}
+```console
 otto
 
 usage: otto [--version] [--help] <command> [<args>]
@@ -35,7 +35,7 @@ Available commands are:
     infra      Builds the infrastructure for the Appfile
     status     Status of the stages of this application
     version    Prints the Otto version
-{% endhighlight %}
+```
 
 A lot of info here (though most are pretty clear) and many of those commands have additional sub commands so let's take it step by step.
 
@@ -48,7 +48,7 @@ The cool thing about otto is that it's smart enough to guess the language enviro
 Download or clone the repo to a folder and enter it. All the files for our basic node app are here so we can start on the first step with Otto.  
 Running `otto compile` will let otto determine that it's a node app.
 
-{% highlight console %}
+```console
 ==> Compiling...
     Application:    node-js-sample (node)
     Project:        node-js-sample
@@ -58,7 +58,7 @@ Running `otto compile` will let otto determine that it's a node app.
     Compiling foundation: consul
 ==> Compiling main application...
 ==> Compilation success!
-{% endhighlight %}
+```
 
 The first step is already finished and as from this moment you're ready to just work on developing the app. This would've taken a lot more time in Vagrant or Docker so kudos to otto for being this easy.
 
@@ -70,17 +70,17 @@ Now otto has determined the language we can start on installing the node runtime
 
 `otto dev`
 
-{% highlight console %}
+```console
 ==> default: [otto] Downloading Node 4.1.0...
 ==> default: [otto] Untarring Node...
 ==> default: [otto] Setting up PATH...
 ==> default: [otto] Installing build-essential for native packages...
 ==> default: [otto] Installing GCC/G++ 4.8 (required for newer Node versions)...
-{% endhighlight %}
+```
 
 You can see that otto also downloads one of the latest node versions and sets it up on the PATH for you. After this is done you should get the following message:
 
-{% highlight console %}
+```console
 ==> Development environment successfully created!
     IP address: 172.16.1.142
 
@@ -92,15 +92,15 @@ You can see that otto also downloads one of the latest node versions and sets it
     When you're ready to build or test your project, run 'otto dev ssh'
     to enter the development environment. You'll be placed directly into the
     working directory where you can run "npm install", "npm run", etc.
-{% endhighlight %}
+```
 
 We now have everything installed to test our application in the environment and look at it in the browser. You'll have to ssh into the environment and start node from here. Take note of the IP address from the `otto dev` output or run `otto dev address`, we'll need it on the client.
 
-{% highlight console %}
+```console
 otto dev ssh
 npm install
 npm run start
-{% endhighlight %}
+```
 
 The application is now running inside of the environment otto created for us. Now with the IP address we can visit it on the client at port 5000.
 

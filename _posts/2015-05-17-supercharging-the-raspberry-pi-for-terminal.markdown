@@ -27,12 +27,12 @@ To get started use the same method as above using `touch` to create the .bash_al
 
 Now using the syntax `alias shortcommand="command goes here"` (where shortcommand is the alias of your choice and your command goes between the quotes), create all the aliases you want. For example I have some set up for deleting, showing and editing files and some other system commands. An example of some aliases might be:
 
-{% highlight bash %}
+```bash
 alias ..=”cd ../”
 alias lsa=”ls -a”
 alias rmrf=”rm -rf”
 alias lsapt=”dpkg –get-selections | grep”
-{% endhighlight %}
+```
 
 *Check out the my git repo below in the resources for some useful stuff*
 

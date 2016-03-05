@@ -19,7 +19,7 @@ For example designing a form with an input field for email, I would create a gro
 
 I like to create lots of groups for layers and nest them in other groups. When I create navigation bars I mostly have a group structure like:
 
-{% highlight bash %}
+```console
 ├── icons
   ├── about-icon
   └── home-icon
@@ -28,7 +28,7 @@ I like to create lots of groups for layers and nest them in other groups. When I
   └── text
     ├── about-text
     └── home-text
-{% endhighlight %}
+```
 
 This way I can **easily hide and unhide** complete sections of the thing I’m designing or move all the text layers. This could also be done with Smart Objects but Smart Objects always show the same in the document. If I have a duplicate of a Smart Object and edit the first one, the duplicate one will **automatically adjust.**  
 A good rule of thumb I use is to **always group and create a Smart Object for the group if necessary or useful.**

@@ -24,21 +24,15 @@ Looking at the .app's Contents folder and searching Spotlight for .dmg I found o
 
 After browsing for a while I found out there is a **RubyGem to create DMG files from the .app Installer**, called `iesd`. Installing was as easy as any other gem with:
 
-{% highlight ruby %}
-
+```ruby
 gem install iesd
-
-# or sudo gem install if that's your thing
-
-{% endhighlight %}
+```
 
 This in place it was time to create it with a simple input/output task for iesd:
 
-{% highlight bash %}
-
+```console
 iesd -i Downloads/Install\ OS\ X\ 10.11\ Developer\ Beta.app/ -o Desktop/Capitan.dmg -t BaseSystem
-
-{% endhighlight %}
+```
 
 This took about **5 minutes** to create the DMG on my desktop. Everything was now in place, and I could head over to the actual installing now.
 

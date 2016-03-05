@@ -42,12 +42,12 @@ A password will be prompted for, enter **frontrow** (you won’t see it on scree
 
 Now we’re connected enter the following commands:
 
-{% highlight bash %}
+```console
 cd && mkdir nitotvtmp && cd nitotvtmp
 wget http://nitosoft.com/nitoTVInstaller_tt.zip
 unzip nitoTVInstaller_tt.zip && cd "nitoTV Take Three"/
 sudo ./installme
-{% endhighlight %}
+```
 
 This creates a temp directory for nitoTV to setup and then downloads and extracts the package from the official site. `sudo./installme` runs the installer from the package.
 
@@ -59,9 +59,9 @@ With nitoTV installed all that is needed is to install USB support. With Termina
 
 We’re now going to download Tiger OS X combo update to install the drivers with
 
-{% highlight bash %}
+```console
 wget http://supportdownload.apple.com/download.info.apple.com/Apple_Support_Area/Apple_Software_Updates/Mac_OS_X/downloads/061-3165.20070313.iU8y4/MacOSXUpdCombo10.4.9Intel.dmg
-{% endhighlight %}
+```
 
 If you want you can close Terminal now, the installing is over.  
 Go to the Apple TV and in the NitoTV menu go to `Settings > Install Software > Smart Installer`, this will take a while and display a dialog with installed components.  
