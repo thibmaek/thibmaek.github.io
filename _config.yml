@@ -1,15 +1,14 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://blog.thibmaekelbergh.be" # the base hostname & protocol for your site
+url: https://blog.thibmaekelbergh.be
+enforce_ssl: blog.thibmaekelbergh.be
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
-  # Meta
   title: Thibault Maekelbergh
   avatar: avatar.jpg
-  description: "A nice blog about development, raspberry pi and os x" # used by search engines
+  description: "A nice blog about development, Raspberry Pi and OS X"
 
-  # Header and footer text
   header_text: >
      <p>A collection of blog posts varying from things I achieved to weekend projects to stuff I designed and coded or just an article reflecting my views and opinions.</p>
   header_text_feature_image:
@@ -28,7 +27,7 @@ theme:
   # Scripts
   google_analytics: "UA-54288425-1"
   disqus_shortname: "thibmaekblog"
-  katex: false # Enable if using math markup
+  katex: false
 
   # Localization strings
   str_follow_on: "Follow on"
@@ -38,11 +37,8 @@ theme:
   str_prev: "Prev"
   str_continue_reading: "Continue reading"
 
-  # Colours, typography and padding
-  # Open the "_sass > base" folder, and open "_variables.scss"
-
 # PAGINATION
-paginate: 5
+paginate: 7
 paginate_path: "blog/page:num"
 
 # BUILD SETTINGS
