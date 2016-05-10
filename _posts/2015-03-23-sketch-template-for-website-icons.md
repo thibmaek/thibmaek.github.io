@@ -23,4 +23,4 @@ What I came up with is a template for Sketch with support for:
 As simple as opening the file and choosing `File > Save As Template` in Sketch.
 Or drop it in `~/Library/Application Support/com.bohemiancoding.sketch3/Templates` manually.
 
-Download: [via Infinit](http://inft.ly/EFXxn2A)
+Download: [via Infinit](https://infinit.io/_/etNKdKh)
