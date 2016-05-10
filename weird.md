@@ -6,7 +6,6 @@ permalink: /weird/
 
 ### Stuff I can get weirdly enthusiastic about
 
-- New Girl
 - Bash
 - Workflow
 - Automation
@@ -25,3 +24,5 @@ permalink: /weird/
 - Audio and sound
 - Christmas
 - Cable management
+- Radiohead
+- My girlfriend
