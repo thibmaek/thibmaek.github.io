@@ -19,9 +19,9 @@
   }
 
   .site-title {
+    float: left;
     font-size: 1em;
     font-weight: bold;
-    float: left;
     line-height: 1.5;
   }
 
@@ -39,6 +39,7 @@
       display: inline;
       float: left;
       margin-right: .4em;
+      padding: 0 10px;
     }
 
     @media (max-width: 1100px) {
