@@ -26,3 +26,5 @@ permalink: /weird/
 - Cable management
 - Radiohead
 - My girlfriend
+- React
+- Discogs
