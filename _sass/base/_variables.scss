@@ -1,5 +1,5 @@
 // Typography
-$font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+$font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 $font-size: 1em;
 
 // Padding
@@ -14,21 +14,21 @@ $border-color: rgba(0, 0, 0, .1); // rgba recommended if using feature images
 
 // Typography colours
 $text-color: #333;
-$link-color: #fd9a92;
+$link-color: #1db4c1;
 $selection-color: #d4d4d4; // visible when highlighting text
 
 // Header colours
-$header-link-color: #fc6c60;
+$header-link-color: #1db4c1;
 
 // Feature image for articles
 $feature-image-text-color: #fff;
 $feature-image-size: cover; // options include "cover", "contain", "auto"
 
 // Header description box
-$header-desc-background-color: #fc6c60;
+$header-desc-background-color: #1db4c1;
 $header-desc-text-color: #fff;
 
 // Code formatting
 $code-background-color: #f8f8f8;
-$code-text-color: #fc6c60;
+$code-text-color: #d14770;
 $code-border: #ddd;
