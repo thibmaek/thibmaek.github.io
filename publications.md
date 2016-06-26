@@ -26,3 +26,4 @@ Below is some stuff either I or someone else published about me or a project of 
 
 # Publications
 - [Planning lunch with a Slackbot on resin.io](https://resin.io/blog/planning-lunch-with-a-slackbot-on-resin-io/)
+- [2nd finalist in Adobe's Creative Jam @ Bump festival](https://www.facebook.com/AdobeBenelux/videos/1090466761021522/)
