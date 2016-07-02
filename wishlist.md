@@ -24,3 +24,4 @@ permalink: /wishlist/
 - [Miles Davis - Music Poster](http://www.amazon.com/Miles-Davis-Music-Poster-Birdland/dp/B001OGOH7Q/ref=sr_1_4?ie=UTF8&qid=1456350752&sr=8-4&keywords=chet+baker+poster)
 - [Marvel Dice Masters Avengers Age of Ultron - Collector's Box](https://www.archonia.com/boardgameshop/en/article/231767/marvel+dice+masters+avengers+age+of+ultron+-+collector%27s+box+-english/)
 - [Marvel Thanos Infinity Gauntlet Mug](http://www.entertainmentearth.com/prodinfo.asp?number=CP14900)
+- [You Don't Know JS - ES6 & Beyond (by Kyle Simpson, Paperback edition)](https://www.bol.com/nl/p/es6-beyond/9200000028189776/)
