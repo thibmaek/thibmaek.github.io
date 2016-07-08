@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: about
 title: About
 permalink: /about/
-feature-img: "img/about.jpg"
 ---
 
 > If you're just looking for my resume you can download it [right here](../CV_Resume.pdf)
