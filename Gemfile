@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'autoprefixer-rails'
+gem 'github-pages'
+gem 'html-proofer'
+gem 'jekyll'
+gem 'jekyll-assets'
 gem 'jekyll-gist'
 gem 'rake'
-gem 'github-pages'
+gem 'sass'
+gem 'uglifier'

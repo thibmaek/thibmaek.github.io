@@ -11,7 +11,7 @@ I’m Thibault Maekelbergh and I’m a student at [Devine](http://devine.be) in 
 I’m passionate about all things web and love **Javascript & Devops**.  
 I’m a huge nerd and love tinkering with my **Raspberry Pi’s**. My preferred social network is not Facebook nor Twitter but [Github](https://github.com/thibmaek).
 
-I previously freelanced at **[Resin.io](https://resin.io)** and currently I'm working at [Typework](http://typework.com) as a frontend React developer.
+I previously freelanced at **[Resin.io](https://resin.io)** and currently I'm working at **[Typework](https://typework.com/) as a frontend React developer** on a fully integrated multi-centre platform for dialysis processes, called **[NephroFlow](https://nephroflow.com/)**.
 
 Besides this blog I also like to post photos on **[BEtypo](http://betypo.tumblr.com)**.  
 A blog dedicated to nice typography that's located throughout the Belgian 'wilderness'.

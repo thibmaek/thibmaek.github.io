@@ -1,0 +1,23 @@
+linters:
+
+  StringQuotes:
+    enabled: true
+    style: single_quotes
+
+  UrlFormat:
+    enabled: true
+
+  SelectorDepth:
+    enabled: true
+    max_depth: 4
+
+  PropertySortOrder:
+    enabled: true
+
+  NestingDepth:
+    enabled: true
+    max_depth: 5
+
+  EmptyLineBetweenBlocks:
+    enabled: true
+    ignore_single_line_blocks: true

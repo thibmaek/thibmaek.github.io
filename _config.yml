@@ -49,4 +49,9 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
+assets:
+  autoprefixer:
+    browsers:
+      - "last 2 versions"
+      - "IE > 9"
 exclude: ["vendor"]
