@@ -12,7 +12,7 @@ Working with these two combined is just plain fun for me, so I thought I’d be 
 
 You’ve surely encountered this if you’re working over SSH with the raspi. It displays an obnoxious login message and disclaimer about GNU and some other stuff.
 
-![](http://imgur.com/zhnclFS.png)
+![](https://imgur.com/zhnclFS.png)
 
 To get rid of all those lines of text above you’ll have to create a dotfile in the home directory (~). Dotfiles are files that start with a dot and are hidden from the file browser or terminal. Working with ls will not display them, `ls -a` will.
 

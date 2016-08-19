@@ -22,6 +22,6 @@ and a **UTP cable** (and a Thunderbolt to Ethernet adapter in my case of having 
 
 Hook up the cables to the pi while it is **powered off**, go to `System Preferences → Sharing` and enable the following settings:
 
-![](http://imgur.com/SpOPnNW.png)
+![](https://imgur.com/SpOPnNW.png)
 
 Choose the Wifi on the MacBook as entry point and send out trough the Ethernet port / adapter.  

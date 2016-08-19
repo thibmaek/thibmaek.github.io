@@ -8,11 +8,11 @@ Since the purchase of my 3rd gen Apple TV the 1st gen I once bought was just col
 
 Internet told me it was possible to run OS X Tiger (10.4.8) on the ATV and I was determined to try that at first but then I found another way to use it: a local network server.
 
-I’ve successfully set-up a linux machine with the [smb](http://en.wikipedia.org/wiki/Server_Message_Block) protocol just three days before and that worked great too but this was a much easier option.
+I’ve successfully set-up a linux machine with the [smb](https://en.wikipedia.org/wiki/Server_Message_Block) protocol just three days before and that worked great too but this was a much easier option.
 
 ### Step 1: Preparing the jailbreak
 
-All file transfer is done over [SSH](http://en.wikipedia.org/wiki/Secure_Shell) and out of the box the Apple TV is just something which only accepts file transfer from iTunes. In order to get SSH I will need to jailbreak the Apple TV.
+All file transfer is done over [SSH](https://en.wikipedia.org/wiki/Secure_Shell) and out of the box the Apple TV is just something which only accepts file transfer from iTunes. In order to get SSH I will need to jailbreak the Apple TV.
 
 First I had to download the latest firmware for my Apple TV. When this was over I just used atv-usbcreator to get ready for jailbreak and create a Patchstick.
 
@@ -44,7 +44,7 @@ Now we’re connected enter the following commands:
 
 ```console
 cd && mkdir nitotvtmp && cd nitotvtmp
-wget http://nitosoft.com/nitoTVInstaller_tt.zip
+wget https://nitosoft.com/nitoTVInstaller_tt.zip
 unzip nitoTVInstaller_tt.zip && cd "nitoTV Take Three"/
 sudo ./installme
 ```
@@ -60,7 +60,7 @@ With nitoTV installed all that is needed is to install USB support. With Termina
 We’re now going to download Tiger OS X combo update to install the drivers with
 
 ```console
-wget http://supportdownload.apple.com/download.info.apple.com/Apple_Support_Area/Apple_Software_Updates/Mac_OS_X/downloads/061-3165.20070313.iU8y4/MacOSXUpdCombo10.4.9Intel.dmg
+wget https://supportdownload.apple.com/download.info.apple.com/Apple_Support_Area/Apple_Software_Updates/Mac_OS_X/downloads/061-3165.20070313.iU8y4/MacOSXUpdCombo10.4.9Intel.dmg
 ```
 
 If you want you can close Terminal now, the installing is over.  
@@ -71,14 +71,14 @@ Hit restart or just disconnect and connect the power supply to reboot, connect a
 
 We will need a SSH client to view the files. I’m perfectly comfortable with Terminal but some users might want a user interface to do this.
 
-On Mac I mainly use [Transmit](http://panic.com/transmit) to connect to the Apple TV.  
+On Mac I mainly use [Transmit](https://panic.com/transmit) to connect to the Apple TV.  
 Open up Transmit and for easy setup go to the Bonjour tab where the Apple TV should be listed, double click it and enter the password and username and the files should appear
 
-![](http://i.imgur.com/GFF7fmA.png)
+![](https://i.imgur.com/GFF7fmA.png)
 
 If in some case Bonjour doesn’t work or you are not able to connect over Bonjour but can use SFTP just click the SFTP tab and enter the following credentials:
 
-![](http://i.imgur.com/BU527Yh.png)
+![](https://i.imgur.com/BU527Yh.png)
 
 Now you have full access to all the files stored on the Apple TV itself which has a 40GB HDD, but also the external HDD you might connect.  
 External storage devices are found on the path `mnt/Scratch/Volumes`.
@@ -92,8 +92,8 @@ Files can be drag’n dropped into the window as you’re familiar with.
 > Remember the Apple TV isn’t a powerhouse machine so file transfer speed might be a little slow, I managed to get 3,4MB/sec when transferring from my MacBook to an external HDD.  
 Also this machine get’s very very hot! Don’t store it with anything which’ll burn easy or place anything on top, keep it in an open or cooled enclosed area. Don’t leave it always on, unless you want your house to burn down.
 
-![](http://media.tumblr.com/412a80a16ed11c037dd3adef53c63e4a/tumblr_inline_n1maf7RrPw1sn0bkh.jpg)
+![](https://media.tumblr.com/412a80a16ed11c037dd3adef53c63e4a/tumblr_inline_n1maf7RrPw1sn0bkh.jpg)
 
-![](http://media.tumblr.com/c355ce3d7bba9d202d5e8099ebbd4d4e/tumblr_inline_n1mafyEjsi1sn0bkh.jpg)
+![](https://media.tumblr.com/c355ce3d7bba9d202d5e8099ebbd4d4e/tumblr_inline_n1mafyEjsi1sn0bkh.jpg)
 
-![](http://media.tumblr.com/9d17a10fefc63eacb27e42f2c8473bd9/tumblr_inline_n1mageRkFS1sn0bkh.jpg)
+![](https://media.tumblr.com/9d17a10fefc63eacb27e42f2c8473bd9/tumblr_inline_n1mageRkFS1sn0bkh.jpg)

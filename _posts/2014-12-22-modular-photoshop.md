@@ -35,11 +35,11 @@ A good rule of thumb I use is to **always group and create a Smart Object for th
 
 ### Use layer colors
 
-![](http://imgur.com/mMGLccB.png)
+![](https://imgur.com/mMGLccB.png)
 
 At first to mee this seemed like pretty useless feature since PS doesn’t assign default colors like After Effects does for example. But when you know of a good use for layer colors they are actually very **handy when searching for specific layers**, especially when using the filter option in the layer panel.
 
-![](http://imgur.com/HzGzY5t.png)
+![](https://imgur.com/HzGzY5t.png)
 
 Get the habit of coloring the layers when creating them and you’ll be able to quickly find specific things like Brushes, Icons and Controls when you’re working with lots of layers. Just put the filter in the layers panel on **Color** and select the color representing the item you’re looking for. PS will automatically only show the items you want. I lik to even leave this filter filled in even when not searching for specific things like Icons, because you can just hit that red switch to **toggle the filter.**
 
@@ -56,7 +56,7 @@ Find one that you find easy to remember and use. It has certainly made working e
 
 This feature is extremely handy. Basically you’re able to set a **couple of states** in this panel which take note of what layers to hide, what Layer FX to disable and position of a layer. Most of the times when I’m using this in my main PSD it’s to show different pages of a website (and the layercomp is just hiding or unhiding a group) or to show hover effects.
 
-![](http://i.giphy.com/5xaOcLtqMcjX6SAjGXC.gif)
+![](https://i.giphy.com/5xaOcLtqMcjX6SAjGXC.gif)
 
 Since CC14 you have been able to use **Layer Comps in Smart Objects** and this just opens a hole new array of possibilities.  
 This comes in really handy when designing UI elements like modals or buttons. You’re able to select a Comp assigned inside of the Smart Object, in the main document’s Properties panel. For example this is really easy for quickly toggling a button state or different tabs inside of a modal window.  
@@ -85,4 +85,4 @@ You might have to get used to changing your flow and working like this, but when
 
 Thanks for reading and if you’re interested or have questions be sure to hit me up on @thibmaekelbergh.
 
-Example PSD: [http://inft.ly/TYs8nBD](http://inft.ly/TYs8nBD)
+Example PSD: [http://inft.ly/TYs8nBD](https://inft.ly/TYs8nBD)

@@ -11,4 +11,4 @@ But when someone sends me that killer-cool video of a kid acting though I have t
 
 Trick Facebook into thinking you’re browsing from mobile Safari (on an iPod or iPhone, doesn’t really matter) and the video will play like it should do by default. Go to the developer menu and pick the **Safari iOS 7 User-Agent**, the page reloads and voila!
 
-![](http://imgur.com/pIMnP8i.png)
+![Screenshot of dev menu](https://imgur.com/pIMnP8i.png)

@@ -44,15 +44,15 @@ Starting off by creating a new VM and **loading the dmg in the VM's CD drive**, 
 
 Since my purpose was to only test Safari's Web Inspector, it would be stupid to use a dynamically sizing virtual HDD anyway. Delete the one that Parallels already sets up for you and then create a new **non-dynamic disk with at least 32GB storage**.
 
-![](http://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_493/v1434456640/Capitan%20VM/Screen_Shot_2015-06-16_at_13.35.59_ywnlct.png)
+![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_493/v1434456640/Capitan%20VM/Screen_Shot_2015-06-16_at_13.35.59_ywnlct.png)
 
 The thing that makes kernel panics happen inside the VM is the connection with webcams and USB 3.0, so make sure you **disable connected FaceTime camera's and USB 3.0 support** (resides under the _USB & Bluetooth_ category in Parallels)
 
-![](http://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1434457396/Capitan%20VM/Screen_Shot_2015-06-16_at_14.22.23_urfeeq.png)
+![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1434457396/Capitan%20VM/Screen_Shot_2015-06-16_at_14.22.23_urfeeq.png)
 
 Since Lion, every release of OS X has **only required 2GB of RAM** so that would be the minimum amount you would have to assign to the VM. I assigned 4GB because I have 16 in total and had some to spare. (_Remember 2GB = 2048MB_)
 
-![](http://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1434457704/Capitan%20VM/Screen_Shot_2015-06-16_at_14.28.00.png)
+![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1434457704/Capitan%20VM/Screen_Shot_2015-06-16_at_14.28.00.png)
 
 To round up make sure to assign **at least 128MB VRAM** to the VM. At 128MB it will **run at bare minimum graphic speed** so assign more if you have a decent GPU. **I assigned 512MB** of my dedicated GPU in my Retina which has 2GB.
 
@@ -62,10 +62,10 @@ Make sure the **dmg is still loaded in the CD/DVD slot** and boot the VM. OS X i
 
 The new **tabbed view** will make it much easier to change views when debugging or inspecting. Feels great to quickly switch to console from the node inspector view with keyboard shortcuts.
 
-![](http://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1434456639/Capitan%20VM/Screen_Shot_2015-06-15_at_13.44.13_bkcagn.png)
+![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1434456639/Capitan%20VM/Screen_Shot_2015-06-15_at_13.44.13_bkcagn.png)
 
 That new Adaptive Viewer is designed in a sleek but functional form with **options for all current Apple devices and common screen sizes** to view from. **User Agents can still be assigned like they could before**, but if I'm correct there are more options for platforms now.
 
 Adaptive View is great and I'm really looking forward to working with it, especially since it also includes the **option to set pixel density**. **One thing I'm missing** though is some way to **create your own resolutions** to test from. Currently there are **only three sizes** (_800x600, 1366x768, 1920x1080_) but I'd love the option to **add in my own sizes like 1024x768**.
 
-![](http://res.cloudinary.com/thibault-maekelbergh/image/upload/v1434457581/Capitan%20VM/Screen_Shot_2015-06-15_at_13.44.06_tmelh7.png)
+![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1434457581/Capitan%20VM/Screen_Shot_2015-06-15_at_13.44.06_tmelh7.png)

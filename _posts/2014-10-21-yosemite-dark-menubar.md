@@ -12,4 +12,4 @@ Dark theme works so much better at night in bed. Found this quick trick to enabl
 3. Log out of your Mac and log back in.
 4. Hit **CTRL+OPT+CMD+T** to toggle Dark Mode off and on.
 
-Source: [Cult Of Mac](http://www.cultofmac.com/300293/switch-dark-mode-yosemite-without-fiddling-settings/)
+Source: [Cult Of Mac](https://www.cultofmac.com/300293/switch-dark-mode-yosemite-without-fiddling-settings/)

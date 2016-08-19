@@ -28,3 +28,4 @@ permalink: /weird/
 - My girlfriend
 - React
 - Discogs
+- Nina Kraviz

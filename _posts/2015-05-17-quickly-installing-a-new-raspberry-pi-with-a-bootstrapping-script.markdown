@@ -4,9 +4,9 @@ title: "Quickly installing a new Raspberry Pi with a bootstrapping script"
 date: "2015-02-22"
 ---
 
-I’m thinking of buying a new Raspberry Pi A+ or either B+ as a separate webserver and fileserver so I can use my current Raspberry Pi B+ for [RetroPie](http://blog.petrockblock.com/retropie/) and [Kodi](http://kodi.tv/).
+I’m thinking of buying a new Raspberry Pi A+ or either B+ as a separate webserver and fileserver so I can use my current Raspberry Pi B+ for [RetroPie](https://blog.petrockblock.com/retropie/) and [Kodi](https://kodi.tv/).
 
-It got me thinking that installing Rasbian is fairly easy with `dd` and I could be up an running in an hour or so, but what about all the packages I installed trough `apt-get` or settings I adjusted, like [my dotfiles](http://blog.thibmaekelbergh.be/supercharging-the-raspberry-pi-for-terminal).  
+It got me thinking that installing Rasbian is fairly easy with `dd` and I could be up an running in an hour or so, but what about all the packages I installed trough `apt-get` or settings I adjusted, like [my dotfiles](https://blog.thibmaekelbergh.be/supercharging-the-raspberry-pi-for-terminal).  
 I could just copy over my current SD card, but when I buy a new one I would like to start with a clean slate and just install the things I really need.  
 Copying the current SD wouldn’t be an option but what would?
 

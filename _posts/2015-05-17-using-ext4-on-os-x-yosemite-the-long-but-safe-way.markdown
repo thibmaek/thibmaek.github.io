@@ -17,7 +17,7 @@ Things like [Paragon extFS](https://www.paragon-software.com/nl/home/extfs-mac/)
 I installed extFS and everything worked, until…
 
 Numerous kernel panics in one day, leading to random system reboots. Very irritating when you’re transferring 64GB of files from disk to disk.  
-Searching the internet for a while I found that people were having [the same issue](http://apple.stackexchange.com/questions/29842/how-can-i-mount-an-ext4-file-system-on-os-x) using these applications.
+Searching the internet for a while I found that people were having [the same issue](https://apple.stackexchange.com/questions/29842/how-can-i-mount-an-ext4-file-system-on-os-x) using these applications.
 
 I uninstalled extFS (which I spent 10 minutes to…) and searched for another solution.
 
@@ -63,7 +63,7 @@ Don’t worry about the safety that’s turned off with those edits, you’re do
 Restart the ssh server with `sudo service ssh restart`, log in to the server on your Mac with either Transmit, Cyberduck or Terminal and voila, you got the share all set up.
 I got a solid 4-8MB/S transfer speed with this setup:
 
-![](http://imgur.com/sVLbx3r.png)
+![](https://imgur.com/sVLbx3r.png)
 
 > Edit 9/04: I just configured ftp instead of sftp and got 11MB write speed, seems like this is a better option!
 

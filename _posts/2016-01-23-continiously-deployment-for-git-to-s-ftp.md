@@ -9,13 +9,13 @@ School blesses me with this nice old SFTP server that doesn't support installing
 
 # Understanding the flow
 So the whole flow relies on using git and using it's branching feature to determine what content
-the server is going to receive. Following the [Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) you'll want your master branch of your repository to always represent a production-state product. This is what we're going to deploy.
+the server is going to receive. Following the [Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) you'll want your master branch of your repository to always represent a production-state product. This is what we're going to deploy.
 
 It is possible to deploy any other branch though, and principles stay exactly the same. This way you could let's say automatically deploy to a staging server from your develop branch. This article won't really go in depth for each specific branch and will just focus on deploying your master as a final product.
 
 Here's a quick overview of how our complete flow will look like in the end:
 
-![From Github to Codeship to Ubuntu](http://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657639/CD%20over%20Git/Artboard_1.png)
+![From Github to Codeship to Ubuntu](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657639/CD%20over%20Git/Artboard_1.png)
 
 Now each point in the flow stays the same but the tools used for them are independent of this flow, you could easily switch out Github for BitBucket or Codeship for your own bash scripts. Actually deploying your product will happen trough rsync if you're connecting over sftp, and lftp if you're connecting over ftp (*not recommended!*). Again you could use other programs, these are just presets that Codeship has at their end to make our life easier.
 
@@ -43,11 +43,11 @@ You'll want to start with signing up for an account with Codeship. In our case w
 
 Find the create new project button and select the SCM (Github). Codeship will pull in a list of your Github repositories, select the project here. The next step will handle some basic testing stuff.
 
-![](http://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657800/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.11.11.png)
+![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657800/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.11.11.png)
 
 Codeship offers some presets for today's most common frameworks, engines and compilers. If you're project uses one of these it's recommended to pick it from the list. My project is based on Node.js but I do want to adjust some things here, like my node version, before I get started.
 
-![](http://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657639/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.14.41.png)
+![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657639/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.14.41.png)
 
 Codeship does a great job at explaining what everything does. They offer a lot of great tools, like nvm and rbenv, to easily give you the same environment as you were locally working in.
 The **Setup Commands** will take care of installing the correct environment and building the project on Codeship's servers. In my case I needed node v4+ (and though it reads from package.json I manually specified it here) and webpack installed globally, since this is my build tool of choice.
@@ -58,7 +58,7 @@ Hit save and you'll be taken to the dashboard were your first build will start a
 
 We can now configure the pipelines for our product. Here it's possible to add extra pipelines for other branches. Fill in the field with 'Branch is exactly' with *master* and hit save. You'll be presented with some preset options like Heroku or AWS CodeDeploy but we want to deploy to older, regular FTP servers so we'll need to configure a **Custom Script**.
 
-The script executes in a shell so it's not limited to just bash. The [Codeship Docs](https://codeship.com/documentation/) offer an extensive explanation of what commands are available to this shell. We want to deploy to an SFTP server and the best way to do so is with [rsync](http://linux.die.net/man/1/rsync) (regular FTP users will want to use [lftp](http://linux.die.net/man/1/lftp) here). Rsync does a great job of versioned syncing while maintaining security, over SSH in this case.
+The script executes in a shell so it's not limited to just bash. The [Codeship Docs](https://codeship.com/documentation/) offer an extensive explanation of what commands are available to this shell. We want to deploy to an SFTP server and the best way to do so is with [rsync](https://linux.die.net/man/1/rsync) (regular FTP users will want to use [lftp](https://linux.die.net/man/1/lftp) here). Rsync does a great job of versioned syncing while maintaining security, over SSH in this case.
 The script below is a one-liner, but here's some explanation to it:
 
 ```console
@@ -78,8 +78,8 @@ So now is the time to push. Make sure all your changes are committed and you add
 
 Click it and you'll get a neat overview of what task the server is running and whether the build succeeds or breaks.
 
-![Build activity for Codeship](http://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657639/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.19.57.png)
+![Build activity for Codeship](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657639/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.19.57.png)
 
-If you're pushing directly to master ([you shouldn't though](http://nvie.com/posts/a-successful-git-branching-model/)) or merging from develop and you visit your server's IP or domain you should see the exact state as your local app. Take a minute here, sit back & relax, and pop a bottle of champagne: you're life just became a lot easier. (Or your development flow at least…)
+If you're pushing directly to master ([you shouldn't though](https://nvie.com/posts/a-successful-git-branching-model/)) or merging from develop and you visit your server's IP or domain you should see the exact state as your local app. Take a minute here, sit back & relax, and pop a bottle of champagne: you're life just became a lot easier. (Or your development flow at least…)
 
 > If you're having trouble with sending content to the server it could be because your server only connects via SSH keys. In this case open the project dashboard and open 'Project Settings > General Settings'. Copy the public key for your project and paste it manually into `~/.ssh/authorized_keys` on your server.

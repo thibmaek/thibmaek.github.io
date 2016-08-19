@@ -32,8 +32,8 @@ For some odd reason (_or a mistake I made_) the bot went offline after about 60 
 
 I glanced at the Raspberry Pi B+ laying on my desk, unused. Resin once came to my attention in the past and I liked the platform's look & feel and ease of use, but hadn't gotten around to fiddling with it and actually deploying an app using Resin. This was my chance. I created a new application, downloaded the OS, installed it to the Pi's SD card and connected it to my 'makeshift bedroom server' and within minutes I got everything online. The fact that I wouldn't suffer from Heroku's sleep time for free plans, and actually having an always on hardware device running the code was something I liked a lot.
 
-![](http://imgur.com/6eDwrkF.png)
-![](http://imgur.com/1aCf2nN.png)
+![](https://imgur.com/6eDwrkF.png)
+![](https://imgur.com/1aCf2nN.png)
 
 It all came down to this. I added the remote I found trough Resin's intuitive dashboard and entered those magic 4 words:
 

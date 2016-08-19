@@ -16,7 +16,7 @@ What I came up with is a template for Sketch with support for:
 - All modern browsers
 - Windows 8 Tablets / PC’s
 
-![](http://imgur.com/5ju4BIj.png)
+![](https://imgur.com/5ju4BIj.png)
 
 ### Installing in Sketch
 

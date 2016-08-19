@@ -4,7 +4,7 @@ title: "Raspberry Pi login with SSH keys"
 date: "2015-05-07"
 ---
 
-[SSH](http://en.wikipedia.org/wiki/Secure_Shell) is a great networking protocol. Secure, fast and commonly-used are probably some of the reasons why it’s the default for communicating with your Raspberry Pi. But having to type in a password each time you log in sucks.
+[SSH](https://en.wikipedia.org/wiki/Secure_Shell) is a great networking protocol. Secure, fast and commonly-used are probably some of the reasons why it’s the default for communicating with your Raspberry Pi. But having to type in a password each time you log in sucks.
 
 Luckily SSH has these things called keys which you can use for password-less logins. Using SSH keys is really simple if you have a basic understanding of networks (like really basic) and the shell. Once you get the idea you could basically use SSH-keys for anything SSH related, from Github to Digital Ocean and Vagrant.
 

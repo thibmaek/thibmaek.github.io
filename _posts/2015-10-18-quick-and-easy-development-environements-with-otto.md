@@ -104,7 +104,7 @@ npm run start
 
 The application is now running inside of the environment otto created for us. Now with the IP address we can visit it on the client at port 5000.
 
-![](http://imgur.com/vWIWKHz.png)
+![](https://imgur.com/vWIWKHz.png)
 
 Any edits made on your local machine will be mirrored in otto's dev environment. If at any time you'd want to undo everything we did up until here just run `otto dev destroy` and the environment and VM will be deleted for you so you can start with a clean slate again.
 

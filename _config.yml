@@ -27,7 +27,6 @@ theme:
   twitter: "thibmaekelbergh"
 
   # Scripts
-  google_analytics: "UA-54288425-1"
   disqus_shortname: "thibmaekblog"
   katex: false
 

@@ -31,7 +31,7 @@ _(The BPM field might also be interesting to those who are DJ’s or producers, 
 
 ### Taking notice of bitrates
 
-If you’re not familiar with bitrates, the [Wikipedia entry](http://en.wikipedia.org/wiki/Bit_rate#Multimedia) for it is something you should read.  
+If you’re not familiar with bitrates, the [Wikipedia entry](https://en.wikipedia.org/wiki/Bit_rate#Multimedia) for it is something you should read.  
 In general a bitrate resembles the **amount of data a track streams** in seconds (expressed in kbps). Bitrates and codecs are somewhat more technical, but the basics of it are fairly easy.
 
 **A higher bitrate is better than a lower bitrate** (more data is being sent), but higher bitrate means **higher file size**. Bitrates are also dependent to codecs and can be two formats, CBR or VBR (Constant, e.g the track constantly transfers 320 kbps VS. Variable, e.g the data transfer changes while playing the track from 320 to lower and than back up). In general the codec most people are familiar with is MP3. MP3 is a lossy codec, meaning it loses some quality but is smaller in file size.  
@@ -49,14 +49,14 @@ Though iTunes provides a general and track specific equalizer, most tracks don�
 
 If you still want to equalize a track or tracks, always use manual equalization and **never use the built in presets**.  
 While the Dance preset might work for your bass-filled techno track, it may sound awful for the techno track with lots of hi-hats. Keep that in mind.
-And as stated by Lifehacker and other music enthousiasts, [always, always, always equalize down](http://lifehacker.com/should-i-use-an-equalizer-when-i-listen-to-music-1488713937).
+And as stated by Lifehacker and other music enthousiasts, [always, always, always equalize down](https://lifehacker.com/should-i-use-an-equalizer-when-i-listen-to-music-1488713937).
 
 ### iTunes info windows
 
 All these tips might get you thinking “_Hey this is really useful stuff_” but most of them won’t work if you don’t fill in, or know how to work the iTunes Info field.  
 When I obtain a new track, the first thing I do is open the info dialog and fill the info in accordingly. Start by opening the Info window by right clicking on a track (or multiple if you’re working on an EP or album), or pressing `Cmd+I` on a Mac.
 
-![](http://imgur.com/mIMSnYV.png])
+![](https://imgur.com/mIMSnYV.png])
 
 Skip the first General tab and go to the second Info one to fill in the info.  
 Now, there’s a bunch of options there, but you don’t have to fill them all in. I’ve made a selection of the most useful ones which will provide clear structure and optimize searching for an item in your library.
