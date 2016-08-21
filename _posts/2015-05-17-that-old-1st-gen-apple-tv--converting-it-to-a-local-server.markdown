@@ -34,7 +34,7 @@ Open up Terminal and enter `ssh frontrow@appletv.local`
 
 The above command connects to the AppleTV over the SSH protocol with username frontrow. `.local` uses the Bonjour protocol and works only if you’re on the same network as the AppleTV. If you’re not just enter the AppleTV’s IP address.
 
-![](https://31.media.tumblr.com/47aed319295c75f12ffa296fb9b73534/tumblr_inline_n1mah3gAyD1sn0bkh.jpg)
+![Logging into Apple TV trough Terminal](https://31.media.tumblr.com/47aed319295c75f12ffa296fb9b73534/tumblr_inline_n1mah3gAyD1sn0bkh.jpg)
 
 A password will be prompted for, enter **frontrow** (you won’t see it on screen it’s a UNIX security measure) and hit enter.
 
@@ -74,11 +74,11 @@ We will need a SSH client to view the files. I’m perfectly comfortable with Te
 On Mac I mainly use [Transmit](https://panic.com/transmit) to connect to the Apple TV.  
 Open up Transmit and for easy setup go to the Bonjour tab where the Apple TV should be listed, double click it and enter the password and username and the files should appear
 
-![](https://i.imgur.com/GFF7fmA.png)
+![Using Transmit to connect over SSH](https://i.imgur.com/GFF7fmA.png)
 
 If in some case Bonjour doesn’t work or you are not able to connect over Bonjour but can use SFTP just click the SFTP tab and enter the following credentials:
 
-![](https://i.imgur.com/BU527Yh.png)
+![Filling in credentials for SSH in Transmit](https://i.imgur.com/BU527Yh.png)
 
 Now you have full access to all the files stored on the Apple TV itself which has a 40GB HDD, but also the external HDD you might connect.  
 External storage devices are found on the path `mnt/Scratch/Volumes`.
@@ -92,8 +92,8 @@ Files can be drag’n dropped into the window as you’re familiar with.
 > Remember the Apple TV isn’t a powerhouse machine so file transfer speed might be a little slow, I managed to get 3,4MB/sec when transferring from my MacBook to an external HDD.  
 Also this machine get’s very very hot! Don’t store it with anything which’ll burn easy or place anything on top, keep it in an open or cooled enclosed area. Don’t leave it always on, unless you want your house to burn down.
 
-![](https://media.tumblr.com/412a80a16ed11c037dd3adef53c63e4a/tumblr_inline_n1maf7RrPw1sn0bkh.jpg)
+![ATV server in a box](https://media.tumblr.com/412a80a16ed11c037dd3adef53c63e4a/tumblr_inline_n1maf7RrPw1sn0bkh.jpg)
 
-![](https://media.tumblr.com/c355ce3d7bba9d202d5e8099ebbd4d4e/tumblr_inline_n1mafyEjsi1sn0bkh.jpg)
+![Another picture of the box](https://media.tumblr.com/c355ce3d7bba9d202d5e8099ebbd4d4e/tumblr_inline_n1mafyEjsi1sn0bkh.jpg)
 
-![](https://media.tumblr.com/9d17a10fefc63eacb27e42f2c8473bd9/tumblr_inline_n1mageRkFS1sn0bkh.jpg)
+![All put neatly away](https://media.tumblr.com/9d17a10fefc63eacb27e42f2c8473bd9/tumblr_inline_n1mageRkFS1sn0bkh.jpg)

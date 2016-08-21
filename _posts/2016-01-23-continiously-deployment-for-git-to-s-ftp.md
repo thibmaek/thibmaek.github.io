@@ -43,11 +43,11 @@ You'll want to start with signing up for an account with Codeship. In our case w
 
 Find the create new project button and select the SCM (Github). Codeship will pull in a list of your Github repositories, select the project here. The next step will handle some basic testing stuff.
 
-![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657800/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.11.11.png)
+![Screenshot for setup on Codeship](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657800/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.11.11.png)
 
 Codeship offers some presets for today's most common frameworks, engines and compilers. If you're project uses one of these it's recommended to pick it from the list. My project is based on Node.js but I do want to adjust some things here, like my node version, before I get started.
 
-![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657639/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.14.41.png)
+![Setting install commands on codeship](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1453657639/CD%20over%20Git/Screen_Shot_2016-01-24_at_18.14.41.png)
 
 Codeship does a great job at explaining what everything does. They offer a lot of great tools, like nvm and rbenv, to easily give you the same environment as you were locally working in.
 The **Setup Commands** will take care of installing the correct environment and building the project on Codeship's servers. In my case I needed node v4+ (and though it reads from package.json I manually specified it here) and webpack installed globally, since this is my build tool of choice.

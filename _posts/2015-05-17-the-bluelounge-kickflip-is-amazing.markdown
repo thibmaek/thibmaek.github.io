@@ -12,25 +12,25 @@ In its bare form it’s a strip that attaches to the MacBook which flips open to
 The good parts are that it uses a special adhesive gel instead of glue so that there is no residue, and the Kickflip is repositionable and removable.  
 It gives you a good lifted angle to make coding and writing more enjoyable.
 
-![](https://farm9.staticflickr.com/8632/16061624034_a2f02a639c_k_d.jpg)
+![A picture](https://farm9.staticflickr.com/8632/16061624034_a2f02a639c_k_d.jpg)
 
 Application is easy, just take off the protecting film and apply the Kickflip to the backside of your MacBook with light pressure.  
 BlueLounge kept the form factor rather thin and the difference when not flipped out is not so big, this still makes it easy to use when just resting on a desk.  
 Once applied just flip open and position on a desk to start boosting your typing.
 
-![](https://farm9.staticflickr.com/8561/16682603981_a36aa64898_k_d.jpg)
+![A picture](https://farm9.staticflickr.com/8561/16682603981_a36aa64898_k_d.jpg)
 
 > Attached neatly to the MacBook
 
-![](https://farm9.staticflickr.com/8589/16476666437_2e48e15c6c_k_d.jpg)
+![A picture](https://farm9.staticflickr.com/8589/16476666437_2e48e15c6c_k_d.jpg)
 
 > Unflipped, not that much a difference with regular MacBook angle
 
-![](https://farm9.staticflickr.com/8565/16683956595_6416df8978_k_d.jpg)
+![A picture](https://farm9.staticflickr.com/8565/16683956595_6416df8978_k_d.jpg)
 
-![](https://farm9.staticflickr.com/8617/16497820009_e81a388d76_k_d.jpg)
+![A picture](https://farm9.staticflickr.com/8617/16497820009_e81a388d76_k_d.jpg)
 
-![](https://farm9.staticflickr.com/8579/16682947482_602a617583_k_d.jpg)
+![A picture](https://farm9.staticflickr.com/8579/16682947482_602a617583_k_d.jpg)
 
 > Flipped out position
 

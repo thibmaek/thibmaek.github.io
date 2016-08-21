@@ -56,7 +56,7 @@ And as stated by Lifehacker and other music enthousiasts, [always, always, alway
 All these tips might get you thinking “_Hey this is really useful stuff_” but most of them won’t work if you don’t fill in, or know how to work the iTunes Info field.  
 When I obtain a new track, the first thing I do is open the info dialog and fill the info in accordingly. Start by opening the Info window by right clicking on a track (or multiple if you’re working on an EP or album), or pressing `Cmd+I` on a Mac.
 
-![](https://imgur.com/mIMSnYV.png])
+![Screenshot of iTunes info screen](https://imgur.com/mIMSnYV.png])
 
 Skip the first General tab and go to the second Info one to fill in the info.  
 Now, there’s a bunch of options there, but you don’t have to fill them all in. I’ve made a selection of the most useful ones which will provide clear structure and optimize searching for an item in your library.

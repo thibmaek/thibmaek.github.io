@@ -6,7 +6,7 @@ date: "2015-10-02 18:43"
 
 By using deprecated methods & code the Belgian eID Viewer version used for Yosemite can't be used on El Capitan (Hooray for bad cross platform production software I guess…).
 
-![](https://imgur.com/PnLTq6I.png)
+![Java lol](https://imgur.com/PnLTq6I.png)
 
 When rounding up the update for El Capitan you probably saw the notice that eID was incompatible with El Capitan's OS X Software. The fix is rather easy though.
 

@@ -13,7 +13,7 @@ theme:
      <p>A collection of blog posts varying from things I achieved to weekend projects to stuff I designed and coded or just an article reflecting my views and opinions.</p>
   header_text_feature_image:
   footer_text: >
-   Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+   Powered by <a href="https://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
 
   # Icons
   rss: true
@@ -27,7 +27,7 @@ theme:
   twitter: "thibmaekelbergh"
 
   # Scripts
-  disqus_shortname: "thibmaekblog"
+  disqus_shortname: "thibaultmaekelbergh"
   katex: false
 
   # Localization strings

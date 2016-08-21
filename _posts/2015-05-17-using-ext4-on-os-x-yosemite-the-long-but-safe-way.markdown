@@ -63,7 +63,7 @@ Don’t worry about the safety that’s turned off with those edits, you’re do
 Restart the ssh server with `sudo service ssh restart`, log in to the server on your Mac with either Transmit, Cyberduck or Terminal and voila, you got the share all set up.
 I got a solid 4-8MB/S transfer speed with this setup:
 
-![](https://imgur.com/sVLbx3r.png)
+![Transferring content in Transmit](https://imgur.com/sVLbx3r.png)
 
 > Edit 9/04: I just configured ftp instead of sftp and got 11MB write speed, seems like this is a better option!
 

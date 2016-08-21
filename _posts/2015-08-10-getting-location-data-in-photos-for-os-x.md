@@ -22,16 +22,16 @@ There was *exiftool* but, even though I'm experienced with the command line, was
 Luckily I found [GeoTag 3](https://www.snafu.org/GeoTag/) which at first glance seemed way more intuitive.  
 I downloaded it from the site and decided to try it out.
 
-![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1439210217/Geotag%20Photos.app/Screen_Shot_2015-08-10_at_14.28.55.png)
+![Showing info in Photos](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1439210217/Geotag%20Photos.app/Screen_Shot_2015-08-10_at_14.28.55.png)
 
 Two days ago I went to [WeCanDance Festival](https://wecandance.be) and wanted to get location for a photo I took there. I dragged the photo from Photos to my desktop and opened that photo in GeoTag. It turned out to be exactly what I was looking for.  
 The photo opened and at the bottom I was able to use the Google Maps API to pinpoint a lat/long location and save it to the photo's EXIF data.
 
-![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1439210214/Geotag%20Photos.app/Screen_Shot_2015-08-10_at_14.29.44.png)
+![Manually setting a tag in GeoTag](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1439210214/Geotag%20Photos.app/Screen_Shot_2015-08-10_at_14.29.44.png)
 
 Removing the photo from Photos and reimporting the one on the desktop in the Album worked and sure enough when I checked out the Info panel for that photo it showed the correct location!
 
-![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1439210217/Geotag%20Photos.app/Screen_Shot_2015-08-10_at_14.30.22.png)
+![The tag recognized in Photos](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,w_1024/v1439210217/Geotag%20Photos.app/Screen_Shot_2015-08-10_at_14.30.22.png)
 
 So it seems this is a working and easy solution for Apple's stunningly stupid decision to remove this feature from Photos. While this method works, I hope that Apple brings it back in some future version of Photos.
 
