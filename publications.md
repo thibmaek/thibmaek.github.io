@@ -17,7 +17,7 @@ Below is some stuff either I or someone else published about me or a project of 
 
 # Contributions
 - [Resin.io documentation](https://github.com/resin-io/docs)
-- [Homebrew Cask](https://github.com/thibmaek/homebrew-cask)
+- [Homebrew Cask](https://github.com/caskroom/homebrew-cask)
 - [Devine.be Yeoman Generator](https://github.com/thibmaek/generator-devine-project)
 - [Sass Syntax Highlight for Atom](https://github.com/thibmaek/Sass-Syntax-Highlight)
 - [Chopstick Boilerplate](https://github.com/thibmaek/chopstick-boilerplate)

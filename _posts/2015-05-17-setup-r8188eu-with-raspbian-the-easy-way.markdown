@@ -24,7 +24,7 @@ sudo ./install-8188eu.sh
 ```
 
 Running this will match kernel version retrieved from `uname -a` with the downloads in the forum topic and put them in the right places and in the modules.  
-It might be a good idea to [update your kernel](https://blog.thibmaekelbergh.be/2015/04/02/r8188eu-and-raspberry-pi.html#Troubleshooting).
+It might be a good idea to [update your kernel](https://blog.thibmaekelbergh.be/2015/04/02/setup-r8188eu-with-raspbian-the-easy-way.html#troubleshooting).
 
 > **Warning: doesn’t work for 3.18.11+. See Troubleshooting section for more info.**
 
@@ -32,7 +32,7 @@ It might be a good idea to [update your kernel](https://blog.thibmaekelbergh.be/
 
 One way I tried before is to download the kernel files and just copy them over to the right directories. This requires quite a lot of sudo so maybe log in as root with `sudo su` or prefix commands with `sudo`.
 
-This requires you to get the files on the Pi so either use a wired connection or [hook it up to your MacBook](https://blog.thibmaekelbergh.be/2015/02/16/bridging-wifi-to-ethernet-for-raspi.html).
+This requires you to get the files on the Pi so either use a wired connection or [hook it up to your MacBook](https://blog.thibmaekelbergh.be/2015/02/16/bridging-wifi-to-the-raspberry-pi-over-ethernet.html).
 
 Download the files first with wget and then unzip them to get the files from the compressed archive.
 

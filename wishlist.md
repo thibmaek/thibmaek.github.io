@@ -6,9 +6,7 @@ permalink: /wishlist/
 
 # Things I need, when I have money
 
-- [Kikkerland Concrete Plant & Pen Holder](https://www.kikkerlandeu.com/kikkerland-design-concrete-planter-and-pen-holder.html)
 - [Wood Alarm Clock](https://www.amazon.com/GOgroove-BlueSYNC-Bluetooth-Wireless-Temperature/dp/B00C2ALKQ4/ref=pd_sim_sbs_etk_hg_fd__13?ie=UTF8&refRID=153VNA71CBJEY0PA1CFW)
-- [Kikkerland Wood Charging Station](https://www.asadventure.com/benl/kikkerland-gadget-wood-charging-station-2h11c52007)
 - [Hanging Sphere Airplant](https://www.etairnity-airplants.com/products/airplant-design-sphere?variant=1443452163)
 - [Cube Airplant](https://www.etairnity-airplants.com/products/airplant-design-cube?variant=4329132611)
 - [BookArc for MacBook Pro Retina 15"](https://www.lab9.be/nl/twelve-south-bookarc-voor-macbook-pro-3927.htm)
