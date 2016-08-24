@@ -2,7 +2,6 @@
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: https://blog.thibmaekelbergh.be
 enforce_ssl: blog.thibmaekelbergh.be
-permalink: :title
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
