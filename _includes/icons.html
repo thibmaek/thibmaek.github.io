@@ -1,102 +1,102 @@
-{% if site.theme.rss %}
+{% if site.theme_options.rss %}
 <li>
-	<a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" title="{{ site.theme.str_rss_follow }}">
+	<a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" title="{{ site.theme_options.str_rss_follow }}">
 		<i class="fa fa-fw fa-rss"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.email_address %}
+{% if site.theme_options.email_address %}
 <li>
-	<a href="mailto:{{ site.theme.email_address }}" title="{{ site.theme.str_email }}">
+	<a href="mailto:{{ site.theme_options.email_address }}" title="{{ site.theme_options.str_email }}">
 		<i class="fa fa-fw fa-envelope"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.behance %}
+{% if site.theme_options.behance %}
 <li>
-	<a href="https://www.behance.net/{{ site.theme.behance }}" title="{{ site.theme.str_follow_on }} Behance">
+	<a href="https://www.behance.net/{{ site.theme_options.behance }}" title="{{ site.theme_options.str_follow_on }} Behance">
 		<i class="fa fa-fw fa-behance"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.bitbucket %}
+{% if site.theme_options.bitbucket %}
 <li>
-	<a href="https://bitbucket.org/{{ site.theme.bitbucket }}" title="{{ site.theme.str_follow_on }} Bitbucket">
+	<a href="https://bitbucket.org/{{ site.theme_options.bitbucket }}" title="{{ site.theme_options.str_follow_on }} Bitbucket">
 		<i class="fa fa-fw fa-bitbucket"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.dribbble %}
+{% if site.theme_options.dribbble %}
 <li>
-	<a href="https://dribbble.com/{{ site.theme.dribbble }}" title="{{ site.theme.str_follow_on }} Dribbble">
+	<a href="https://dribbble.com/{{ site.theme_options.dribbble }}" title="{{ site.theme_options.str_follow_on }} Dribbble">
 		<i class="fa fa-fw fa-dribbble"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.flickr %}
+{% if site.theme_options.flickr %}
 <li>
-	<a href="https://www.flickr.com/photos/{{ site.theme.flickr }}" title="{{ site.theme.str_follow_on }} Flickr">
+	<a href="https://www.flickr.com/photos/{{ site.theme_options.flickr }}" title="{{ site.theme_options.str_follow_on }} Flickr">
 		<i class="fa fa-fw fa-flickr"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.github %}
+{% if site.theme_options.github %}
 <li>
-	<a href="https://github.com/{{ site.theme.github }}" title="{{ site.theme.str_follow_on }} GitHub">
+	<a href="https://github.com/{{ site.theme_options.github }}" title="{{ site.theme_options.str_follow_on }} GitHub">
 		<i class="fa fa-fw fa-github"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.instagram %}
+{% if site.theme_options.instagram %}
 <li>
-	<a href="https://instagram.com/{{ site.theme.instagram }}" title="{{ site.theme.str_follow_on }} Instagram">
+	<a href="https://instagram.com/{{ site.theme_options.instagram }}" title="{{ site.theme_options.str_follow_on }} Instagram">
 		<i class="fa fa-fw fa-instagram"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.linkedin %}
+{% if site.theme_options.linkedin %}
 <li>
-	<a href="{{ site.theme.linkedin }}" title="{{ site.theme.str_follow_on }} LinkedIn">
+	<a href="{{ site.theme_options.linkedin }}" title="{{ site.theme_options.str_follow_on }} LinkedIn">
 		<i class="fa fa-fw fa-linkedin"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.pinterest %}
+{% if site.theme_options.pinterest %}
 <li>
-	<a href="https://www.pinterest.com/{{ site.theme.pinterest }}" title="{{ site.theme.str_follow_on }} Pinterest">
+	<a href="https://www.pinterest.com/{{ site.theme_options.pinterest }}" title="{{ site.theme_options.str_follow_on }} Pinterest">
 		<i class="fa fa-fw fa-pinterest"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.stack_exchange %}
+{% if site.theme_options.stack_exchange %}
 <li>
-	<a href="{{ site.theme.stack_exchange }}" title="{{ site.theme.str_follow_on }} Stack Exchange">
+	<a href="{{ site.theme_options.stack_exchange }}" title="{{ site.theme_options.str_follow_on }} Stack Exchange">
 		<i class="fa fa-fw fa-stack-exchange"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.tumblr %}
+{% if site.theme_options.tumblr %}
 <li>
-	<a href="https://{{ site.theme.tumblr }}.tumblr.com/" title="{{ site.theme.str_follow_on }} Tumblr">
+	<a href="https://{{ site.theme_options.tumblr }}.tumblr.com/" title="{{ site.theme_options.str_follow_on }} Tumblr">
 		<i class="fa fa-fw fa-tumblr"></i>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme.twitter %}
+{% if site.theme_options.twitter %}
 <li>
-	<a href="https://twitter.com/{{ site.theme.twitter }}" title="{{ site.theme.str_follow_on }} Twitter">
+	<a href="https://twitter.com/{{ site.theme_options.twitter }}" title="{{ site.theme_options.str_follow_on }} Twitter">
 		<i class="fa fa-fw fa-twitter"></i>
 	</a>
 </li>
