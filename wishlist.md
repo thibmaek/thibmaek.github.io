@@ -23,4 +23,7 @@ permalink: /wishlist/
 - [Marvel Dice Masters Avengers Age of Ultron - Collector's Box](https://www.archonia.com/boardgameshop/en/article/231767/marvel+dice+masters+avengers+age+of+ultron+-+collector%27s+box+-english/)
 - [Marvel Thanos Infinity Gauntlet Mug](https://www.entertainmentearth.com/prodinfo.asp?number=CP14900)
 - [You Don't Know JS - ES6 & Beyond - Paperback edition](https://www.bol.com/nl/p/es6-beyond/9200000028189776/)
-- [Discogs Turntable Weight, but a Turntable Lab one is also fine 😇](http://discogs.myshopify.com/products/turntable-weight)
+- [Discogs Turntable Weight, but a Turntable Lab one is also fine 😇](https://discogs.myshopify.com/products/turntable-weight)
+- [Starbucks Reserve™ Stainless Steel Coffee Canister, 8 oz](https://store.starbucks.com/starbucks-reserve-stainless-steel-coffee-canister-8-oz-011053355.html)
+- [Cold Brew Kit - Starbucks Reserve® Edition, 32 fl oz](https://store.starbucks.com/cold-brew-kit---starbucks-reserve-edition-32-fl-oz-011051156.html)
+- [Starbucks® Stainless Steel Coffee Press with Walnut Handle - Copper, 8-cup](https://store.starbucks.com/starbucks-stainless-steel-coffee-press-with-walnut-handle---copper-8-cup-011046662.html)
