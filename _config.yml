@@ -4,7 +4,7 @@ url: https://blog.thibmaekelbergh.be
 enforce_ssl: blog.thibmaekelbergh.be
 
 # THEME-SPECIFIC CONFIGURATION
-theme:
+theme_options:
   title: Thibault Maekelbergh
   avatar: avatar.jpg
   description: "A nice blog about development, Raspberry Pi and OS X"

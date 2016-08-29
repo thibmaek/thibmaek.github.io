@@ -1,8 +1,8 @@
 <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
 
-{% if site.theme.footer_text %}
+{% if site.theme_options.footer_text %}
 <footer class="site-footer">
-	<p class="text">{{ site.theme.footer_text }}</p>
+	<p class="text">{{ site.theme_options.footer_text }}</p>
 	<!-- Social icons from Font Awesome, if enabled -->
 	{% include icons.html %}
 </footer>
