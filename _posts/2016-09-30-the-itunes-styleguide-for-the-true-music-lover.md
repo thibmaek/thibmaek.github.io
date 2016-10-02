@@ -114,4 +114,4 @@ Clicking a playlist will default show you the Playlist View but, it looks way ni
 ## Conclusion
 These tips will probably require some work transitioning to from your current library but, trust me, once you get all the rules in order having a well maintained library will be a bliss and will require zero extra work.
 
-Thanks for reading all the way trough, if you have anything to say about this post be sure to put it in the comments or give me a shout on [Twitter](https://twitter.com/thibmaek).
+Thanks for reading all the way trough, if you have anything to say about this post be sure to put it in the comments or give me a shout on [Twitter](https://twitter.com/thibmaekelbergh).
