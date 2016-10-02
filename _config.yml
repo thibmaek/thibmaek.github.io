@@ -9,12 +9,6 @@ theme_options:
   avatar: avatar.jpg
   description: "A nice blog about development, Raspberry Pi and OS X"
 
-  header_text: >
-     <p>A collection of blog posts varying from things I achieved to weekend projects to stuff I designed and coded or just an article reflecting my views and opinions.</p>
-  header_text_feature_image:
-  footer_text: >
-   Powered by <a href="https://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
-
   # Icons
   rss: true
   email_address: "thibault.maekelbergh@icloud.com"
@@ -54,6 +48,8 @@ assets:
       - "last 2 versions"
       - "IE > 9"
 gems:
-  - jekyll-paginate
+  - jekyll-feed
   - jekyll-gist
+  - jekyll-paginate
+
 exclude: ["vendor"]
