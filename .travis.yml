@@ -3,9 +3,11 @@ sudo: false
 language: ruby
 rvm: 2.3.1
 
-before_install: chmod +x ./bin/setup
+before_install:
+  - chmod +x ./bin/setup
+  - chmod +x ./bin/build
 install: ./bin/setup
 
 script:
-  - bundle exec jekyll build
+  - ./bin/build
   - bundle exec htmlproofer ./_site --enforce-https --check-favicon --only-4xx --allow-hash-href

@@ -3,13 +3,9 @@ layout: default
 ---
 
 <div class="home">
-  {% if site.theme_options.header_text %}
-  <div class="call-out"
-  style="background-image: url('{{ site.baseurl }}/{{ site.theme_options.header_text_feature_image }}')">
-    {{ site.theme_options.header_text }}
+  <div class="call-out">
+    <p>A collection of blog posts varying from things I achieved to weekend projects to stuff I designed and coded or just an article reflecting my views and opinions.</p>
   </div>
-  {% endif %}
-
   <div class="posts">
     {% for post in paginator.posts %}
     <div class="post-teaser">
