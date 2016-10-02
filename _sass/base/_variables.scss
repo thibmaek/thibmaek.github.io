@@ -1,34 +1,43 @@
+// Bases
+$black: #000;
+$black-light: #333;
+$white: #fff;
+$white-dark: #efefef;
+$border: #ddd;
+$code-bg: #f8f8f8;
+$code: #d14770;
+$quote-bg: #999;
+
+// Brand colours
+$accent: #1db4c1;
+$background-color: $white-dark;
+$brand-color: $background-color;
+$border-color: rgba(0, 0, 0, .1);
+
+// Typography colours
+$text-color: $black-light;
+$link-color: $accent;
+$header-link-color: $accent;
+
+// Feature image for articles
+$feature-image-text-color: $white;
+$feature-image-size: cover;
+
+// Header description box
+$header-desc-background-color: $accent;
+$header-desc-text-color: $white;
+
+// Code formatting
+$code-background-color: $code-bg;
+$code-text-color: $code;
+$code-border: $border;
+
 // Typography
 $font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+$code-font: 'Source Code Pro', monospace;
 $font-size: 1em;
 
 // Padding
 $padding-large: 20%;
 $padding-small: 5%;
 $padding-x-small: 3%;
-
-// Brand colours
-$background-color: #efefef;
-$brand-color: $background-color;
-$border-color: rgba(0, 0, 0, .1);
-
-// Typography colours
-$text-color: #333;
-$link-color: #1db4c1;
-$selection-color: #d4d4d4;
-
-// Header colours
-$header-link-color: #1db4c1;
-
-// Feature image for articles
-$feature-image-text-color: #fff;
-$feature-image-size: cover;
-
-// Header description box
-$header-desc-background-color: #1db4c1;
-$header-desc-text-color: #fff;
-
-// Code formatting
-$code-background-color: #f8f8f8;
-$code-text-color: #d14770;
-$code-border: #ddd;
