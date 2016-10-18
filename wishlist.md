@@ -30,3 +30,4 @@ permalink: /wishlist/
 - [Okki Nokki RCM](http://okkinokki.com/)
 - [Sharkoon SATA QuickPort XT USB 3.0 - Docking station](https://www.bol.com/nl/p/sharkoon-sata-quickport-xt-usb-3-0-docking-station/9200000021962299/?country=BE&suggestionType=typedsearch)
 - [Freecom Hard Drive Dock 3.0 - Docking station](https://www.bol.com/nl/p/freecom-hard-drive-dock-3-0-docking-station/9000000012202868/?bltg=itm_event=click&mmt_id=c1cc41cfdaf78626&pg_nm=pdp&slt_id=prd_reco&slt_nm=product_recommendations&slt_pos=C1&slt_owner=ccs&itm_type=product&itm_lp=0&itm_id=9000000012202868&itm_role=in)
+- [KRYDDA / VÄXER homegrowing set](http://www.ikea.com/be/nl/catalog/products/S39158216/)
