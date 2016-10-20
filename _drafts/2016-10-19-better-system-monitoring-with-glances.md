@@ -85,6 +85,12 @@ server {
   listen 80;
   server_name example.dyndns.org 192.168.0.200 # change this to your dynamic url & local ip
 
+  location / {
+    if ($http_referer ~ "^https?://[^/]+/glances") {
+      rewrite ^/(.*) /glances/$1 redirect;
+    }
+  }
+
   location /glances/ {
     rewrite /glances/(.*) /$1 break;
     proxy_pass http://127.0.0.1:61208/;
