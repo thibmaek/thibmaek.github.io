@@ -27,3 +27,6 @@ permalink: /wishlist/
 - [Starbucks® Stainless Steel Coffee Press with Walnut Handle - Copper, 8-cup](https://store.starbucks.com/starbucks-stainless-steel-coffee-press-with-walnut-handle---copper-8-cup-011046662.html)
 - [ZERO AUDIO Carbo Tenore ZH-DX200-CT](https://www.amazon.co.uk/ZERO-AUDIO-stereo-headphones-ZH-DX200-CT/dp/B0093VVP0Q/ref=sr_1_1?ie=UTF8&qid=1472492952&sr=8-1&keywords=ZH-DX200)
 - [Vinyl Passion Dust Buster](https://www.amazon.co.uk/Vinyl-Passion-Dust-Buster-Polymer/dp/B004VEORZ0)
+- [Okki Nokki RCM](https://www.amazon.com/Okki-Nokki-Record-Cleaning-Machine/dp/B00J4PABUQ/ref=sr_1_1?ie=UTF8&qid=1476797266&sr=8-1&keywords=okki+nokki)
+- [Sharkoon SATA QuickPort XT USB 3.0 - Docking station](https://www.bol.com/nl/p/sharkoon-sata-quickport-xt-usb-3-0-docking-station/9200000021962299/?country=BE&suggestionType=typedsearch)
+- [Freecom Hard Drive Dock 3.0 - Docking station](https://www.bol.com/nl/p/freecom-hard-drive-dock-3-0-docking-station/9000000012202868/?bltg=itm_event=click&mmt_id=c1cc41cfdaf78626&pg_nm=pdp&slt_id=prd_reco&slt_nm=product_recommendations&slt_pos=C1&slt_owner=ccs&itm_type=product&itm_lp=0&itm_id=9000000012202868&itm_role=in)
