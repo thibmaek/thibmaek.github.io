@@ -22,7 +22,7 @@ Damn, first obstacle. The zip file **uncompresses to a .app** to install 10.11 o
 
 Looking at the .app's Contents folder and searching Spotlight for .dmg I found out there was a disk image called **"InstallESD.dmg"** but it couldn't be mounted into Parallels. So I headed to Safari and searched for ESD.
 
-After browsing for a while I found out there is a **RubyGem to create DMG files from the .app Installer**, called `iesd`. Installing was as easy as any other gem with:
+After browsing for a while I found out there is a **RubyGem to create DMG files from the .app Installer**, called `iesd`. Installing was as easy as any other gem with:
 
 ```ruby
 gem install iesd
