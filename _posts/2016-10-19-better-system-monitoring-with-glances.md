@@ -15,11 +15,12 @@ Installing it trough pip will make sure dependencies are automatically satisfied
 * Python v2.7.x or a version higher than 3.3 if you're already on Python 3
 * Python headers to install `psutil`. The `python-dev` package includes these
 
-You can fetch all the packages required to set up installing from pip with this oneliner:
+You can fetch all the packages required to set up installing from pip with this snippet:
 
-{% highlight shell %}
+{% highlight plain %}
 sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install python-dev python-pip && sudo pip install glances bottle
+sudo apt-get install python-dev python-pip
+sudo pip install glances bottle
 {% endhighlight %}
 
 We also installed bottle alongside of glances here so we can start the web interface, which we'll use to access it remotely. Glances should now be installed and you can open its interface by running `glances` on your Pi or in an SSH session.
@@ -37,9 +38,7 @@ While `init.d` is still present in Jessie it's not encouraged to use it anymore 
 
 When installing the packages from pip I also installed `bottle` which is a micro framework for webapps and which will allow us to connect to the glances interface in any browser over http. The way we will want our `systemd` service to work is to that it is automatically started on boot and we can manage it trough `systemctl`. Let's start with creating the file in the correct directory where `systemd` services are stored:
 
-{% highlight shell %}
-sudo nano /etc/systemd/system/glances.service
-{% endhighlight %}
+{% highlight shell %}sudo nano /etc/systemd/system/glances.service{% endhighlight %}
 
 Passing the `-w` flag to glances will start the webserver mode on port 61208, which is exactly what we need in our case. Optionally you can create an extra service or change the `-w` flag by `-s` to start glances in server mode so that we can connect to it in another shell with `glances -c <0.0.0.0>`. For now we'll focus on the web server instead. Inside the nano window create these entries:
 
@@ -57,7 +56,7 @@ WantedBy=multi-user.target
 
 Ctrl+x, y and enter to save the file. We've now successfully created the service to manage glances and run it in the background, but still need to enable it and start it with `systemctl` which manages `systemd`:
 
-{% highlight shell %}
+{% highlight plain %}
 sudo systemctl enable glances.service
 sudo systemctl start glances.service
 {% endhighlight %}
@@ -116,3 +115,8 @@ sudo systemctl restart nginx
 {% endhighlight %}
 
 Now visiting either the ip address for your pi or the dydns hostname followed by /glances should work and everywhere you go you can take a glance at the system!
+
+### Further reading:
+* [What is an init system?](https://fedoramagazine.org/what-is-an-init-system/)
+* [systemd: Writing and Enabling a Service](https://learn.adafruit.com/running-programs-automatically-on-your-tiny-computer/systemd-writing-and-enabling-a-service)
+* [NGINX REVERSE PROXY](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
