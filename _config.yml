@@ -21,7 +21,7 @@ theme_options:
   twitter: "thibmaekelbergh"
 
   # Scripts
-  disqus_shortname: "thibaultmaekelbergh"
+  disqus_shortname: "thibmaekblog"
   katex: false
 
   # Localization strings
