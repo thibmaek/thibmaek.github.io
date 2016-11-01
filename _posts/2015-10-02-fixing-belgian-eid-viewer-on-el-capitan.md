@@ -2,7 +2,10 @@
 layout: post
 title: "Fixing Belgian eID Viewer on El Capitan"
 date: "2015-10-02 18:43"
+summary: "The easy fix for horrible eID software on El Capitan"
 ---
+
+> __Note:__ Both the viewer & middleware which eID require have been made available on a brew cask tap by me and are updated to the latest version. Installing trough here should make it work automatically.
 
 By using deprecated methods & code the Belgian eID Viewer version used for Yosemite can't be used on El Capitan (Hooray for bad cross platform production software I guess…).
 

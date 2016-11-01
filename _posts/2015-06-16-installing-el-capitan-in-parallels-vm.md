@@ -4,16 +4,7 @@ title: "Installing OS X 10.11 as a VM"
 date: "2015-06-16"
 ---
 
-OS X 10.11 El Capitan (which is a ridiculous name, if you're not from America) was recently announced at WWDC15 a couple of weeks ago.  
-
-Not a lot of new features but mainly gimmicks (_shake to find cursor, really?_) and productivity upgrades like split screen working are included with this release of OS X.
-
-But there was one feature I was curious about, and that's the **completely revamped Web Inspector and the new Adaptive Viewer**. Chrome's DevTools are probably the most common used and the favourite of every webdev, but I seem to enjoy the way Web Inspector works way more (_grouped XHR folder anyone?_).  
-
-The new Adaptive Viewer is something you could compare to that device emulator Chrome has, and curious how Safari's looks like I decided to take a look at the first beta of OS X 10.11
-
 ## Finding a beta and creating the dmg
-
 The beta releases are available to anyone enrolled to the Apple Developer Program. Sadly my enrollment is college bound and doesn't let me do anything besides get a provision for side-loading Xcode projects on my iPhone.
 
 Luckily, [shade.sh](https://blog.shade.sh/index.php/os-x-beta) uploads the beta's with a valid shasum so it's pretty safe to grab one from there. So I downloaded this file (*around 6GB*) and uncompressed it.

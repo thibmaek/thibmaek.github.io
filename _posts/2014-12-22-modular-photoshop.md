@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using Photoshop with a modular approach
+summary: "Modern approach to using Photoshop anno 2015/2016/2017 for webdesign (when you really should use Sketch)"
 ---
 
 With the current state of design and possible technologies and possibilities, some claim it’s time for Photoshop to hand over the throne. The fanbase for Sketch and Affinity is vastly growing and while those are great tools and I’ve tried working with them a lot, they still aren’t possible to beat Photoshop in a lot of ways.

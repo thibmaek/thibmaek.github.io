@@ -2,9 +2,10 @@
 layout: "post"
 title: "Better system monitoring with Glances"
 date: "2016-10-19 12:02"
+summary: "This post goes trough installing, starting and monitoring Glances on a Raspberry Pi and making it work remotely."
 ---
 
-Recently my eye fell upon an amazing Python tool called [glances](https://github.com/nicolargo/glances), which monitors your system. This post goes trough installing, starting and monitoring it on a Raspberry Pi and making it work remotely.
+Recently my eye fell upon an amazing Python tool called [glances](https://github.com/nicolargo/glances), which monitors your system in a curses layout. It's awesome and will probably be my goto for system monitoring in the future!
 
 ## Installing glances on the Raspberry Pi
 When starting off it's always a good idea to go trough the README & wiki of the official repo. This post will mainly guide you trough steps already described in the README but it focusses also on adding a service you can start trough `systemd` and enabling remote connection possibilities with `nginx` & port forwarding.
