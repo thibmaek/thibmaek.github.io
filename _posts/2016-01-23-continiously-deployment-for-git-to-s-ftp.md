@@ -2,6 +2,7 @@
 layout: "post"
 title: "Continuously Deploying Git to (s)ftp"
 date: "2016-01-24 18:42"
+summary: "A modern approach to deploying on older servers"
 ---
 
 So I'm nearing the deadline for this semester's final project.

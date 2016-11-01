@@ -2,9 +2,8 @@
 layout: post
 title: "5 minute guide to keeping your system updated"
 date: "2015-12-15 11:45"
+summary: "Keeping dependencies and tools up to date can be a hassle and a time consuming task, I learned that the hard way. What follows is my semi-bulletproof guide to making sure you're updated and don't spend your valuable time doing so."
 ---
-
-Keeping dependencies and tools up to date can be a hassle and a time consuming task, I learned that the hard way. What follows is my semi-bulletproof guide to making sure you're updated and don't spend your valuable time doing so.
 
 > **TL;DR: If your just looking for an easy automated way to update everything, skip to the automation part.**
 

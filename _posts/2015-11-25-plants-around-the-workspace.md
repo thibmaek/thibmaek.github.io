@@ -2,9 +2,8 @@
 layout: post
 title: "Plants around the workspace"
 date: "2015-11-25 19:19"
+summary: "My collection of plants (regularly updated)"
 ---
-
-> My collection of plants
 
 ![Hanging plant](https://lh3.googleusercontent.com/2Z017GsUDuje3fP7IuRy8BZerb1G2-20B0V2lPQowmWFYC4GKbg=w926-h1396-no)
 

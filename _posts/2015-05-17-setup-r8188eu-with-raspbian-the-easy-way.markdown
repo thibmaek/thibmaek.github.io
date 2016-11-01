@@ -2,6 +2,7 @@
 layout: post
 title: "Setup r8188eu with Raspbian the easy way"
 date: "2015-04-02"
+summary: "Up to date installtion guide for the TL-WN752N wifi dongle"
 ---
 
 An example of a usb network adapter that uses this chipset is the popular and cheap TL-WN752N which you can get for around 10 euros.
@@ -23,7 +24,7 @@ tar -zxvf install-8188eu.tgz
 sudo ./install-8188eu.sh
 ```
 
-Running this will match kernel version retrieved from `uname -a` with the downloads in the forum topic and put them in the right places and in the modules.  
+Running this will match kernel version retrieved from `uname -a` with the downloads in the forum topic and put them in the right places and in the modules.
 It might be a good idea to [update your kernel](https://blog.thibmaekelbergh.be/2015/04/02/setup-r8188eu-with-raspbian-the-easy-way.html#troubleshooting).
 
 > **Warning: doesn’t work for 3.18.11+. See Troubleshooting section for more info.**

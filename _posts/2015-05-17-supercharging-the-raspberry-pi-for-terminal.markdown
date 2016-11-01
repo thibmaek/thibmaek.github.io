@@ -2,6 +2,7 @@
 layout: post
 title: "Supercharging the Raspberry Pi for terminal"
 date: "2015-02-23"
+summary: "I’m crazy about the Raspberry Pi, you might already know that. Another thing I’m crazy about is Bash & the terminal."
 ---
 
 I’m crazy about the Raspberry Pi, you might already know that. Another thing I’m crazy about is Bash & the terminal.
@@ -53,7 +54,7 @@ Terminal has autocompletion with the tab key, so please use it. Saves a lot of t
 #### Cloning my git repo
 
 To start using dotfiles I recommend installing my repo and running the builder with `./make.sh`.  
-This will move the dotfiles to the home directory. All you need to do after this is reload the shell with `exec $SHELL -l`  
+This will move the dotfiles to the home directory. All you need to do after this is reload the shell with `exec $SHELL -l`
 Everything should work, from here on just edit the files using nano or another edit to adjust to personal preference!
 
 It's even updateable. Just `git pull` in the folder with the git repo and run the make script again. Any changes you added yourself will be overwritten of course.
