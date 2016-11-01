@@ -35,7 +35,7 @@ export OWNCLOUD_DATA_DIR=$HOME/Library-2/Owncloud/
 sudo mv <folder> $OWNCLOUD_DATA_DIR/<user>/files/<folder>
 ```
 
-![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,h_795/v1477993064/Owncloud Migration/Screen_Shot_2016-11-01_at_10.13.00.png)
+![rights are in order](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,h_795/v1477993064/Owncloud Migration/Screen_Shot_2016-11-01_at_10.13.00.png)
 
 Migrating was instant since we're moving on the local fs. Checking the above screenshot you can see the rights are still the same of course. Own the folders to the ownCloud user and change the permissions to octal 755:
 
