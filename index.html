@@ -20,7 +20,7 @@ layout: default
         </p>
       </header>
       <div class="excerpt">
-        {{ post.excerpt }}
+        <p>{{ post.summary }}</p>
         <a class="button" href="{{ post.url | prepend: site.baseurl }}">
           {{ site.theme_options.str_continue_reading }}
         </a>

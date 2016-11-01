@@ -2,9 +2,8 @@
 layout: post
 title: "Workspace"
 date: "2015-10-23 16:21"
+summary: "Some pictures of my personal workspace"
 ---
-
-This is just me, wanting to share the workspace (my room) I love working from.
 
 ![nightstand](https://lh3.googleusercontent.com/U2j1M0L4RpzWeK0tNpRQlK5IV_6SrIRrKBqIETgX_5FUvPwd7Gp4tq8dT-66t1rS8wE69gZoi77UQE_RzVkEumiakqKooaFw1oelSk964L608ZlEktPVc61rTzrYsSoiHUARtU450mFwVzqnO75DwNqGRl7getnxhMv-W2uc1T50r25Yw80ZGRjUAiIUxSe6mZbiWRuqPVQcJbYDHugsX7tragBYaG8tTiKtq6gt0r4CuCa-_x3eDGkd3RqDfZwbn80br-i8zeNuQGEE65Vbfzc37xkrOcVUbNPUXF8OHL56S7Q-uy1BT1HC8V3YQt5I_lesTp9b86R9vCSWmX7JFX7fp0dYYA8IdB6qbDHDradL6fkoP3J87jAv5r_HbEAz4hAw3a8WQN5lzZNhFenfAwqxpvfcOsMCEY8mvtC8CcLhoucAvDzLeU8oYHr9z9Kz3xUNgv6TJsRWVqoyuBFmib_t7M1F3uxCu10Puah-GhRkYVhbaTe4PS_vc7MUT35YCM2pyZIzub3-j33ED4WFlHRH9J-jPsXB3zRKeZrCcnY=w2220-h1470-no)
 

@@ -2,9 +2,8 @@
 layout: post
 title: "Using ext4 on OS X Yosemite, the long but safe way"
 date: "2015-04-08"
+summary: "ext4 is not OS X compatible (which is stupid) and getting it to work is a big hassle. There are tools but their unsafe. Luckily I found a safer way."
 ---
-
-ext4 is not OS X compatible (which is stupid) and getting it to work is a big hassle. There are tools but their unsafe. Luckily I found a safer way.
 
 ### Some background information
 
@@ -67,7 +66,7 @@ I got a solid 4-8MB/S transfer speed with this setup:
 
 > Edit 9/04: I just configured ftp instead of sftp and got 11MB write speed, seems like this is a better option!
 
-Admitted, it’s kind of a bigger hassle to set up, has more overhead for the machine and eats more resources.  
+Admitted, it’s kind of a bigger hassle to set up, has more overhead for the machine and eats more resources.
 Then again, it won’t be used that often and some tinkering with Linux never killed any dev ;)
 
 > If you set your mount point to /mnt/hdd be sure to `chown -R yourusername hdd` on the folder. Without this the user won’t have any write permissions since you’re at system root.

@@ -2,6 +2,7 @@
 layout: post
 title: "Bridging Wifi to the Raspberry Pi over Ethernet"
 date: "2015-02-16"
+summary: "Steps to help you bridge a wifi connection from a MacBook over to a Raspberry Pi"
 ---
 
 With my various attempts to try and setup Wifi and internet on my pi I was going back
@@ -24,4 +25,4 @@ Hook up the cables to the pi while it is **powered off**, go to `System Preferen
 
 ![Screenshot of the sharing menu in OS X](https://imgur.com/SpOPnNW.png)
 
-Choose the Wifi on the MacBook as entry point and send out trough the Ethernet port / adapter.  
+Choose the Wifi on the MacBook as entry point and send out trough the Ethernet port / adapter.

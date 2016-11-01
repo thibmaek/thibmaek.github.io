@@ -2,6 +2,7 @@
 layout: post
 title: "Raspberry Pi login with SSH keys"
 date: "2015-05-07"
+summary: "Improved ease of use & security by using public & private key pairs on the server"
 ---
 
 [SSH](https://en.wikipedia.org/wiki/Secure_Shell) is a great networking protocol. Secure, fast and commonly-used are probably some of the reasons why it’s the default for communicating with your Raspberry Pi. But having to type in a password each time you log in sucks.
@@ -39,7 +40,7 @@ Now there are two options to match keys with the pi:
 
 ### ssh-copy-id
 
-There’s this great application called ssh-copy-id which automatically matches the contents from the public key to a ssh host.  
+There’s this great application called ssh-copy-id which automatically matches the contents from the public key to a ssh host.
 On Linux it’s mostly installed by default, but OS X can install it from brew with: `brew install ssh-copy-id`.
 
 Now you can just match the key by running it and providing an ssh host:

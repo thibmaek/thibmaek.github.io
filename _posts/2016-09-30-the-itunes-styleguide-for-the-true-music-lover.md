@@ -2,9 +2,8 @@
 layout: "post"
 title: "The iTunes Styleguide for the true music lover"
 date: "2016-09-30 21:11"
+summary: "Just like keeping a tidy and nice looking record collection I like iTunes to shine when I use it. This updated post will guide you trough some tips & tricks to get an immensely well-organized iTunes library which you'll enjoy using every time!"
 ---
-
-Just like keeping a tidy and nice looking record collection I like iTunes to shine when I use it. This updated post will guide you trough some tips & tricks to get an immensely well-organized iTunes library which you'll enjoy using every time!
 
 # Table of contents:
 1. [Cover Art](#cover-art)
