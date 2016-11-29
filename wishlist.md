@@ -14,4 +14,3 @@ hide: true
 - [Starbucks Reserve™ Stainless Steel Coffee Canister, 8 oz](https://store.starbucks.com/starbucks-reserve-stainless-steel-coffee-canister-8-oz-011053355.html)
 - [Cold Brew Kit - Starbucks Reserve® Edition, 32 fl oz](https://store.starbucks.com/cold-brew-kit---starbucks-reserve-edition-32-fl-oz-011051156.html)
 - [Starbucks® Stainless Steel Coffee Press with Walnut Handle - Copper, 8-cup](https://store.starbucks.com/starbucks-stainless-steel-coffee-press-with-walnut-handle---copper-8-cup-011046662.html)
-- [Vedett Pint glazen (set van 6)](https://www.vedettsuperett.com/vedett-glasses.html)
