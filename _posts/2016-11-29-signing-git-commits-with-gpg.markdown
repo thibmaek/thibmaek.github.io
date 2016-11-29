@@ -33,9 +33,9 @@ We need the ID of our public key to generate the raw key, which we'll need for c
 
 Copy this and paste it into the following command which will generate raw key output for the public key and then copy the output:
 
-{% highlight console %}
+```console
 gpg --armor --export <ID>
-{% endhighlight %}
+```
 
 Head over to your [Github settings for keys](https://github.com/settings/keys) and add a new GPG key. Paste the output from the GPG export. This is the public key and is now associated with your Github account.
 
@@ -44,9 +44,9 @@ You need to tell git to sign commits and which key to use. You can do this easil
 
 You can now append a flag to sign commits with git:
 
-{% highlight console %}
+```console
 git commit -S -m "🎉 My first signed commit"
-{% endhighlight %}
+```
 
 Instead of explicitly passing the flag to sign commits each time you can also tell your .gitconfig to sign commits by default with `git config --global commit.gpgsign true`. I recommend this since you'll never forgot to sign it then.
 __Do note that GPG signing is only supported in the shell and using most Git apps like Github.app, Tower, GitKraken will not be able to commit or push if global signing is set to true. Disable it altogether or temporarily switch it off by setting it to false and back to true when finished.__
