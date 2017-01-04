@@ -24,4 +24,6 @@ Now just download the latest version of the eID software (middleware & app) from
 
 A working version of eID Viewer for OS X El Capitan is now located in your Applications folder & Launchpad.
 
-> Here's a oneliner for developers to use in terminal: `sudo rm -rf /Volumes/Macintosh HD/Incompatible\ Software/*`
+> Thanks to Anne-Marie Swalens for pointing out that the Sitecom Card Reader MD-031 is officially declared as incompatible/deprecated with El Capitan and higher. If you have this card reader it's advised to upgrade to the Sitecom 065.
+
+> Here's a oneliner for __developers__ to use in terminal: `sudo rm -rf /Volumes/Macintosh HD/Incompatible\ Software/*`
