@@ -3,6 +3,10 @@
 	<title>{% if page.title %}{{ page.title }} |{% endif %} {{ site.theme_options.title }}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.theme_options.description }}{% endif %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Thibault Maekelbergh Blog">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:image" content="https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1483739724/Screenshot_2017-01-06_22.54.57_oomj4d.png">
 	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 	<link rel="shortcut icon" href="{{ "/img/icons/favicon-96x96.png" | prepend: site.baseurl }}" type="image/x-icon">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
