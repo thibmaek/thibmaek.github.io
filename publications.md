@@ -6,17 +6,19 @@ title: Publications
 Below is some stuff either I or someone else published about me or a project of mine. Most of these are open-source contributions or projects.
 
 # Own projects
+- [Awesome Raspberry Pi - A curated list of awesome Raspberry Pi tools, projects, images and resources](https://github.com/thibmaek/awesome-raspberry-pi)
+- [bpost - Modern JavaScript API wrapper for bpost track & trace](https://github.com/thibmaek/bpost)
 - [Bifrost - named color palette for SCSS projects](https://www.npmjs.com/package/bifrost-color)
 - [Worker - bootstrapper for new OS X computers](https://github.com/thibmaek/worker)
 - [Lunch-mutn - our 'where should we eat' bot for Slack](https://github.com/thibmaek/lunch-mutn)
-- [Raspi-Setup - bootstrapping script for a simple Raspberry Pi setup](https://github.com/thibmaek/raspi-setup)
+- [Devinereel - Viewer for online/web #devinehowest student projects](https://github.com/thibmaek/devinereel)
 - [Thane - frontend boilerplate with Gulp, Compass and Browserify](https://github.com/thibmaek/Thane)
 - [Vagrant-Devine - Vagrant box for devine.be](https://github.com/thibmaek/vagrant-devine)
-- [Sketch Web Icon Template - includes all common web icons](https://www.behance.net/portfolio/editor?project_id=24760497)
 
 # Contributions
 - [Resin.io documentation](https://github.com/resin-io/docs)
 - [Homebrew Cask](https://github.com/caskroom/homebrew-cask)
+- [Homebrew eID](https://github.com/caskroom/homebrew-eid)
 - [Devine.be Yeoman Generator](https://github.com/thibmaek/generator-devine-boilerplate)
 - [Sass Syntax Highlight for Atom](https://github.com/thibmaek/Sass-Syntax-Highlight)
 - [Atom Toychest](https://github.com/thibmaek/atom-toychest)
