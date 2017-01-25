@@ -1,11 +1,7 @@
 ---
 layout: default
 ---
-
 <div class="home">
-  <div class="call-out">
-    <p>A collection of blog posts varying from things I achieved to weekend projects to stuff I designed and coded or just an article reflecting my views and opinions.</p>
-  </div>
   <div class="posts">
     {% for post in paginator.posts %}
     <div class="post-teaser">
@@ -25,6 +21,14 @@ layout: default
           {{ site.theme_options.str_continue_reading }}
         </a>
       </div>
+      {% if post.tags %}
+      <div class="tags">
+        <!-- These should be sorted -->
+        {% for tag in post.tags%}
+          <span class="post-tag">{{tag}}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
     {% endfor %}
   </div>

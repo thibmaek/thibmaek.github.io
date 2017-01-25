@@ -1,12 +1,13 @@
 .site-header {
   @extend %padding-small;
-  background: $brand-color;
+  background: $accent;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .2);
   display: inline-block;
   float: left;
   width: 100%;
 
   a {
-    color: $header-link-color;
+    color: $white;
   }
 
   .avatar {
