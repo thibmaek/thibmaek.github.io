@@ -2,6 +2,8 @@
 layout: post
 title: Executable HTTP Server Script
 summary: "No more cross origin errors when working on static content locally"
+tags:
+  - "networking"
 ---
 
 Get cross-domain errors in the console because you’re running

@@ -3,6 +3,9 @@ layout: post
 title: "Getting location data in Photos for OS X"
 date: "2015-08-10 13:59"
 summary: "With all the recent changes going on in the Apple ecosystem I decided (with discontent) to ditch my good old pal iPhoto for Apple's new Photos app to keep myself up to date."
+tags:
+  - "macos"
+  - "photography"
 ---
 
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Photos.app is fucking with my photo-workflow. I wish Apple never created this app :&#39;(</p>&mdash; Thibault Maekelbergh (@ThibMaekelbergh) <a href="https://twitter.com/ThibMaekelbergh/status/587962799852249088">April 14, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

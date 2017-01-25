@@ -3,6 +3,10 @@ layout: post
 title: "Supercharging the Raspberry Pi for terminal"
 date: "2015-02-23"
 summary: "I’m crazy about the Raspberry Pi, you might already know that. Another thing I’m crazy about is Bash & the terminal."
+tags:
+  - "raspberry-pi"
+  - "shell"
+  - "bash"
 ---
 
 I’m crazy about the Raspberry Pi, you might already know that. Another thing I’m crazy about is Bash & the terminal.
@@ -17,7 +21,7 @@ You’ve surely encountered this if you’re working over SSH with the raspi. It
 
 To get rid of all those lines of text above you’ll have to create a dotfile in the home directory (~). Dotfiles are files that start with a dot and are hidden from the file browser or terminal. Working with ls will not display them, `ls -a` will.
 
-If you’re not already located there, enter cd in Terminal to get to the homedir.   Then just create a new dotfile called .hushlogin by executing `touch .hushlogin` and that’s it!  
+If you’re not already located there, enter cd in Terminal to get to the homedir.   Then just create a new dotfile called .hushlogin by executing `touch .hushlogin` and that’s it!
 Content in `.hushlogin` is not required, the presence of the file in ~ will disable the message.
 
 ### Working with aliases in terminal
@@ -53,7 +57,7 @@ Terminal has autocompletion with the tab key, so please use it. Saves a lot of t
 
 #### Cloning my git repo
 
-To start using dotfiles I recommend installing my repo and running the builder with `./make.sh`.  
+To start using dotfiles I recommend installing my repo and running the builder with `./make.sh`.
 This will move the dotfiles to the home directory. All you need to do after this is reload the shell with `exec $SHELL -l`
 Everything should work, from here on just edit the files using nano or another edit to adjust to personal preference!
 

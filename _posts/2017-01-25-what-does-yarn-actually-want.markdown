@@ -3,6 +3,8 @@ layout: post
 title: "What does Yarn actually want?"
 date: "2017-01-25 11:54:33 +0100"
 summary: "A 4 month later review, summarizing why I'll ditch yarn"
+tags:
+  - "javascript"
 ---
 
 So [yarn]… I remember stumbling upon it on Twitter, reading the initial announcement and immediately find myself thinking they've invented the holy grail of dependency management. I decided to install it right away, the only installation method provided at the time being by curling it to sh.

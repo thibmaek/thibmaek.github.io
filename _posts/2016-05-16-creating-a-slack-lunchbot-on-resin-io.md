@@ -2,6 +2,10 @@
 layout: "post"
 title: "Planning lunch with a Slackbot on Resin"
 date: "2016-05-16 11:54"
+tags:
+  - "ai"
+  - "raspberry-pi"
+  - "javascript"
 ---
 
 > This article originally appeared on the [Resin.io Blog](https://resin.io/blog/planning-lunch-with-a-slackbot-on-resin-io/)

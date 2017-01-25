@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Bash…Trash!
+tags:
+  - "macos"
+  - "bash"
 ---
 
 Quick and easy clearing of the trash on OS X using bash!

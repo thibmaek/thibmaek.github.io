@@ -3,6 +3,9 @@ layout: post
 title: "Setup r8188eu with Raspbian the easy way"
 date: "2015-04-02"
 summary: "Up to date installtion guide for the TL-WN752N wifi dongle"
+tags:
+  - "raspberry-pi"
+  - "networking"
 ---
 
 An example of a usb network adapter that uses this chipset is the popular and cheap TL-WN752N which you can get for around 10 euros.

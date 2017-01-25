@@ -3,6 +3,8 @@ layout: post
 title: "Using the screen multiplexer for hidden shell work"
 date: "2016-12-04 17:01:05 +0100"
 summary: "Get to know the basics of using a multiplexer like screen to run your shell scripts and tasks without having to keep terminal open"
+tags:
+  - "shell"
 ---
 
 I've known of the existence of multiplexers but rarely ever used them in the past. Recently though using the [screen] multiplexer became a vital addition to my work in the shell.

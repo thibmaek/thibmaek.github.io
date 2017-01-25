@@ -3,6 +3,10 @@ layout: post
 title: "Signing Git commits with GPG"
 date: "2016-11-29 11:04:48 +0100"
 summary: "More secure & reliable online collaborating with Git"
+tags:
+  - "git"
+  - "gpg"
+  - "security"
 ---
 
 GPG is the next best thing for encryption and online communication of any sort. GNU Privacy Guard (GPG) is an implementation of the OpenPGP standard. You might have seen these in emails, online articles (Lifehacker likes these) and even on Github which could have left you wondering how to get that nice `Verified` badge next to your commits.

@@ -3,6 +3,9 @@ layout: post
 title: "Quick and easy development environments with Otto"
 date: "2015-10-18 22:41"
 summary: "Using Vagrant's successor is so easy and quick and gives you a way more convenient flow of developing applications."
+tags:
+  - "devops"
+  - "vagrant"
 ---
 
 Since around April I've been more interested in the aspects of development that don't actually include writing code. I started out with Vagrant (which was like a love story for me but it faded out after a while) and then got more into Docker, which, at least I think so, is kinda a big thing if you want to be the topnotch developer these days.

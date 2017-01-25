@@ -2,6 +2,8 @@
 layout: post
 title: "That old 1st Gen Apple TV - Converting it to a local server"
 date: "2014-08-14"
+tags:
+  - "apple-tv"
 ---
 
 Since the purchase of my 3rd gen Apple TV the 1st gen I once bought was just collecting dust, I had jailbroken it before to run XBMC and Boxee but this time I couldn’t immediately think about a good use for it.
@@ -20,8 +22,8 @@ You can find it over at [Github](https://github.com/davilla/atvusb-creator). I d
 
 ### Step 2: Jailbreaking
 
-With your freshly created USB Patchstick go over to your Apple TV and pull out the power supply.  
-Insert the USB and plug the power cable back in. Hold the (-) and menu key when your Apple TV is booting up (keep holding if you don’t see anything for at least 5 seconds).  
+With your freshly created USB Patchstick go over to your Apple TV and pull out the power supply.
+Insert the USB and plug the power cable back in. Hold the (-) and menu key when your Apple TV is booting up (keep holding if you don’t see anything for at least 5 seconds).
 The Linux logo will appear and the patching process will start. When the commands stop running and you see something like “Unplug the device” you can unplug the power supply again and remove the USB.
 
 Let the Apple TV turn on again and you should see the Launcher menu now. If you don’t need XBMC like I do, just let this be. SSH is now installed and that’s what we wanted…
@@ -63,15 +65,15 @@ We’re now going to download Tiger OS X combo update to install the drivers wit
 wget https://supportdownload.apple.com/download.info.apple.com/Apple_Support_Area/Apple_Software_Updates/Mac_OS_X/downloads/061-3165.20070313.iU8y4/MacOSXUpdCombo10.4.9Intel.dmg
 ```
 
-If you want you can close Terminal now, the installing is over.  
-Go to the Apple TV and in the NitoTV menu go to `Settings > Install Software > Smart Installer`, this will take a while and display a dialog with installed components.  
+If you want you can close Terminal now, the installing is over.
+Go to the Apple TV and in the NitoTV menu go to `Settings > Install Software > Smart Installer`, this will take a while and display a dialog with installed components.
 Hit restart or just disconnect and connect the power supply to reboot, connect a hard drive and we’re done, all that’s left is to access the files.
 
 ### Step 6: Accessing The Files
 
 We will need a SSH client to view the files. I’m perfectly comfortable with Terminal but some users might want a user interface to do this.
 
-On Mac I mainly use [Transmit](https://panic.com/transmit) to connect to the Apple TV.  
+On Mac I mainly use [Transmit](https://panic.com/transmit) to connect to the Apple TV.
 Open up Transmit and for easy setup go to the Bonjour tab where the Apple TV should be listed, double click it and enter the password and username and the files should appear
 
 ![Using Transmit to connect over SSH](https://i.imgur.com/GFF7fmA.png)
@@ -80,16 +82,16 @@ If in some case Bonjour doesn’t work or you are not able to connect over Bonjo
 
 ![Filling in credentials for SSH in Transmit](https://i.imgur.com/BU527Yh.png)
 
-Now you have full access to all the files stored on the Apple TV itself which has a 40GB HDD, but also the external HDD you might connect.  
+Now you have full access to all the files stored on the Apple TV itself which has a 40GB HDD, but also the external HDD you might connect.
 External storage devices are found on the path `mnt/Scratch/Volumes`.
 
-> Note that Tiger doesn’t support ExFat so go for either FAT or HFS)  
+> Note that Tiger doesn’t support ExFat so go for either FAT or HFS)
 
 Files can be drag’n dropped into the window as you’re familiar with.
 
 #### Notes & Pictures
 
-> Remember the Apple TV isn’t a powerhouse machine so file transfer speed might be a little slow, I managed to get 3,4MB/sec when transferring from my MacBook to an external HDD.  
+> Remember the Apple TV isn’t a powerhouse machine so file transfer speed might be a little slow, I managed to get 3,4MB/sec when transferring from my MacBook to an external HDD.
 Also this machine get’s very very hot! Don’t store it with anything which’ll burn easy or place anything on top, keep it in an open or cooled enclosed area. Don’t leave it always on, unless you want your house to burn down.
 
 ![ATV server in a box](https://media.tumblr.com/412a80a16ed11c037dd3adef53c63e4a/tumblr_inline_n1maf7RrPw1sn0bkh.jpg)
