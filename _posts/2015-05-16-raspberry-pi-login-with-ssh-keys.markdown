@@ -3,6 +3,10 @@ layout: post
 title: "Raspberry Pi login with SSH keys"
 date: "2015-05-07"
 summary: "Improved ease of use & security by using public & private key pairs on the server"
+tags:
+  - "raspberry-pi"
+  - "networking"
+  - "security"
 ---
 
 [SSH](https://en.wikipedia.org/wiki/Secure_Shell) is a great networking protocol. Secure, fast and commonly-used are probably some of the reasons why it’s the default for communicating with your Raspberry Pi. But having to type in a password each time you log in sucks.
@@ -11,7 +15,7 @@ Luckily SSH has these things called keys which you can use for password-less log
 
 ## Generating SSH Keys
 
-Setting up SSH keys is always the first thing I do on new Raspberry Pi images, but before doing so I like to install Bonjour on the pi first because then you don’t have to lookup IP’s.  
+Setting up SSH keys is always the first thing I do on new Raspberry Pi images, but before doing so I like to install Bonjour on the pi first because then you don’t have to lookup IP’s.
 *Avahi sometimes requires an update first.*
 
 ```console
@@ -22,7 +26,7 @@ sudo apt-get install avahi-daemon --fix-missing #I had some errors without fix-m
 
 Safest way is to reboot your pi, but `sudo service avahi-daemon` restart works just as well for our setting up right now.
 
-Ok so now that is configured, it’s time to build the actual ssh keys.  
+Ok so now that is configured, it’s time to build the actual ssh keys.
 Everything we do will typically be stored in a hidden directory in the home folder called `.ssh`. Generating a new key there is as easy as:
 
 ```console
@@ -31,7 +35,7 @@ ssh-keygen -t rsa -C "example@example.com"
 
 This creates a new key with the RSA type and creates it from the comment email address you provide.   ssh-keygen will ask you for a password (make it secure) to create the new keys.
 
-This will generate two new keys in the `~/.ssh` directory, called `id_rsa` and `id_rsa.pub`. It’s important to pause and think about how they act.  
+This will generate two new keys in the `~/.ssh` directory, called `id_rsa` and `id_rsa.pub`. It’s important to pause and think about how they act.
 The first one is your private key and the .pub one is the public one. Typically, matching keys will require you to provide the public one to a service (Like Github, or the Pi login over SSH) so it can identify you. The first private key matches with the public one to authenticate you.
 
 **Never ever ever ever post the contens of id_rsa anywhere, this could lead to a huge security hole in your machine.**

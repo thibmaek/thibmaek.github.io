@@ -3,6 +3,10 @@ layout: "post"
 title: "Manually migrating existing data to ownCloud"
 date: "2016-11-01 12:17"
 summary: "Easily migrate existing files and folders from an external HDD to your ownCloud's data directory"
+tags:
+  - "owncloud"
+  - "php"
+  - "shell"
 ---
 
 Before we start off, let's give some background as to how this blogpost came to be. I can imagine lots of people may think the same as I do but don't find the right approach to accomplish the topic of this post.  

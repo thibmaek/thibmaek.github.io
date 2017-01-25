@@ -3,6 +3,9 @@ layout: "post"
 title: "Better system monitoring with Glances"
 date: "2016-10-19 12:02"
 summary: "This post goes trough installing, starting and monitoring Glances on a Raspberry Pi and making it work remotely."
+tags:
+  - "system"
+  - "devops"
 ---
 
 Recently my eye fell upon an amazing Python tool called [glances](https://github.com/nicolargo/glances), which monitors your system in a curses layout. It's awesome and will probably be my goto for system monitoring in the future!

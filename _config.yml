@@ -6,7 +6,7 @@ enforce_ssl: blog.thibmaekelbergh.be
 # THEME-SPECIFIC CONFIGURATION
 theme_options:
   title: Thibault Maekelbergh
-  avatar: avatar.jpg
+  gravatar: "ee5f9d49d43486e5dffad318c1e6199b"
   description: "A nice blog about development, Raspberry Pi and OS X"
 
   # Icons
@@ -14,10 +14,9 @@ theme_options:
   email_address: "thibault.maekelbergh@icloud.com"
   behance: "thibmaek"
   dribbble: "thibmaek"
-  instagram: "thibmaekelbergh"
+  instagram: "be.typo"
   github: "thibmaek"
   linkedin: "https://www.linkedin.com/profile/view?id=343554566&trk=nav_responsive_tab_profile_pic"
-  tumblr: "betypo"
   twitter: "thibmaek"
 
   # Scripts

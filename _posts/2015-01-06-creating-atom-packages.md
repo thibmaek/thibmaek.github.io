@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Creating a package for Atom is dead easy
+tags:
+  - "atom"
 ---
 
 I’m pretty much in love with Atom (and ditched Sublime for it) and could go on an on about how amazing I think this text editor is. The way it handles snippets with CSON for example or how easy it is to manage packages or to sync your settings with Dropbox, etc.

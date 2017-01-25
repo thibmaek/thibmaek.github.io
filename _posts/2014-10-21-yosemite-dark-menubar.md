@@ -2,6 +2,8 @@
 layout: post
 title: Quick toggle Yosemite's Dark Theme
 feature-img: img/2014-10-21-quick-toggle-yosemite-dark-theme.png
+tags:
+  - "macos"
 ---
 
 Dark theme works so much better at night in bed. Found this quick trick to enable a hotkey to turn it on and off:

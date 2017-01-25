@@ -3,6 +3,8 @@ layout: post
 title: "Best of 2016"
 date: "2016-12-23 19:08:40 +0100"
 summary: "The best singles, 12\"s and albums of 2016"
+tags:
+  - "music"
 ---
 Following my annual tradition below is a list of my (top 100) picks for the best musical releases of 2016. Sorted up to 50 and unsorted from 51, all including Spotify/Bandcamp link!
 

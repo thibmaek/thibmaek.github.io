@@ -2,6 +2,8 @@
 layout: post
 title: "Installing OS X 10.11 as a VM"
 date: "2015-06-16"
+tags:
+  - "macos"
 ---
 
 ## Finding a beta and creating the dmg

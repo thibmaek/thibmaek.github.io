@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Playing Facebook video without Flash
+tags:
+  - "facebook"
+  - "flash"
 ---
 
 Ever since I got my new Retina MacBook I’ve been ignorant to installing Flash. It’s old, it’s slow and is a hassle to install. So why would you?
