@@ -28,8 +28,8 @@ In the past I used to carry a lot more stuff in the backpack but nowadays it com
 * __Accessories__: Apple 5W USB charger, [SanDisk 32GB USB3 Drive](https://www.amazon.com/SanDisk-Ultra-Transfer-Speeds-s-SDCZ48-032G-UAM46/dp/B00KYK2AKO/ref=sr_1_fkmr2_1?ie=UTF8&qid=1485434153&sr=8-1-fkmr2&keywords=SanDisk+32GB+USB3+Drive), Libratone 4GB USB2 (Promotional) Drive, MicroSD to SD adapter.
 * __Offline material__: Pocket Deodorant (_regular size is a bitch to fit in with the rest_), [Moleskine Pocket notebook](https://www.amazon.com/Moleskine-Reporter-Notebook-Pocket-Notebooks/dp/8862932987/ref=sr_1_16?ie=UTF8&qid=1485434181&sr=8-16&keywords=moleskine+pocket+blank) (_blank_), Devine notebook, [Hay Line Dot notebook](http://hay.dk/m/productzoom.php?top=acc_rugs&mid=Office&img=4&pid=line-dot) (_blank_), a train card for commuting between Bruges & Kortrijk, a biro, [Blox silicone earprotection](https://blox.info/en/produit/blox-disco-4/) (_these are cheap and work great!_), Zara mini perfume, Kleenex (_I'm a runny nose person_), a mini screwdriver (_lifesaver in those situations when you actually need them for a change_), Laguiole Swiss Pocket Knife (_super sturdy_)!
 
-![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,h_1846,q_auto:best/v1485377105/whats%20in%20my%20bag/_DSC0007.jpg)
+![Pic](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,h_1846,q_auto:best/v1485377105/whats%20in%20my%20bag/_DSC0007.jpg)
 
-![](http://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,q_auto:best,w_2882/v1485377102/whats%20in%20my%20bag/_DSC0008.jpg)
+![Pic](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,q_auto:best,w_2882/v1485377102/whats%20in%20my%20bag/_DSC0008.jpg)
 
 To me this is the everyday toolkit. I'm pretty sure once I live in Berlin for 3 months I'll probably swap some stuff out for others though.
