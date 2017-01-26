@@ -12,19 +12,18 @@ article {
     text-align: center;
   }
 
-  a:hover {
-    @extend %link-hover;
+  strong {
+    background-color: lighten($accent, 30%);
+    padding: 2px;
   }
 
-  .footnotes {
-    font-size: .9em;
-  }
+  a:hover { @extend %link-hover; }
+
+  .footnotes { font-size: .9em; }
 }
 
 header {
-  h1 {
-    margin: 0;
-  }
+  h1 { margin: 0; }
 
   .meta {
     color: rgba($text-color, .5);
@@ -33,29 +32,21 @@ header {
     margin: 0;
     text-transform: uppercase;
   }
-
 }
 
 .feature-image {
   padding: 0%;
 
-  .post-link {
-    color: $feature-image-text-color;
-  }
+  .post-link { color: $feature-image-text-color; }
 
   header {
     background-size: $feature-image-size;
     color: $feature-image-text-color;
     margin-bottom: 0;
-    padding: $padding-large/2.5 $padding-large;
+    padding: $padding-large / 2.5 $padding-large;
 
-    .meta {
-      color: rgba($feature-image-text-color, .7);
-    }
-
+    .meta { color: rgba($feature-image-text-color, .7);}
   }
 
-  .post-content {
-    @extend %padding-regular;
-  }
+  .post-content { @extend %padding-regular; }
 }
