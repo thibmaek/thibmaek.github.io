@@ -50,3 +50,9 @@ header {
 
   .post-content { @extend %padding-regular; }
 }
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .content article {
+    padding: 1em;
+  }
+}

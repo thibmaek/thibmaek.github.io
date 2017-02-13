@@ -47,7 +47,7 @@ pre code {
 }
 
 code {
-  background: $code-background-color;
+  background: darken($code-background-color, 2%);
   border-radius: 3px;
   color: $code-text-color;
   padding: .2em .4em;
