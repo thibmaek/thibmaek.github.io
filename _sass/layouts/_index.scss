@@ -58,3 +58,16 @@
   padding: $padding-small $padding-large 0 $padding-large;
   text-align: center;
 }
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .posts {
+    .post-teaser {
+      margin: 1em .5em;
+      width: 95%;
+    }
+  }
+
+  .pagination {
+    padding: 0;
+  }
+}
