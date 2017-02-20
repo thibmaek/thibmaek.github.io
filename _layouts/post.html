@@ -6,7 +6,16 @@ layout: default
     <h1 class="title">{{ page.title }}</h1>
     <p class="meta">
     {{ page.date | date: "%B %-d, %Y" }}
-    {% if page.author %} - {{ page.author }}{% endif %}
+    <span class="post-reading-time">
+      —
+      {% capture words %}
+        {{ content | number_of_words | minus: 180 }}
+      {% endcapture %}
+      {% unless words contains "-" %}
+        {{ words | plus: 180 | divided_by: 180 | append: " min" }}
+      {% endunless %}
+      read
+    </span>
     </p>
   </header>
   <section class="post-content">{{ content }}</section>
