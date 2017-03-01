@@ -1,31 +1,33 @@
 ---
 layout: page
-title: Weird
+title: 👻 Weird
 permalink: /weird/
 ---
 
 ### Stuff I can get weirdly enthusiastic about
 
-- Bash
-- Workflow
-- Automation
-- Web performance
-- Nature walks
-- Comics
-- Matt Fraction & David Aja’s Hawkeye
 - All things Raspberry Pi
-- Vinyl
-- dotfiles
-- Git & Github
-- Burial
 - Atom
-- Harley Quinn
-- Four Tet
 - Audio and sound
-- Christmas
+- Automation
+- Bash
+- Burial
 - Cable management
-- Radiohead
-- My girlfriend
-- React
+- Christmas
+- Comics
 - Discogs
+- dotfiles
+- Four Tet
+- Functional Programming
+- Git & Github
+- Harley Quinn
+- Matt Fraction & David Aja’s Hawkeye
+- Mesh Networks
+- My girlfriend
+- Nature walks
 - Nina Kraviz
+- Radiohead
+- React
+- Vinyl
+- Web performance
+- Workflow

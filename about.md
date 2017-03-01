@@ -1,6 +1,6 @@
 ---
 layout: about
-title: About
+title: 👋 About
 permalink: /about/
 ---
 
@@ -14,7 +14,7 @@ Javascript is my goto language but that doesn't scare me off from experimenting 
 I own 5 Raspberry Pi's with whom I've gone trough a difficult, yet loving relationship with.
 Oh and I check [my Github](https://github.com/thibmaek) like 20 times a day.
 
-I previously freelanced at **[Resin.io](https://resin.io)** and currently I'm working at **[Typework](https://typework.com/) as a frontend React developer** on a fully integrated multi-centre platform for dialysis processes, called **[NephroFlow](https://nephroflow.com/)**.
+I previously freelanced at **[Resin.io](https://resin.io)** and **[NephroFlow](https://nephroflow.com/)**, but currently I'm working at **[Edenspiekermann](https://edenspiekermann.com)** in Berlin as a development intern.
 
 Besides this blog I also like to post photos on **[BEtypo](https://betypo.tumblr.com)**.  
 A blog dedicated to nice typography that's located throughout the Belgian 'wilderness'.
