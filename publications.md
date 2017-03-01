@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Publications
+title: 🗞 Publications
 ---
 
 Below is some stuff either I or someone else published about me or a project of mine. Most of these are open-source contributions or projects.
