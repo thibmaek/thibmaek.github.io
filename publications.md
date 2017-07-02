@@ -30,3 +30,4 @@ Below is some stuff either I or someone else published about me or a project of 
 - [2nd finalist in Adobe's Creative Jam @ Bump festival](https://www.facebook.com/AdobeBenelux/videos/1090466761021522/)
 - [2nd place in StackShare's Top Developers list](https://stackshare.io/posts/top-developer-tools-2016?utm_content=stackshare_awards&utm_campaign=eoy_2016&utm_source=StackShare%20Marketing&utm_medium=email#developers)
 - [Project Hi — term paper for Devine, commissioned by vzw Foyer for the EU Tales@Home project](https://drive.google.com/open?id=0B0VnQFloqwQ2VFFrMVBXaVVONkE)
+- [Edenspiekermann Brainfood session - Raspberry Pi: A recipe for success](https://drive.google.com/open?id=0B0VnQFloqwQ2eUIzdFZnT0psYXc)
