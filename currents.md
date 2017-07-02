@@ -11,6 +11,7 @@ permalink: /currents/
 * Cryptography
 * Immutability
 * Laravel
+* MQTT
 * React Fiber
 * Reactive Functional Programming
 * Ruby on Rails
