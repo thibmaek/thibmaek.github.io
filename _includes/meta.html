@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="{{ page.title }}">
 <meta property="og:type" content="article">
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.theme_options.description }}{% endif %}">
 <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 <meta property="og:image" content="{% if page.feature-img %}{{ site.url }}/{{ page.feature-img }}{% else %}https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1483739724/Screenshot_2017-01-06_22.54.57_oomj4d.png{% endif %}">
 <meta name="twitter:card" content="summary_large_image">
