@@ -1,3 +1,7 @@
+---
+hide: true
+---
+
 Simple-Jekyll-Search
 ====================
 
