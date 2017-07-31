@@ -9,9 +9,13 @@ permalink: /currents/
 * African records
 * AWS
 * Cryptography
+* Electronics
+* Home Automation with Home Assistant
 * Immutability
 * Laravel
+* MPJ on YouTube
 * MQTT
+* Python
 * React Fiber
 * Reactive Functional Programming
 * Ruby on Rails
