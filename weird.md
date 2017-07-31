@@ -17,17 +17,21 @@ permalink: /weird/
 - Comics
 - Discogs
 - dotfiles
+- Floating Points
 - Four Tet
 - Functional Programming
 - Git & Github
 - Harley Quinn
+- Kompass Klub Gent
 - Matt Fraction & David Aja’s Hawkeye
 - Mesh Networks
+- Mobx
 - My girlfriend
 - Nature walks
 - Nina Kraviz
 - Radiohead
 - React
+- Techno
 - Vinyl
 - Web performance
 - Workflow
