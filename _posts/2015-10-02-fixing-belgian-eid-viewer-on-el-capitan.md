@@ -7,7 +7,7 @@ tags:
   - "macos"
 ---
 
-> __Note:__ Both the viewer & middleware which eID require have been made available on a brew cask tap by me and are updated to the latest version. Installing trough here should make it work automatically.
+> __6 aug. 2017:__ This post is merely kept for archival purpose. Though the software is still buggy & horrible some improvements have been made and for most cases it is advised to download the dmg/pkg from https://eid.belgium.be/nl for macOS 10.8+
 
 By using deprecated methods & code the Belgian eID Viewer version used for Yosemite can't be used on El Capitan (Hooray for bad cross platform production software I guess…).
 
@@ -22,10 +22,16 @@ Navigate to the Incompatible Software folder on your Macintosh HD. You can do th
 Open the Macintosh HD and concurrently open the Incompatible Software folder. There'll be two items here at least: a folder for eID and the eID Viewer itself.
 Move them both to the Trash and if prompted for your password, just enter the password for that account. Be sure to empty the trash afterwards to make sure that all old files are deleted.
 
-Now just download the latest version of the eID software (middleware & app) from the [official site](https://eid.belgium.be/nl/je_eid_gebruiken/de_eid-middleware_installeren/mac/). Open the downloaded disk image (`.dmg` file) and install the program.
+Now just download the latest version of the eID software (middleware & app) from the [official site](https://eid.belgium.be/nl). Open the downloaded disk image (`.dmg` file) and install the program.
 
 A working version of eID Viewer for OS X El Capitan is now located in your Applications folder & Launchpad.
 
 > Thanks to Anne-Marie Swalens for pointing out that the Sitecom Card Reader MD-031 is officially declared as incompatible/deprecated with El Capitan and higher. If you have this card reader it's advised to upgrade to the Sitecom 065.
 
-> Here's a oneliner for __developers__ to use in terminal: `sudo rm -rf /Volumes/Macintosh HD/Incompatible\ Software/*`
+## For developers
+Developers can opt in to install the driver & viewer through [homebrew-cask](https://caskroom.github.io/). Just tap the official eid repository and install the required driver and optional viewer (if wanted). Java is of course still a requirement. I would advise a reboot afterwards.
+
+```console
+$ brew tap caskroom/eid
+$ brew cask install eid-be eid-be-viewer
+```
