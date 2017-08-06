@@ -55,7 +55,7 @@ sudo chmod 755 $OWNCLOUD_DATA_DIR/<user>/files/<folder>
 ![OC is not showing the files on the server's frontend](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,h_667/v1477993064/Owncloud Migration/Screen_Shot_2016-11-01_at_10.13.38.png)
 
 Even though my permissions and ownerships are in order on the Unix fs they weren't showing up in the OC frontend.
-My rage started to transform into immense sadness but then I found this in the [OC v9 docs for occ](https://doc.owncloud.org/server/latest/admin_manual/configuration_server/occ_command.html?highlight=occ#file-operations):
+My rage started to transform into immense sadness but then I found this in the [OC v9 docs for occ](https://doc.owncloud.org/server/latest/admin_manual/configuration/server/occ_command.html#file-operations-label):
 
 > occ has three commands for managing files in ownCloud…
 >

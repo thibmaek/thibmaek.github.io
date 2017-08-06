@@ -13,7 +13,6 @@ Below is some stuff either I or someone else published about me or a project of 
 - [RNDynamicButton - dynamically growing React Native button component based on TouchableComponent](https://github.com/thibmaek/rndynamicbutton)
 - [Lunch-mutn - our 'where should we eat' bot for Slack](https://github.com/thibmaek/lunch-mutn)
 - [Devinereel - viewer for online/web #devinehowest student projects](https://github.com/thibmaek/devinereel)
-- [Thane - frontend boilerplate with Gulp, Compass and Browserify](https://github.com/thibmaek/Thane)
 - [Vagrant-Devine - vagrant box for devine.be](https://github.com/thibmaek/vagrant-devine)
 
 # Contributions
@@ -23,7 +22,6 @@ Below is some stuff either I or someone else published about me or a project of 
 - [Devine.be Yeoman Generator](https://github.com/thibmaek/generator-devine-boilerplate)
 - [Sass Syntax Highlight for Atom](https://github.com/thibmaek/Sass-Syntax-Highlight)
 - [Atom Toychest](https://github.com/thibmaek/atom-toychest)
-- [Modular Snippets - modular solution to the Atom Snippets](https://github.com/thibmaek/modular-snippets)
 
 # Publications & awards
 - [Planning lunch with a Slackbot on resin.io](https://resin.io/blog/planning-lunch-with-a-slackbot-on-resin-io/)

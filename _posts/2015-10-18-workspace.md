@@ -45,7 +45,3 @@ tags:
 ![Ikea vinyl stand](https://lh3.googleusercontent.com/m_j39He97ET47jzKTYl7SW-gfaJpkJmjC8wAmtHJ6ajwYi_hZnAxxRG6nPZ0yXSVOZ3-IbZ61Gn0MEyTwX3Yz3MUikp7jAXTBCO7iwEtddljC4gtN3QS9g_B5Z6h-a9jBgnGg_RpLIHYOc8l3hS5PQDK8hCIjRtdOZwKltbVHo8ZVFkV9o5bvculu8R2Ob_oiawj9HWNOgBpYvD7qMNOAYgcZetwiR5lOcntnejwEMo1-ZjT7OSodjhHv2RUUAyzCcG2TRcZ5m-y1w27O5y5yiBmcX6w5o0OAv3lid8xp405jE0es_TEBqT69M9hH91q1s9t2ja1E-XJ0LSurReaP3ovu7cyiQxShnLJkSbnxVLNtwen5-NX52hnjLUeqeZHB3122oHqNiv4H_fWuns_WATatUzkMOeE6bJtuCabAIUZrfv6VseQh4pWDx4m5YN0unO_8erPoIBnL79-SFKvASGTFM9MiZOoZL7ETG07h4eiKWZ_YgK-LnIKIj0XuEYVqh7rphob3zi6jJoS6Rq3vZ08klVuTPNMLyXfIIUJ8LM=w2220-h1470-no)
 
 > I found out this neat trick to repurpose an Ikea tablet stand as a display for my current record. I was fed up with the lack of space when playing records and the currently playing record always ended up laying on my bed. Now I have a clever solution to not doing that and giving more flair to the booth.
-
-![Full desk workspace](https://lh3.googleusercontent.com/V8p8XQ-6J0sRUGplqJcEPtAWjsFtjy9iYbLq03eVcEqD4mf5qcR4yvYDlCSly82fWSenRdWYsgdCMA=w1054-h698-no)
-
-> Updated full workspace. I got a new external monitor with IPS and a lot of gold & bronze accessories now!

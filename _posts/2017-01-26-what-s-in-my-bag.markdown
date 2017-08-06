@@ -21,7 +21,7 @@ The backpack itself has a 15" laptop compartment and a lot of extra pockets for 
 ## What's inside?
 In the past I used to carry a lot more stuff in the backpack but nowadays it comes down to this:
 
-![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,h_1531,q_auto:best/v1485377109/whats%20in%20my%20bag/_DSC0002.jpg)
+![Inside of the bag](https://res.cloudinary.com/thibault-maekelbergh/image/upload/c_scale,h_1531,q_auto:best/v1485377109/whats%20in%20my%20bag/_DSC0002.jpg)
 
 * __Electronics:__ [Wacom Bamboo Spark](https://www.amazon.com/Wacom-Bamboo-Gadget-Pocket-CDS600G/dp/B010PKT6C2/ref=sr_1_2?ie=UTF8&qid=1485433916&sr=8-2&keywords=wacom+bamboo+spark), iPad Mini (_unfortunately still the first model which I rarely use for stuff other than reading books or comics_), cheap portable power bank (_2-port with a 2A & 1A USB port_), [Sony HDR AS-10](https://www.amazon.com/Action-Sony-HDR-AS10-Discontinued-Manufacturer/dp/B0090EC5NC/ref=sr_1_2?ie=UTF8&qid=1485434008&sr=8-2&keywords=sony+hdr-as10) & mounts.
 * __Cables__: A Cat 6e UTP cable with a [Belkin Ethernet to USB 2.0 adapter](https://www.amazon.com/Belkin-USB-2-0-Ethernet-Adapter/dp/B00E9655LU/ref=sr_1_1?ie=UTF8&qid=1485434078&sr=8-1&keywords=belkin+ethernet+usb) (_I use an Apple Thunderbolt Gigabit Ethernet adapter at home, the USB adapter is mainly for emergency network situations_), [Urbanears 1.2M MFI Lightning cable](https://www.amazon.com/Urbanears-Concerned-Charging-Cable-156255/dp/B01F9A9HEA/ref=sr_1_2?ie=UTF8&qid=1485434107&sr=8-2&keywords=urbanears+cable) (_seriously, ditch your Apple cables and get this one_), Mini USB to USB, Micro USB to USB, Apple Earpods.
