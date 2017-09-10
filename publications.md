@@ -20,8 +20,6 @@ Below is some stuff either I or someone else published about me or a project of 
 - [Homebrew Cask](https://github.com/caskroom/homebrew-cask)
 - [Homebrew eID](https://github.com/caskroom/homebrew-eid)
 - [Devine.be Yeoman Generator](https://github.com/thibmaek/generator-devine-boilerplate)
-- [Sass Syntax Highlight for Atom](https://github.com/thibmaek/Sass-Syntax-Highlight)
-- [Atom Toychest](https://github.com/thibmaek/atom-toychest)
 
 # Publications & awards
 - [Planning lunch with a Slackbot on resin.io](https://resin.io/blog/planning-lunch-with-a-slackbot-on-resin-io/)
