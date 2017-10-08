@@ -19,6 +19,8 @@ tags:
 
 ![A creepy/cute kid's head plant pot](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1506796347/Plants/_DSC0031_0_5x.jpg)
 
+![Instant love when I saw this skyreacher](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1507480336/Plants/_DSC0040_0_5x.jpg)
+
 ![My much loved Monstera Deliciosa](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1506796349/Plants/_DSC0029_0_5x.jpg)
 
 ![My much loved Monstera Deliciosa](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1506796351/Plants/_DSC0030_0_5x.jpg)
@@ -35,11 +37,19 @@ tags:
 
 ![Wide shot of my Calathea on my desk](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1506796347/Plants/_DSC0018_0_5x.jpg)
 
+![Calathea made room for this funky plant that looks like a sword](http://res.cloudinary.com/thibault-maekelbergh/image/upload/v1507480336/Plants/_DSC0041_0_5x.jpg)
+
+![Monkey candle holder next to a Medusa airplant](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1507480339/Plants/_DSC0038_0_5x.jpg)
+
 ![Zebra head next to a spider plant](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1506796332/Plants/_DSC0008_0_5x.jpg)
 
 ![Close up of my flamingo frame next to the spider plant](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1506796332/Plants/_CSC0015_0_5x.jpg)
 
 ![Biggest jungle of em' all](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1506796330/Plants/_DSC0009_0_5x.jpg)
+
+![In love with the pattern on this one](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1507480338/Plants/_DSC0037_0_5x.jpg)
+
+![Little Leopard Head Pot](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1507480329/Plants/_DSC0039_0_5x.jpg)
 
 ![My Dracaena, airplant & newest addition hanging plant](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1506796336/Plants/_DSC0010_0_5x.jpg)
 
