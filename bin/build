@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-set -e
-
-if [[ -d _site/ ]]; then
-  rm -rf _site/
-fi
-
-bundle exec jekyll build
