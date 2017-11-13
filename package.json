@@ -1,25 +1,31 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "blog.thibmaekelbergh.be",
+  "description": "A nice blog about development, Raspberry Pi, plants and probably records",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "dependencies": {
-    "gatsby": "^1.9.99",
-    "gatsby-link": "^1.6.24",
-    "gatsby-plugin-react-helmet": "^1.0.8"
-  },
+  "author": "Thibault Maekelbergh",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "blog",
+    "thibmaek",
+    "thibault maekelbergh"
   ],
   "license": "MIT",
-  "main": "n/a",
+  "main": "",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-devine": "^1.7.1",
     "prettier": "^1.7.4"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.99",
+    "gatsby-link": "^1.6.24",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "normalize.css": "^7.0.0"
   }
 }
