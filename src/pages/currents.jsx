@@ -1,6 +1,8 @@
 import React from 'react';
 import { object } from 'prop-types';
 
+import '../queries/page-currents';
+
 const Currents = ({ data }) => (
   <section>
     <article>
@@ -16,19 +18,5 @@ const Currents = ({ data }) => (
 Currents.propTypes = {
   data: object.isRequired,
 };
-
-export const query = graphql`
-  query CurrentsPageQuery {
-    allContentfulList(filter: { title: { eq: "Currents" } }) {
-      edges {
-        node {
-          title
-          description
-          list
-        }
-      }
-    }
-  }
-`;
 
 export default Currents;

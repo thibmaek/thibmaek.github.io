@@ -11,8 +11,7 @@ class RecentRepos extends Component {
   }
 
   async componentWillMount() {
-    const repos = await fetch(`https://sindresorhus-gh-latest-repos-rdwtooeefg.now.sh/`).then(r => r.json());
-    // TODO: Limit to amountOfRepos
+    const repos = await fetch(process.env.GATSBY_RECENT_REPOS_URL).then(r => r.json());
     this.setState({ repos: repos.reverse() });
   }
 

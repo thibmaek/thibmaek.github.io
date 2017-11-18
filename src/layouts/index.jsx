@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, object } from 'prop-types';
+import { func } from 'prop-types';
 import Helmet from 'react-helmet';
 
 import links from '../constants/links';
@@ -11,10 +11,9 @@ import Footer from '../components/footer/';
 import 'normalize.css';
 import '../styles/index.css';
 
-const IndexLayout = ({ children, data }) => (
+const IndexLayout = ({ children }) => (
   <div className='main-container'>
     <Helmet
-      // title={data.site.siteMetadata.title}
       meta={[
         { name: `description`, content: `Sample` },
         { name: `keywords`, content: `sample, something` },
@@ -32,17 +31,6 @@ const IndexLayout = ({ children, data }) => (
 
 IndexLayout.propTypes = {
   children: func.isRequired,
-  data: object.isRequired,
 };
-
-export const query = graphql`
-  query SiteMetaDataQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
 
 export default IndexLayout;

@@ -1,4 +1,4 @@
-export const query = graphql`
+export default graphql`
   query CurrentsPageQuery {
     allContentfulList(filter: { title: { eq: "Currents" } }) {
       edges {

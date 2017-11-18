@@ -1,12 +1,16 @@
 import React from 'react';
-import {} from 'prop-types';
+import { string } from 'prop-types';
 
 import './styles/preview.css';
 
-const PostPreview = () => (
+const PostPreview = ({ title }) => (
   <article className='post-preview'>
-
+    <h2>{title}</h2>
   </article>
 );
+
+PostPreview.propTypes = {
+  title: string.isRequired,
+};
 
 export default PostPreview;
