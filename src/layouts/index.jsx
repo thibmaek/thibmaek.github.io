@@ -1,6 +1,8 @@
-import React from 'react'
-import { func } from 'prop-types'
-import Helmet from 'react-helmet'
+import React from 'react';
+import { func, object } from 'prop-types';
+import Helmet from 'react-helmet';
+
+import links from '../constants/links';
 
 import Header from '../components/header/';
 import Nav from '../components/nav/';
@@ -9,44 +11,19 @@ import Footer from '../components/footer/';
 import 'normalize.css';
 import '../styles/index.css';
 
-// TODO: Move this to constant/graphql side
-const links = [
-  {
-    title: '👋🏻 About',
-    url: '/about'
-  },
-  {
-    title: '🌊 Currents',
-    url: '/currents'
-  },
-  {
-    title: '🗞 Publications',
-    url: '/publications'
-  },
-  {
-    title: '🔎 Search',
-    url: '/search'
-  },
-  {
-    title: '👻 Weird',
-    url: '/weird'
-  },
-];
-
-const IndexLayout = ({ children }) => (
-  <div>
-    {/* TODO: Abstract this into a <Head /> component */}
+const IndexLayout = ({ children, data }) => (
+  <div className='main-container'>
     <Helmet
-      title="A nice blog about development, Raspberry Pi, plants and probably records"
+      // title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: `description`, content: `Sample` },
+        { name: `keywords`, content: `sample, something` },
       ]}
     />
     <Header>
       <Nav links={links} />
     </Header>
-    <main className="main-content">
+    <main className='main-content'>
       {children()}
     </main>
     <Footer />
@@ -54,7 +31,18 @@ const IndexLayout = ({ children }) => (
 );
 
 IndexLayout.propTypes = {
-  children: func,
+  children: func.isRequired,
+  data: object.isRequired,
 };
+
+export const query = graphql`
+  query SiteMetaDataQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
 
 export default IndexLayout;
