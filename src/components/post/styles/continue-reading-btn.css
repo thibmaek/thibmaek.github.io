@@ -2,10 +2,12 @@
   border: 1px solid #214244;
   border-radius: .3rem;
   color: #214244;
-  transition: all .2s ease-in-out;
-  text-decoration: none;
-  padding: .5rem;
   margin: 1rem 0;
+  padding: .5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+  width: 9rem;
 
   &:hover {
     background-color: #214244;

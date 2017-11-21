@@ -1,12 +1,12 @@
-/* TODO: Use color variables */
+@import '../../styles/constants/colors';
 
 .main-header {
-  background-color: #214244;
+  background-color: var(--mainAccent);
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .2);
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 5rem;
+  padding: 2rem 3rem;
 }
 
 .main-header h1 {
@@ -20,8 +20,8 @@
 }
 
 .main-header-profile img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: .3rem;
   margin-right: 1rem;
 }

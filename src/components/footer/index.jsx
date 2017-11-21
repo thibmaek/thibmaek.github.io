@@ -1,12 +1,20 @@
 import React from 'react';
+import { string } from 'prop-types';
+
+import pickRandom from '../../lib/pickRandom';
+import oneliners from '../../constants/footer-oneliners';
 
 import './index.css';
 
-const Footer = () => (
+const Footer = ({ author }) => (
   <footer className='main-footer'>
-    {/* TODO: Replace name with name from site config author */}
-    &copy; {new Date().getFullYear()} Thibault Maekelbergh
+    <p>Copyright &copy; {new Date().getFullYear()} {author} All Rights Reserved.</p>
+    <p>Made with {pickRandom(oneliners)}</p>
   </footer>
 );
+
+Footer.propTypes = {
+  author: string.isRequired,
+};
 
 export default Footer;

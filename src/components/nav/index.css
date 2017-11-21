@@ -5,9 +5,12 @@
 .main-nav ul li {
   display: inline;
   margin-right: 1rem;
-}
 
-.main-nav ul li a:hover {
-  border
-  border-bottom: 2px solid rgba(255, 255, 255, .4);
+  & a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

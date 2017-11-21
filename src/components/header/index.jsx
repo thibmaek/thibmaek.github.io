@@ -1,15 +1,15 @@
 import React from 'react';
-import { node } from 'prop-types';
+import { string, node } from 'prop-types';
 import Link from 'gatsby-link';
 
 import './header.css';
 
-const Header = ({ children }) => (
+const Header = ({ title, children }) => (
   <header className='main-header'>
     <Link to='/'>
       <div className='main-header-profile'>
         <img src='//github.com/thibmaek.png' alt='Profile picture' />
-        <h1>Thibault Maekelbergh</h1>
+        <h1>{title}</h1>
       </div>
     </Link>
     {children}
@@ -22,6 +22,7 @@ Header.defaultProps = {
 
 Header.propTypes = {
   children: node,
+  title: string.isRequired,
 };
 
 export default Header;

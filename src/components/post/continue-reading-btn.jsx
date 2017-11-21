@@ -6,7 +6,7 @@ import './styles/continue-reading-btn.css';
 
 const ContinueReadingButton = ({ slug }) => (
   <Link className='post-preview-continue' to={`/post/${slug}`}>
-    Continue reading…
+    Continue reading
   </Link>
 );
 

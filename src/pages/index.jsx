@@ -9,7 +9,12 @@ const IndexPage = ({ data }) => (
     <RecentRepos />
     <section className='main-posts-list'>
       {data.allContentfulPost.edges.map(({ node: post }) => (
-        <PostPreview key={post.id} {...post} />
+        <PostPreview
+          key={post.id}
+          excerpt={post.body.childMarkdownRemark.excerpt}
+          timeToRead={post.body.childMarkdownRemark.timeToRead}
+          {...post}
+        />
       ))}
     </section>
   </div>
@@ -30,6 +35,9 @@ export const query = graphql`
           summary
           tags
           title
+          body {
+            childMarkdownRemark { excerpt, timeToRead }
+          }
         }
       }
     }

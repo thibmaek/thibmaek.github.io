@@ -8,14 +8,14 @@ import ContinueReadingButton from './continue-reading-btn';
 
 import './styles/preview.css';
 
-const PostPreview = ({ title, summary, date, tags, slug }) => (
+const PostPreview = ({ title, summary, date, tags, slug, excerpt, timeToRead }) => (
   <article className='post-preview-container'>
     <h2 className='post-preview-title'>{title}</h2>
     <time className='post-preview-date'>
-      {computeDateFormat(date)}
+      {computeDateFormat(date)} ({timeToRead} min. read)
     </time>
     <summary className='post-preview-summary'>
-      {summary}
+      {summary || excerpt}
     </summary>
     <ContinueReadingButton slug={slug} />
     {tags ? <Tags tags={tags} /> : null}
@@ -23,13 +23,16 @@ const PostPreview = ({ title, summary, date, tags, slug }) => (
 );
 
 PostPreview.defaultProps = {
+  excerpt: null,
+  summary: null,
   tags: [],
 };
 
 PostPreview.propTypes = {
   date: string.isRequired,
+  excerpt: string,
   slug: string.isRequired,
-  summary: string.isRequired,
+  summary: string,
   tags: array,
   title: string.isRequired,
 };

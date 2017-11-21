@@ -14,7 +14,7 @@ const PostPage = ({ data }) => {
       <header>
         <h1>{title}</h1>
         <div className='post-header-timemeta'>
-          <time>{computeDateFormat(date)}</time> — <span>{post.timeToRead} min. read</span>
+          <time>{computeDateFormat(date)} — {post.timeToRead} min. read</time>
         </div>
       </header>
       <article dangerouslySetInnerHTML={{ __html: post.html }} />

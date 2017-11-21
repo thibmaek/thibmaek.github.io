@@ -1,13 +1,18 @@
 import React from 'react';
 import { object } from 'prop-types';
 
-const Publications = ({ data }) => (
-  <section>
-    <article dangerouslySetInnerHTML={{
-      __html: data.contentfulPage.body.childMarkdownRemark.html,
-    }} />
-  </section>
-);
+const Publications = ({ data }) => {
+  const { title, body } = data.contentfulPage;
+
+  return (
+    <section>
+      <header>
+        <h1>{title}</h1>
+      </header>
+      <article dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+    </section>
+  );
+};
 
 Publications.propTypes = {
   data: object.isRequired,
@@ -15,7 +20,7 @@ Publications.propTypes = {
 
 export const query = graphql`
   query PublicationsPageQuery {
-    contentfulPage(title: { eq: "Publications" }) {
+    contentfulPage(slug: { eq: "publications" }) {
       title
       body { childMarkdownRemark { html } }
     }

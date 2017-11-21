@@ -37,7 +37,6 @@
   font-size: .8rem;
   margin: 0 .5rem;
   padding: 0 1rem 1rem;
-  height: 15vh;
   overflow: hidden;
 
   & .is-javascript::before {
