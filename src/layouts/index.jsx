@@ -10,6 +10,7 @@ import Footer from '../components/footer/';
 
 import 'normalize.css';
 import '../styles/index.css';
+import '../styles/mq.css';
 
 const IndexLayout = ({ children }) => (
   <div className='main-container'>

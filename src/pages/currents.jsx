@@ -1,15 +1,13 @@
 import React from 'react';
 import { object } from 'prop-types';
 
-import '../queries/page-currents';
-
 const Currents = ({ data }) => (
   <section>
     <article>
-      <h1>{data.allContentfulList.edges[0].node.title}</h1>
-      <blockquote>{data.allContentfulList.edges[0].node.description}</blockquote>
+      <h1>{data.contentfulList.title}</h1>
+      <blockquote><p>{data.contentfulList.description}</p></blockquote>
       <ul>
-        {data.allContentfulList.edges[0].node.list.map(i => <li key={i}>{i}</li>)}
+        {data.contentfulList.list.map(i => <li key={i}>{i}</li>)}
       </ul>
     </article>
   </section>
@@ -18,5 +16,16 @@ const Currents = ({ data }) => (
 Currents.propTypes = {
   data: object.isRequired,
 };
+
+export const query = graphql`
+  query CurrentsPageQuery {
+    contentfulList(title: {eq: "Currents"}) {
+      description
+      list
+      title
+    }
+  }
+`;
+
 
 export default Currents;

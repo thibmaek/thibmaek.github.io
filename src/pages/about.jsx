@@ -4,7 +4,7 @@ import { object } from 'prop-types';
 const About = ({ data }) => (
   <section>
     <article dangerouslySetInnerHTML={{
-      __html: data.allContentfulPage.edges[0].node.body.childMarkdownRemark.html,
+      __html: data.contentfulPage.body.childMarkdownRemark.html,
     }} />
   </section>
 );
@@ -15,12 +15,10 @@ About.propTypes = {
 
 export const query = graphql`
   query AboutPageQuery {
-    allContentfulPage(filter: { title: { eq: "About" } }) {
-      edges {
-        node {
-          title
-          body { childMarkdownRemark { html } }
-        }
+    contentfulPage(title: {eq: "About"}) {
+      title
+      body {
+        childMarkdownRemark { html }
       }
     }
   }

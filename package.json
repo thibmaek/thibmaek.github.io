@@ -5,6 +5,9 @@
   "author": "Thibault Maekelbergh",
   "license": "MIT",
   "main": "",
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "build": "gatsby build",
     "development": "gatsby develop",
@@ -17,9 +20,11 @@
     "dotenv": "^4.0.0",
     "eslint": "^4.11.0",
     "eslint-config-devine": "^1.7.1",
-    "prettier": "^1.7.4"
+    "prettier": "^1.7.4",
+    "stylelint-config-devine": "^1.1.4"
   },
   "dependencies": {
+    "date-fns": "^1.29.0",
     "gatsby": "^1.9.99",
     "gatsby-link": "^1.6.24",
     "gatsby-plugin-react-helmet": "^1.0.8",

@@ -7,9 +7,11 @@ import PostPreview from '../components/post/preview';
 const IndexPage = ({ data }) => (
   <div>
     <RecentRepos />
-    {data.allContentfulPost.edges.map(({ node: post }) => (
-      <PostPreview key={post.id} {...post} />
-    ))}
+    <section className='main-posts-list'>
+      {data.allContentfulPost.edges.map(({ node: post }) => (
+        <PostPreview key={post.id} {...post} />
+      ))}
+    </section>
   </div>
 );
 
@@ -22,8 +24,12 @@ export const query = graphql`
     allContentfulPost {
       edges {
         node {
-          title
+          date
           id
+          slug
+          summary
+          tags
+          title
         }
       }
     }

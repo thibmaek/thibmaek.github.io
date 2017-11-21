@@ -1,3 +1,21 @@
+:root {
+  --nolang: gray;
+  --javascript: #f1e05a;
+  --shell: #89e051;
+
+  /* stylelint-disable*/
+  --islanguage {
+    background-color: var(--nolang);
+    border-radius: 1rem;
+    content: '';
+    display: inline-block;
+    height: .5rem;
+    margin-right: .5rem;
+    width: .5rem;
+  }
+  /* stylelint-enable */
+}
+
 .recent-repos {
   display: flex;
   justify-content: space-around;
@@ -6,25 +24,34 @@
 
 .recent-repos a {
   flex: 1;
+  text-decoration: none;
 }
 
 .recent-repos-repo {
-  background-color: #e6ebf1;
-  background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
-  border: 1px solid rgba(27, 31, 35, 0.2);
+  background: #e6ebf1, linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+  border: 1px solid rgba(27, 31, 35, .2);
   border-radius: .3rem;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   font-size: .8rem;
   margin: 0 .5rem;
-  padding: 0 1rem 1rem 1rem;
+  padding: 0 1rem 1rem;
+  height: 15vh;
+  overflow: hidden;
+
+  & .is-javascript::before {
+    @apply --islanguage;
+    background-color: var(--javascript);
+  }
+
+  & .is-shell::before {
+    @apply --islanguage;
+    background-color: var(--shell);
+  }
 }
 
 .recent-repos-repo h3 {
-  font-weight: normal;
-}
-
-.recent-repos-repo span {
-  
+  font-weight: bold;
+  margin-bottom: 0;
 }

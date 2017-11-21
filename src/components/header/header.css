@@ -1,6 +1,7 @@
 /* TODO: Use color variables */
+
 .main-header {
-  background-color: #0f674c;
+  background-color: #214244;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .2);
   color: white;
   display: flex;
