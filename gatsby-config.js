@@ -2,8 +2,9 @@ require(`dotenv`).config();
 
 module.exports = {
   siteMetadata: {
-    title: `A nice blog about development, Raspberry Pi, plants and probably records`,
     author: `Thibault Maekelbergh`,
+    keywords: `thibault maekelbergh, thibmaek, blog`,
+    title: `A nice blog about development, Raspberry Pi, plants and probably records`,
     social: {
       github: `thibmaek`,
       twitter: `thibmaek`,

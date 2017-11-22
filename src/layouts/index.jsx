@@ -22,27 +22,18 @@ const IndexLayout = ({ children, data }) => {
 
   return (
     <div className='main-container'>
-      <Helmet
-        title={`${siteMetadata.author} | ${siteMetadata.title}`}
-        meta={[
-          { name: `description`, content: siteMetadata.title },
-          { name: `keywords`, content: `` },
-          { name: `author`, content: siteMetadata.author },
-          // TODO: Twitter & OpenGraph
-        ]}
-        link={[
-          { rel: `icon`, type: `image/png`, href: favicon16, sizes: `16x16` },
-          { rel: `icon`, type: `image/png`, href: favicon32, sizes: `32x32` },
-          { rel: `icon`, type: `image/png`, href: favicon96, sizes: `96x96` },
-        ]}
-      />
+      <Helmet siteMetadata={siteMetadata} />
       <Header title={siteMetadata.author}>
         <Nav links={links} />
       </Header>
       <main className='main-content'>
         {children()}
       </main>
-      <Footer author={siteMetadata.author} social={siteMetadata.social} />
+      <Footer
+        author={siteMetadata.author}
+        social={siteMetadata.social}
+        oneliners={data.contentfulList.list}
+      />
     </div>
   );
 };
@@ -56,28 +47,27 @@ export const query = graphql`
   query SiteMetadataQuery {
     site {
       siteMetadata {
-        author
-        title
-        social {
-          github
-          twitter
-        }
+        author,
+        title,
+        keywords,
+        social { github, twitter },
       }
     }
 
-    allContentfulPage(sort: {
-      fields: [slug],
-      order: ASC
-    }) {
+    contentfulList(slug: { eq: "footer-oneliners" }) { list }
+
+    allContentfulPage(
+      sort: { fields: [slug], order: ASC },
+    ) {
       edges {
         node { title, slug }
       }
     }
 
-    allContentfulList(sort: {
-      fields: [slug],
-      order: ASC
-    }) {
+    allContentfulList(
+      filter: { slug: { ne: "footer-oneliners" } },
+      sort: { fields: [slug], order: ASC },
+    ) {
       edges {
         node { title, slug }
       }
