@@ -1,12 +1,10 @@
 import React from 'react';
 import { func, object } from 'prop-types';
-import Helmet from 'react-helmet';
 
+import Helmet from '../components/helmet/';
 import Header from '../components/header/';
 import Nav from '../components/nav/';
 import Footer from '../components/footer/';
-
-import { favicon16, favicon32, favicon96 } from '../assets/img/icons/favicons';
 
 import sortByProperty from '../lib/sortByProperty';
 
