@@ -26,7 +26,9 @@ IndexPage.propTypes = {
 
 export const query = graphql`
   query AllPostsQuery {
-    allContentfulPost {
+    allContentfulPost(
+      sort: { fields: [date], order: DESC },
+    ) {
       edges {
         node {
           date
