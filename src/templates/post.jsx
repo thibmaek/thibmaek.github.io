@@ -10,14 +10,12 @@ const PostPage = ({ data }) => {
   const { childMarkdownRemark: post } = body;
 
   return (
-    <section>
-      <header>
-        <h1>{title}</h1>
-        <div className='post-header-timemeta'>
-          <time>{computeDateFormat(date)} — {post.timeToRead} min. read</time>
-        </div>
+    <section className='post-section-container'>
+      <header className='post-header-container'>
+        <h1 className='post-header-title'>{title}</h1>
+        <time>{computeDateFormat(date)} — {post.timeToRead} min. read</time>
       </header>
-      <article dangerouslySetInnerHTML={{ __html: post.html }} />
+      <article className='post-article-container' dangerouslySetInnerHTML={{ __html: post.html }} />
     </section>
   );
 };
