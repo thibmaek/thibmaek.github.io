@@ -1,8 +1,11 @@
-header {
+.post-header-container {
   text-align: center;
 }
 
-.post-header-timemeta {
-  text-transform: uppercase;
-  color: #999;
+.post-article-container {
+
+  & p > img {
+    transform: scale(.8);
+    width: 100%;
+  }
 }

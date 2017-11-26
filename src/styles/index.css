@@ -1,26 +1,21 @@
+/* COSTANTS */
 @import 'constants/colors';
+@import 'constants/fonts';
+
+/* PARTIALS */
+@import 'partials/text-styles';
 @import 'partials/code';
 
 :root {
   background-color: var(--lightGray);
-  color: var(--ashBlack);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
-a {
-  text-decoration: underline;
-  color: inherit;
-}
-
-time {
-  color: var(--mediumGray);
-  font-size: .8rem;
-  text-transform: uppercase;
+  color: var(--mediumBlack);
+  font-family: var(--systemFont);
 }
 
 blockquote {
   border-left: 2px solid;
   color: var(--mediumGray);
+  font-style: italic;
   margin: 2rem;
 
   & p {
@@ -38,7 +33,8 @@ blockquote {
     & article {
       padding: 1rem;
 
-      & ul {
+      & ul,
+      & ol {
         margin: 1rem;
 
         & li {

@@ -1,12 +1,21 @@
+@import '../constants/colors';
+@import '../constants/fonts';
+
+pre, code {
+  background-color: var(--lightGray);
+  border-radius: 3px;
+  border: 1px solid var(--semiMediumGray);
+  color: var(--mediumRed);
+  font-family: var(--codeFontFamily);
+  font-size: .9rem;
+  font-weight: 400;
+  padding: 0 .3rem;
+}
+
 pre {
-
-  border: 1px solid rgba(27, 31, 35, .2);
-  border-radius: .3rem;
   padding: 1rem;
-  background: linear-gradient(to bottom, #fff, #fafbfc);
+}
 
-  & code {
-
-  }
-
+pre code {
+  border: 0;
 }

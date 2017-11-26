@@ -1,0 +1,17 @@
+header {
+
+  & h1 {
+    text-align: center;
+  }
+}
+
+time {
+  color: var(--mediumGray);
+  font-size: .8rem;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+}
