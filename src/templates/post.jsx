@@ -1,21 +1,26 @@
 import React from 'react';
 import { object } from 'prop-types';
 
+import Comments from '../components/comments/comments';
+
 import './post.css';
 
 import computeDateFormat from '../lib/computeDateFormat';
 
 const PostPage = ({ data }) => {
-  const { title, date, body } = data.contentfulPost;
+  const { title, date, slug, body } = data.contentfulPost;
   const { childMarkdownRemark: post } = body;
 
   return (
     <section className='post-section-container'>
       <header className='post-header-container'>
         <h1 className='post-header-title'>{title}</h1>
-        <time>{computeDateFormat(date)} — {post.timeToRead} min. read</time>
+        <time>
+          {computeDateFormat(date)} — {post.timeToRead} min. read
+        </time>
       </header>
       <article className='post-article-container' dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Comments title={title} slug={slug} />
     </section>
   );
 };
@@ -29,6 +34,7 @@ export const query = graphql`
     contentfulPost(slug: { eq: $slug }) {
       title
       date
+      slug
       body {
         childMarkdownRemark {
           html
