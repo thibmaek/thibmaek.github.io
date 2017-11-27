@@ -7,9 +7,10 @@ import './post.css';
 
 import computeDateFormat from '../lib/computeDateFormat';
 
-const PostPage = ({ data }) => {
+const PostPage = ({ data, location }) => {
   const { title, date, slug, body } = data.contentfulPost;
   const { childMarkdownRemark: post } = body;
+  console.log(location);
 
   return (
     <section className='post-section-container'>
@@ -20,13 +21,14 @@ const PostPage = ({ data }) => {
         </time>
       </header>
       <article className='post-article-container' dangerouslySetInnerHTML={{ __html: post.html }} />
-      <Comments title={title} slug={slug} />
+      <Comments title={title} slug={slug} location={location} />
     </section>
   );
 };
 
 PostPage.propTypes = {
   data: object.isRequired,
+  location: object.isRequired,
 };
 
 export const query = graphql`
