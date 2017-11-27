@@ -11,3 +11,8 @@
     padding: 0 .5rem;
   }
 }
+
+.contentful-attribution {
+  max-width: 100px;
+  width: `100%`;
+}
