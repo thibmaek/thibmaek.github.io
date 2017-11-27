@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import { favicon16, favicon32, favicon96 } from '../../assets/img/icons/favicons';
 
-const Head = ({ siteMetadata, children }) => (
+const Head = ({ siteMetadata }) => (
   <Helmet
     title={`${siteMetadata.author} | ${siteMetadata.title}`}
     meta={[
@@ -19,9 +19,7 @@ const Head = ({ siteMetadata, children }) => (
       { rel: `icon`, type: `image/png`, href: favicon32, sizes: `32x32` },
       { rel: `icon`, type: `image/png`, href: favicon96, sizes: `96x96` },
     ]}
-  >
-    {children}
-  </Helmet>
+  />
 );
 
 Head.propTypes = {

@@ -3,6 +3,8 @@ import { object } from 'prop-types';
 
 import Comments from '../components/comments/comments';
 
+import Helmet from '../components/helmet/post';
+
 import './post.css';
 
 import computeDateFormat from '../lib/computeDateFormat';
@@ -13,6 +15,7 @@ const PostPage = ({ data, location }) => {
 
   return (
     <section className='post-section-container'>
+      <Helmet title={title} />
       <header className='post-header-container'>
         <h1 className='post-header-title'>{title}</h1>
         <time>
