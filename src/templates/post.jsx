@@ -10,7 +10,6 @@ import computeDateFormat from '../lib/computeDateFormat';
 const PostPage = ({ data, location }) => {
   const { title, date, slug, body } = data.contentfulPost;
   const { childMarkdownRemark: post } = body;
-  console.log(location);
 
   return (
     <section className='post-section-container'>
