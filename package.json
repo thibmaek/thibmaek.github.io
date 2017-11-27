@@ -11,9 +11,12 @@
   "scripts": {
     "build": "gatsby build",
     "development": "gatsby develop",
+    "eslint:fix": "eslint --fix src/**/*.js",
+    "eslint": "eslint src/**/*.js",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint --fix src/**/*.js",
+    "lint": "npm run eslint && npm run stylelint",
+    "stylelint:fix": "stylelint --fix src/**/*.css",
+    "stylelint": "stylelint src/**/*.css",
     "test:ci": "npm run lint"
   },
   "devDependencies": {
