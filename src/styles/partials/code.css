@@ -14,13 +14,11 @@ pre, code {
 }
 
 pre {
+  overflow: auto;
   padding: 1rem;
 
-  @media (--small-viewport) {
-    overflow: auto;
+  & > code {
+    border: 0;
+    padding: 0;
   }
-}
-
-pre code {
-  border: 0;
 }
