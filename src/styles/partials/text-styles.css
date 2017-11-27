@@ -12,6 +12,6 @@ time {
 }
 
 a {
-  text-decoration: underline;
   color: inherit;
+  text-decoration: underline;
 }

@@ -3,8 +3,8 @@
 
 pre, code {
   background-color: var(--lightGray);
-  border-radius: 3px;
   border: 1px solid var(--semiMediumGray);
+  border-radius: 3px;
   color: var(--mediumRed);
   font-family: var(--codeFontFamily);
   font-size: .9rem;
