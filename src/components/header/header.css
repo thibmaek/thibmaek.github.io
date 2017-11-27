@@ -10,7 +10,9 @@
   padding: 2rem 3rem;
 
   @media (--small-viewport) {
-    flex-flow: column wrap;
+    align-items: center;
+    flex-flow: row;
+    justify-content: center;
     padding: 1rem;
   }
 }
@@ -23,6 +25,12 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+
+  & h1 {
+    @media (--small-viewport) {
+      display: none;
+    }
+  }
 }
 
 .main-header-profile img {

@@ -22,6 +22,7 @@
   @media (--small-viewport) {
     display: flex;
     flex-flow: row wrap;
+    justify-content: flex-end;
     padding: 0;
 
     & li {
