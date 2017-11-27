@@ -1,14 +1,19 @@
 @import '../../../styles/constants/colors';
+@import '../../../styles/constants/sizes';
 
 .post-preview-container {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, .09);
-  display: flex;
-  flex-flow: column wrap;
   border-radius: 3px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
-  padding: .5rem 2rem;
+  display: flex;
+  flex-flow: column wrap;
   margin: 2rem 0;
+  padding: .5rem 2rem;
+
+  @media (--small-viewport) {
+    margin: 1rem 0;
+  }
 }
 
 .post-preview-date {

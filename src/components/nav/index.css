@@ -1,16 +1,31 @@
+@import '../../styles/constants/sizes';
+
 .main-nav {
   display: flex;
 }
 
-.main-nav ul li {
-  display: inline;
-  margin-right: 1rem;
+.main-nav ul {
 
-  & a {
-    text-decoration: none;
+  & li {
+    display: inline;
+    margin-right: 1rem;
 
-    &:hover {
-      text-decoration: underline;
+    & a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media (--small-viewport) {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+
+    & li {
+      padding: .5rem 0;
     }
   }
 }

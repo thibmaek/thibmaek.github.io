@@ -1,4 +1,5 @@
 @import '../../styles/constants/colors';
+@import '../../styles/constants/sizes';
 
 .main-header {
   background-color: var(--mainAccent);
@@ -7,6 +8,11 @@
   display: flex;
   justify-content: space-between;
   padding: 2rem 3rem;
+
+  @media (--small-viewport) {
+    flex-flow: column wrap;
+    padding: 1rem;
+  }
 }
 
 .main-header h1 {

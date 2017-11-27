@@ -1,3 +1,5 @@
+@import '../styles/constants/sizes';
+
 .post-header-container {
   text-align: center;
 }
@@ -7,5 +9,15 @@
   & p > img {
     transform: scale(.8);
     width: 100%;
+
+    @media (--small-viewport) {
+      transform: scale(1.1);
+    }
+  }
+
+  & ul {
+    @media (--small-viewport) {
+      padding-left: 1rem;
+    }
   }
 }

@@ -1,8 +1,13 @@
 @import '../../styles/constants/colors';
+@import '../../styles/constants/sizes';
 
 .main-footer {
   color: var(--mediumGray);
   font-size: .8rem;
   margin: 2rem 0;
   text-align: center;
+
+  @media (--small-viewport) {
+    padding: 0 .5rem;
+  }
 }

@@ -1,6 +1,7 @@
 /* COSTANTS */
 @import 'constants/colors';
 @import 'constants/fonts';
+@import 'constants/sizes';
 
 /* PARTIALS */
 @import 'partials/text-styles';
@@ -16,7 +17,7 @@ blockquote {
   border-left: 2px solid;
   color: var(--mediumGray);
   font-style: italic;
-  margin: 2rem;
+  margin: 5%;
 
   & p {
     padding: .5rem;
@@ -30,6 +31,10 @@ blockquote {
   & section {
     margin-top: 5rem;
 
+    @media (--small-viewport) {
+      margin: 0;
+    }
+
     & article {
       padding: 1rem;
 
@@ -37,16 +42,33 @@ blockquote {
       & ol {
         margin: 1rem;
 
+        @media (--small-viewport) {
+          margin: 0;
+        }
+
         & li {
           padding: .2rem 0;
         }
       }
     }
   }
+
+  @media (--small-viewport) {
+    padding: 0 1rem;
+  }
+
+  @media (--medium-viewport) {
+    padding: 0 2rem;
+  }
 }
 
 .main-posts-list {
   margin: 0 6rem;
+
+  @media (--small-viewport) {
+    display: flex;
+    flex-flow: column wrap;
+  }
 }
 
 .mod-ellepsize {

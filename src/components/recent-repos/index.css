@@ -1,3 +1,5 @@
+@import '../../styles/constants/sizes';
+
 :root {
   --nolang: gray;
   --javascript: #f1e05a;
@@ -20,6 +22,10 @@
   display: flex;
   justify-content: space-around;
   margin: 2rem;
+
+  @media (--small-viewport) {
+    display: none;
+  }
 }
 
 .recent-repos a {
