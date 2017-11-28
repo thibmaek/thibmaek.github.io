@@ -10,6 +10,7 @@ import sortByProperty from '../lib/sortByProperty';
 
 import 'normalize.css';
 import '../styles/index.css';
+import 'prismjs/themes/prism.css';
 
 const IndexLayout = ({ children, data }) => {
   const { siteMetadata } = data.site;

@@ -3,22 +3,27 @@
 @import '../constants/sizes';
 
 pre, code {
-  background-color: var(--lightGray);
   border: 1px solid var(--semiMediumGray);
   border-radius: 3px;
-  color: var(--mediumRed);
   font-family: var(--codeFontFamily);
   font-size: .9rem;
   font-weight: 400;
+}
+
+/* Overwrites prism.js default background color */
+/* stylelint-disable */
+pre {
+  background: var(--lightGray) !important; 
+}
+/* stylelint-enable */
+
+p > code {
+  background-color: var(--lightGray);
+  color: var(--mediumRed);
   padding: 0 .3rem;
 }
 
-pre {
-  overflow: auto;
-  padding: 1rem;
-
-  & > code {
-    border: 0;
-    padding: 0;
-  }
+pre > code {
+  border: 0;
+  padding: 0;
 }
