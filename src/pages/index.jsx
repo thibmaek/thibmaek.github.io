@@ -1,10 +1,12 @@
 import React from 'react';
 import { object } from 'prop-types';
 
+import RecentRepos from '../components/recent-repos';
 import PostPreview from '../components/post/preview';
 
 const IndexPage = ({ data }) => (
   <div>
+    <RecentRepos />
     <section className='main-posts-list'>
       {data.allContentfulPost.edges.map(({ node: post }) => (
         <PostPreview
