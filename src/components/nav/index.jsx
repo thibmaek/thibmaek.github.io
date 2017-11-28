@@ -2,10 +2,10 @@ import React from 'react';
 import { array } from 'prop-types';
 import Link from 'gatsby-link';
 
-import './index.css';
+import styles from './index.module.css';
 
 const Nav = ({ links }) => (
-  <nav className='main-nav'>
+  <nav className={styles[`main-nav`]}>
     <ul>
       {links.map(ln =>
         <li key={ln.title}>

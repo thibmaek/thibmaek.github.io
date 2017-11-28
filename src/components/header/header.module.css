@@ -15,10 +15,10 @@
     justify-content: center;
     padding: 1rem;
   }
-}
 
-.main-header h1 {
-  font-size: 1.2rem;
+  & h1 {
+    font-size: 1.2rem;
+  }
 }
 
 .main-header-profile {
@@ -31,11 +31,11 @@
       display: none;
     }
   }
-}
 
-.main-header-profile img {
-  border-radius: .3rem;
-  height: 3rem;
-  margin-right: 1rem;
-  width: 3rem;
+  & img {
+    border-radius: .3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    width: 3rem;
+  }
 }

@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 
 import Repo from './Repo';
 
-import './index.css';
+import styles from './index.module.css';
 
 class RecentRepos extends Component {
 
@@ -20,7 +20,7 @@ class RecentRepos extends Component {
     const { repos } = this.state;
 
     return (
-      <section className='recent-repos'>
+      <section className={styles[`recent-repos`]}>
         {repos.map(repo => <Repo key={repo.name} {...repo} />)}
       </section>
     );
