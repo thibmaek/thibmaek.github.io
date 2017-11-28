@@ -1,0 +1,29 @@
+@import '../constants/colors';
+@import '../constants/fonts';
+@import '../constants/sizes';
+
+pre, code {
+  border: 1px solid var(--semiMediumGray);
+  border-radius: 3px;
+  font-family: var(--codeFontFamily);
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+/* Overwrites prism.js default background color */
+/* stylelint-disable */
+pre {
+  background: var(--lightGray) !important; 
+}
+/* stylelint-enable */
+
+p > code {
+  background-color: var(--lightGray);
+  color: var(--mediumRed);
+  padding: 0 .3rem;
+}
+
+pre > code {
+  border: 0;
+  padding: 0;
+}

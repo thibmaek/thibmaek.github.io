@@ -1,5 +1,11 @@
-.sass-cache
-.DS_Store
+# Dependencies
+node_modules
+.cache/
 
-_site
-_drafts
+# Build / Generated files / Sensitive
+public/
+.env
+
+# Logs, etc…
+.DS_Store
+yarn-error.log

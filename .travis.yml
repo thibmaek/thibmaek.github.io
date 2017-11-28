@@ -1,14 +1,7 @@
-sudo: false
+language: node_js
 
-language: ruby
-rvm: 2.3.1
-cache: bundler
-
-before_install:
-  - chmod +x ./bin/setup
-  - chmod +x ./bin/build
-install: ./bin/setup
+node_js:
+  - 'lts/*'
 
 script:
-  - ./bin/build
-  - bundle exec htmlproofer ./_site --enforce-https --check-favicon --only-4xx --allow-hash-href
+  - 'npm run test:ci'
