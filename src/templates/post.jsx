@@ -2,6 +2,7 @@ import React from 'react';
 import { object } from 'prop-types';
 
 import Comments from '../components/comments/comments';
+import Tags from '../components/post/tags';
 
 import Helmet from '../components/helmet/post';
 
@@ -10,7 +11,7 @@ import './post.css';
 import computeDateFormat from '../lib/computeDateFormat';
 
 const PostPage = ({ data, location }) => {
-  const { title, date, slug, body } = data.contentfulPost;
+  const { title, date, slug, body, tags } = data.contentfulPost;
   const { childMarkdownRemark: post } = body;
 
   return (
@@ -23,6 +24,7 @@ const PostPage = ({ data, location }) => {
         </time>
       </header>
       <article className='post-article-container' dangerouslySetInnerHTML={{ __html: post.html }} />
+      {tags ? <Tags tags={tags} /> : null}
       <Comments title={title} slug={slug} location={location} />
     </section>
   );
@@ -39,6 +41,7 @@ export const query = graphql`
       title
       date
       slug
+      tags
       body {
         childMarkdownRemark {
           html
