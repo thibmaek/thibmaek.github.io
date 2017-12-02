@@ -4,7 +4,9 @@ module.exports = {
   siteMetadata: {
     author: `Thibault Maekelbergh`,
     keywords: `thibault maekelbergh, thibmaek, blog`,
-    title: `A nice blog about development, Raspberry Pi, plants and probably records`,
+    title: `Thibault Maekelbergh`,
+    description: `A nice blog about development, Raspberry Pi, plants and probably records`,
+    siteUrl: `https://blog.thibmaekelbergh.be/`,
     social: {
       github: `thibmaek`,
       twitter: `thibmaek`,
@@ -28,7 +30,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: `gatsby-plugin-feed`,
       options: {
         query: `
           {
@@ -74,10 +76,10 @@ module.exports = {
                 }
               }
             `,
-            output: `/feed.xml`
-          }
-        ]
-      }
-    }
-  ]
+            output: `/feed.xml`,
+          },
+        ],
+      },
+    },
+  ],
 };
