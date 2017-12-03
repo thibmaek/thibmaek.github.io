@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 require(`dotenv`).config();
 
 module.exports = {
