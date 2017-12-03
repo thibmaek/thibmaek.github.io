@@ -15,6 +15,7 @@ const Head = ({ siteMetadata }) => (
       { name: `twitter:twitter:creator`, content: `@thibmaek` },
     ]}
     link={[
+      { rel: `alternate`, type: `application/rss+xml`, title: siteMetadata.title, href: `${siteMetadata.siteUrl}/feed.xml` },
       { rel: `icon`, type: `image/png`, href: favicon16, sizes: `16x16` },
       { rel: `icon`, type: `image/png`, href: favicon32, sizes: `32x32` },
       { rel: `icon`, type: `image/png`, href: favicon96, sizes: `96x96` },
