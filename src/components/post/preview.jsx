@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, array } from 'prop-types';
+import { string, array, number } from 'prop-types';
 
 import computeDateFormat from '../../lib/computeDateFormat';
 
@@ -26,6 +26,7 @@ PostPreview.defaultProps = {
   excerpt: null,
   summary: null,
   tags: [],
+  timeToRead: 0,
 };
 
 PostPreview.propTypes = {
@@ -35,6 +36,7 @@ PostPreview.propTypes = {
   summary: string,
   tags: array,
   title: string.isRequired,
+  timeToRead: number,
 };
 
 export default PostPreview;
