@@ -1,5 +1,6 @@
 import React from 'react';
-import { string, array } from 'prop-types';
+import { string, array, number } from 'prop-types';
+import Link from 'gatsby-link';
 
 import computeDateFormat from '../../lib/computeDateFormat';
 
@@ -10,7 +11,9 @@ import './styles/preview.css';
 
 const PostPreview = ({ title, summary, date, tags, slug, excerpt, timeToRead }) => (
   <article className='post-preview-container'>
-    <h2 className='post-preview-title'>{title}</h2>
+    <Link to={`/post/${slug}`}>
+      <h2 className='post-preview-title'>{title}</h2>
+    </Link>
     <time className='post-preview-date'>
       {computeDateFormat(date)} ({timeToRead} min. read)
     </time>
@@ -26,6 +29,7 @@ PostPreview.defaultProps = {
   excerpt: null,
   summary: null,
   tags: [],
+  timeToRead: 0,
 };
 
 PostPreview.propTypes = {
@@ -35,6 +39,7 @@ PostPreview.propTypes = {
   summary: string,
   tags: array,
   title: string.isRequired,
+  timeToRead: number,
 };
 
 export default PostPreview;
