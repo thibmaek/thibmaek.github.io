@@ -9,14 +9,19 @@ import Helmet from '../components/helmet/post';
 import './post.css';
 
 import computeDateFormat from '../lib/computeDateFormat';
+import getFirstImageFromHTML from '../lib/getFirstImageFromHTML';
 
 const PostPage = ({ data, location }) => {
   const { title, date, slug, body, tags } = data.contentfulPost;
   const { childMarkdownRemark: post } = body;
+  const ogImageSrc = getFirstImageFromHTML(post.html);
 
   return (
     <section className='post-section-container'>
-      <Helmet title={title} />
+      <Helmet
+        meta={{ name: `og:image`, content: ogImageSrc }}
+        title={title}
+      />
       <header className='post-header-container'>
         <h1 className='post-header-title'>{title}</h1>
         <time>

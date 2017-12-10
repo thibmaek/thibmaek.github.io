@@ -4,15 +4,18 @@ import Helmet from 'react-helmet';
 
 import { favicon16, favicon32, favicon96 } from '../../assets/img/icons/favicons';
 
-const Head = ({ siteMetadata }) => (
+const Head = ({ siteMetadata, meta }) => (
   <Helmet
     title={`${siteMetadata.author} | ${siteMetadata.title}`}
     meta={[
-      { name: `description`, content: siteMetadata.title },
+      { name: `description`, content: siteMetadata.description },
       { name: `keywords`, content: siteMetadata.keywords },
       { name: `author`, content: siteMetadata.author },
       { name: `twitter:site`, content: `@thibmaek` },
-      { name: `twitter:twitter:creator`, content: `@thibmaek` },
+      { name: `twitter:creator`, content: `@thibmaek` },
+      { name: `og:description`, content: siteMetadata.description },
+      { name: `og:title`, content: siteMetadata.title },
+      ...meta,
     ]}
     link={[
       { rel: `alternate`, type: `application/rss+xml`, title: siteMetadata.title, href: `${siteMetadata.siteUrl}/feed.xml` },
@@ -23,8 +26,13 @@ const Head = ({ siteMetadata }) => (
   />
 );
 
+Head.defaultProps = {
+  meta: {},
+};
+
 Head.propTypes = {
   siteMetadata: object.isRequired,
+  meta: object,
 };
 
 export default Head;
