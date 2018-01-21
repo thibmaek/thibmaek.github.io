@@ -15,6 +15,8 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "lint": "npm run eslint && npm run stylelint",
     "packages:update": "npm-check -u -E",
+    "precommit": "lint-staged",
+    "postinstall": "npm run packages:update",
     "start": "gatsby develop",
     "stylelint:fix": "npm run stylelint -- --fix",
     "stylelint": "stylelint \"src/**/*.css\"",
@@ -24,6 +26,8 @@
     "dotenv": "^4.0.0",
     "eslint": "^4.12.1",
     "eslint-config-devine": "^1.7.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.1",
     "npm-check": "^5.5.2",
     "prettier": "^1.7.4",
     "stylelint": "^8.3.1",
@@ -46,5 +50,15 @@
     "normalize.css": "^7.0.0",
     "react-disqus-comments": "^1.1.1",
     "react-helmet": "^5.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json}": [
+      "npm run eslint:fix",
+      "git add"
+    ],
+    "src/**/*.css": [
+      "npm run stylelint:fix",
+      "git add"
+    ]
   }
 }
