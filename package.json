@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "clean:build": "rm -rf public && npm run build",
     "clean:deps": "rm -rf node_modules",
     "clean:install": "npm run clean:deps && npm install",
     "eslint:fix": "npm run eslint -- --fix",
@@ -18,7 +19,6 @@
     "lint": "npm run eslint && npm run stylelint",
     "packages:update": "npm-check -u -E",
     "precommit": "lint-staged",
-    "postinstall": "npm run packages:update",
     "start": "gatsby develop",
     "stylelint:fix": "npm run stylelint -- --fix",
     "stylelint": "stylelint \"src/**/*.css\"",
