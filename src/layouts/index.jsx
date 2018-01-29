@@ -18,7 +18,13 @@ const IndexLayout = ({ children, data }) => {
   const links = sortByProperty([
     ...data.allContentfulPage.edges.map(({ node }) => node),
     ...data.allContentfulList.edges.map(({ node }) => node),
+    {
+      title: `🔊 Spotify`,
+      slug: `spotify`,
+    },
   ], `slug`);
+
+  console.log(links);
 
   return (
     <div className='main-container'>

@@ -10,6 +10,8 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "clean:deps": "rm -rf node_modules",
+    "clean:install": "npm run clean:deps && npm install",
     "eslint:fix": "npm run eslint -- --fix",
     "eslint": "eslint \"src/**/*.js\"",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
