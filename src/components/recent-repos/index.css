@@ -6,6 +6,7 @@
   --shell: #89e051;
 
   /* stylelint-disable*/
+
   --islanguage {
     background-color: var(--nolang);
     border-radius: 1rem;
@@ -39,11 +40,11 @@
   border-radius: .3rem;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
   font-size: .8rem;
+  justify-content: flex-start;
   margin: 0 .5rem;
-  padding: 0 1rem 1rem;
   overflow: hidden;
+  padding: 0 1rem 1rem;
 
   & .is-javascript::before {
     @apply --islanguage;

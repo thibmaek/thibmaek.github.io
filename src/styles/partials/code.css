@@ -12,6 +12,7 @@ pre, code {
 
 /* Overwrites prism.js default background color */
 /* stylelint-disable */
+
 pre {
   background: var(--lightGray) !important; 
 }

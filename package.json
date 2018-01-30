@@ -1,7 +1,7 @@
 {
   "name": "blog.thibmaekelbergh.be",
   "description": "A nice blog about development, Raspberry Pi, plants and probably records",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Thibault Maekelbergh",
   "license": "MIT",
   "main": "",
@@ -10,23 +10,31 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "development": "gatsby develop",
-    "eslint:fix": "eslint --fix src/**/*.js",
-    "eslint": "eslint src/**/*.js",
+    "clean:build": "rm -rf public && npm run build",
+    "clean:deps": "rm -rf node_modules",
+    "clean:install": "npm run clean:deps && npm install",
+    "eslint:fix": "npm run eslint -- --fix",
+    "eslint": "eslint \"src/**/*.js\"",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "lint": "npm run eslint && npm run stylelint",
-    "stylelint:fix": "stylelint --fix src/**/*.css",
-    "stylelint": "stylelint src/**/*.css",
+    "packages:update": "npm-check -u -E",
+    "precommit": "lint-staged",
+    "start": "gatsby develop",
+    "stylelint:fix": "npm run stylelint -- --fix",
+    "stylelint": "stylelint \"src/**/*.css\"",
     "test:ci": "npm run lint"
   },
   "devDependencies": {
     "dotenv": "^4.0.0",
-    "eslint": "^4.12.1",
+    "eslint": "4.16.0",
     "eslint-config-devine": "^1.7.1",
-    "prettier": "^1.7.4",
-    "stylelint": "^8.3.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.1",
+    "npm-check": "^5.5.2",
+    "prettier": "1.10.2",
+    "stylelint": "8.4.0",
     "stylelint-config-devine": "^1.1.4",
-    "stylelint-order": "^0.7.0"
+    "stylelint-order": "0.8.0"
   },
   "dependencies": {
     "date-fns": "^1.29.0",
@@ -44,5 +52,15 @@
     "normalize.css": "^7.0.0",
     "react-disqus-comments": "^1.1.1",
     "react-helmet": "^5.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json}": [
+      "npm run eslint:fix",
+      "git add"
+    ],
+    "src/**/*.css": [
+      "npm run stylelint:fix",
+      "git add"
+    ]
   }
 }
