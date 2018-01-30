@@ -24,8 +24,6 @@ const IndexLayout = ({ children, data }) => {
     },
   ], `slug`);
 
-  console.log(links);
-
   return (
     <div className='main-container'>
       <Helmet siteMetadata={siteMetadata} />
