@@ -41,6 +41,7 @@ blockquote {
       & ul,
       & ol {
         margin: 1rem;
+        padding-left: 1rem;
 
         @media (--small-viewport) {
           margin: 0;
@@ -68,6 +69,12 @@ blockquote {
   @media (--small-viewport) {
     display: flex;
     flex-flow: column wrap;
+  }
+
+  @media (--xl-viewport) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
 }
 

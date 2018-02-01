@@ -1,3 +1,5 @@
+@import '../../../styles/mixins';
+
 .post-preview-tags {
   align-items: center;
   display: flex;
@@ -11,12 +13,9 @@
   }
 
   & li {
-    background-image: linear-gradient(0deg, transparent 7px, rgba(33, 66, 68, .2) 0);
-    background-position: left .3rem top .6rem;
-    background-repeat: no-repeat;
+    @apply --tagStyle;
     font-size: .8rem;
     margin-right: 1rem;
-    padding: .1rem .3rem .1rem .1rem;
 
     &:hover {
       background-image: linear-gradient(0deg, transparent 7px, rgba(33, 66, 68, .4) 0);
