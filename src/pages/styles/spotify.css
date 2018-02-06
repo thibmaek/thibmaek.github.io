@@ -1,0 +1,26 @@
+.playlist-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-container {
+  width: 100%;
+
+  & h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.playlist-item {
+  align-items: flex-start;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  margin-bottom: 4rem;
+}
+
+.spotify-embed {
+  height: 18rem;
+  width: 60%;
+}

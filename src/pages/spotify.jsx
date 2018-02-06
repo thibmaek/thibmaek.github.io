@@ -2,30 +2,7 @@ import React from 'react';
 
 import Helmet from '../components/helmet/page';
 
-const styles = {
-  playlist: {
-    display: `flex`,
-    justifyContent: `space-around`,
-    alignItems: `flex-start`,
-    height: `100%`,
-    marginBottom: `4rem`,
-  },
-  container: {
-    width: `100%`,
-  },
-  title: {
-    textAlign: `center`,
-    marginBottom: `2rem`,
-  },
-  playlists: {
-    display: `flex`,
-    flexDirection: `column`,
-  },
-  iframe: {
-    width: `60%`,
-    height: `18rem`,
-  },
-};
+import './styles/spotify.css';
 
 const PLAYLISTS = [
   {
@@ -58,7 +35,7 @@ const PLAYLISTS = [
     name: `🇧🇪 Big from Belgium`,
     url: `https://open.spotify.com/embed/user/thibault.maekelbergh/playlist/3GNcIkMbPXDXdlDUYbLvwV`,
   },
-];
+].sort((a, b) => a.id > b.id);
 
 const Spotify = () => (
   <section>
@@ -66,13 +43,13 @@ const Spotify = () => (
     <header>
       <h1>Spotify</h1>
     </header>
-    <article style={styles.playlists}>
-      {PLAYLISTS.sort((a, b) => a.id > b.id).map(({ name, image, url }) => (
-        <div key={name} style={styles.container}>
-          <h2 style={styles.title}>{name}</h2>
-          <div style={styles.playlist}>
+    <article className='playlist-list'>
+      {PLAYLISTS.map(({ name, image, url }) => (
+        <div key={name} className='row-container'>
+          <h2>{name}</h2>
+          <div className='playlist-item'>
             <img src={image} />
-            <iframe style={styles.iframe} src={url} frameBorder='0' allowTransparency='true'></iframe>
+            <iframe className='spotify-embed' src={url} frameBorder='0' allowTransparency='true' />
           </div>
         </div>
       ))}
