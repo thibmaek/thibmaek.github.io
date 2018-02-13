@@ -22,10 +22,11 @@ Repo.defaultProps = {
     name: ``,
     color: ``,
   },
+  description: `No description…`,
 };
 
 Repo.propTypes = {
-  description: string.isRequired,
+  description: string,
   name: string.isRequired,
   primaryLanguage: object,
   url: string.isRequired,
