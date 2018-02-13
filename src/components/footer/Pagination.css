@@ -1,0 +1,28 @@
+.pagination-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 70%;
+
+  & .post-preview-continue {
+    max-width: 6rem;
+    text-align: center;
+  }
+
+  & .post-preview-continue.previous::before {
+    content: '👈';
+  }
+
+  & .post-preview-continue.next {
+
+    &::before {
+      content: '';
+    }
+
+    &::after {
+      content: '👉';
+      margin-left: .5rem;
+    }
+  }
+}
