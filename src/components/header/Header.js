@@ -2,7 +2,7 @@ import React from 'react';
 import { string, node } from 'prop-types';
 import Link from 'gatsby-link';
 
-import './Header.css';
+import './header.css';
 
 const Header = ({ title, children }) => (
   <header className='main-header'>
