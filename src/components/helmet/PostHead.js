@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 const Head = ({ title, meta }) => (
   <Helmet meta={[
-    { name: `og:type`, content: `article` },
+    { content: `article`, name: `og:type` },
     ...meta,
   ]}>
     <title>{title}</title>

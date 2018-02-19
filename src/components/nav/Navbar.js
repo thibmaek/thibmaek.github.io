@@ -8,11 +8,11 @@ const Navbar = ({ links }) => (
   <nav className='main-nav'>
     <ul>
       {links.map(ln =>
-        <li key={ln.title}>
+        (<li key={ln.title}>
           <Link to={`/${ln.slug}`}>
             {ln.title}
           </Link>
-        </li>
+        </li>)
       )}
     </ul>
   </nav>
@@ -20,10 +20,6 @@ const Navbar = ({ links }) => (
 
 Navbar.propTypes = {
   links: array.isRequired,
-};
-
-Navbar.defaultProps = {
-  links: [],
 };
 
 export default Navbar;

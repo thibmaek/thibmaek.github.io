@@ -19,8 +19,8 @@ const IndexLayout = ({ children, data }) => {
     ...data.allContentfulPage.edges.map(({ node }) => node),
     ...data.allContentfulList.edges.map(({ node }) => node),
     {
-      title: `🔊 Spotify`,
       slug: `spotify`,
+      title: `🔊 Spotify`,
     },
   ], `slug`);
 
@@ -35,8 +35,8 @@ const IndexLayout = ({ children, data }) => {
       </main>
       <Footer
         author={siteMetadata.author}
-        social={siteMetadata.social}
         oneliners={data.contentfulList.list}
+        social={siteMetadata.social}
       />
     </div>
   );

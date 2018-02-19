@@ -4,12 +4,12 @@ import Disqus from 'react-disqus-comments';
 
 const Comments = ({ slug, title, location }) => (
   <Disqus
-    shortname='blog-thibmaekelbergh'
-    identifier={slug}
-    title={title}
-    url={location.pathname}
-    // TODO: Fill in category_id
     category_id=''
+    identifier={slug}
+    shortname='blog-thibmaekelbergh'
+    title={title}
+    // TODO: Fill in category_id
+    url={location.pathname}
   />
 );
 
