@@ -37,8 +37,8 @@ PostPreview.propTypes = {
   slug: string.isRequired,
   summary: string,
   tags: array,
-  title: string.isRequired,
   timeToRead: number,
+  title: string.isRequired,
 };
 
 export default PostPreview;

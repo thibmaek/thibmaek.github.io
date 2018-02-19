@@ -45,11 +45,11 @@ const Spotify = () => (
     </header>
     <article className='playlist-list'>
       {PLAYLISTS.map(({ name, image, url }) => (
-        <div key={name} className='row-container'>
+        <div className='row-container' key={name}>
           <h2>{name}</h2>
           <div className='playlist-item'>
             <img src={image} />
-            <iframe className='spotify-embed' src={url} frameBorder='0' allowTransparency='true' />
+            <iframe allowTransparency='true' className='spotify-embed' frameBorder='0' src={url} />
           </div>
         </div>
       ))}

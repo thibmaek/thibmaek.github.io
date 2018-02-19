@@ -19,7 +19,7 @@ const PostPage = ({ data, location }) => {
   return (
     <section className='post-section-container'>
       <PostHelmet
-        meta={{ name: `og:image`, content: ogImageSrc }}
+        meta={{ content: ogImageSrc, name: `og:image` }}
         title={title}
       />
       <header className='post-header-container'>
@@ -30,7 +30,7 @@ const PostPage = ({ data, location }) => {
       </header>
       <article className='post-article-container' dangerouslySetInnerHTML={{ __html: post.html }} />
       {tags ? <Tags tags={tags} /> : null}
-      <Comments title={title} slug={slug} location={location} />
+      <Comments location={location} slug={slug} title={title} />
     </section>
   );
 };

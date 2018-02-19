@@ -6,23 +6,23 @@ import { favicon16, favicon32, favicon96 } from '../../assets/img/icons/favicons
 
 const Head = ({ siteMetadata, meta }) => (
   <Helmet
-    title={`${siteMetadata.author} | ${siteMetadata.title}`}
+    link={[
+      { href: `${siteMetadata.siteUrl}/feed.xml`, rel: `alternate`, title: siteMetadata.title, type: `application/rss+xml` },
+      { href: favicon16, rel: `icon`, sizes: `16x16`, type: `image/png` },
+      { href: favicon32, rel: `icon`, sizes: `32x32`, type: `image/png` },
+      { href: favicon96, rel: `icon`, sizes: `96x96`, type: `image/png` },
+    ]}
     meta={[
-      { name: `description`, content: siteMetadata.description },
-      { name: `keywords`, content: siteMetadata.keywords },
-      { name: `author`, content: siteMetadata.author },
-      { name: `twitter:site`, content: `@thibmaek` },
-      { name: `twitter:creator`, content: `@thibmaek` },
-      { name: `og:description`, content: siteMetadata.description },
-      { name: `og:title`, content: siteMetadata.title },
+      { content: siteMetadata.description, name: `description`  },
+      { content: siteMetadata.keywords, name: `keywords`  },
+      { content: siteMetadata.author, name: `author`  },
+      { content: `@thibmaek`, name: `twitter:site`  },
+      { content: `@thibmaek`, name: `twitter:creator`  },
+      { content: siteMetadata.description, name: `og:description`  },
+      { content: siteMetadata.title, name: `og:title`  },
       ...meta,
     ]}
-    link={[
-      { rel: `alternate`, type: `application/rss+xml`, title: siteMetadata.title, href: `${siteMetadata.siteUrl}/feed.xml` },
-      { rel: `icon`, type: `image/png`, href: favicon16, sizes: `16x16` },
-      { rel: `icon`, type: `image/png`, href: favicon32, sizes: `32x32` },
-      { rel: `icon`, type: `image/png`, href: favicon96, sizes: `96x96` },
-    ]}
+    title={`${siteMetadata.author} | ${siteMetadata.title}`}
   />
 );
 
@@ -31,8 +31,8 @@ Head.defaultProps = {
 };
 
 Head.propTypes = {
-  siteMetadata: object.isRequired,
   meta: object,
+  siteMetadata: object.isRequired,
 };
 
 export default Head;
