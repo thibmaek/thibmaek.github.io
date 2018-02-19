@@ -53,15 +53,5 @@
     "normalize.css": "^7.0.0",
     "react-disqus-comments": "^1.1.1",
     "react-helmet": "^5.2.0"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json}": [
-      "npm run eslint:fix",
-      "git add"
-    ],
-    "src/**/*.css": [
-      "npm run stylelint:fix",
-      "git add"
-    ]
   }
 }
