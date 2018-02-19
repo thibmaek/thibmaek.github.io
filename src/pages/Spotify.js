@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Helmet from '../components/helmet/page';
+import { PageHelmet } from '../components/helmet/';
 
 import './styles/spotify.css';
 
@@ -39,7 +39,7 @@ const PLAYLISTS = [
 
 const Spotify = () => (
   <section>
-    <Helmet title='🔊 Spotify' />
+    <PageHelmet title='🔊 Spotify' />
     <header>
       <h1>Spotify</h1>
     </header>

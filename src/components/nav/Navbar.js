@@ -2,9 +2,9 @@ import React from 'react';
 import { array } from 'prop-types';
 import Link from 'gatsby-link';
 
-import './index.css';
+import './Navbar.css';
 
-const Nav = ({ links }) => (
+const Navbar = ({ links }) => (
   <nav className='main-nav'>
     <ul>
       {links.map(ln =>
@@ -18,12 +18,12 @@ const Nav = ({ links }) => (
   </nav>
 );
 
-Nav.propTypes = {
+Navbar.propTypes = {
   links: array.isRequired,
 };
 
-Nav.defaultProps = {
+Navbar.defaultProps = {
   links: [],
 };
 
-export default Nav;
+export default Navbar;

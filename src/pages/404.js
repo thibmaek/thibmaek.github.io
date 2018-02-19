@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-import PostPreview from '../components/post/preview';
+import { Preview as PostPreview } from '../components/post/';
 
 import random from '../lib/pickRandom';
 

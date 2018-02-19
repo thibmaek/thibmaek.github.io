@@ -4,10 +4,9 @@ import Link from 'gatsby-link';
 
 import computeDateFormat from '../../lib/computeDateFormat';
 
-import Tags from './tags';
-import ContinueReadingButton from './continue-reading-btn';
+import { ContinueReadingButton, Tags } from './';
 
-import './styles/preview.css';
+import './styles/Preview.css';
 
 const PostPreview = ({ title, summary, date, tags, slug, excerpt, timeToRead }) => (
   <article className='post-preview-container'>
