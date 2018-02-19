@@ -27,7 +27,7 @@
   "devDependencies": {
     "dotenv": "^4.0.0",
     "eslint": "4.16.0",
-    "eslint-config-devine": "^1.7.1",
+    "eslint-config-thibmaek": "^1.0.3",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.1",
     "npm-check": "^5.5.2",
