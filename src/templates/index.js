@@ -2,9 +2,9 @@
 import React from "react";
 import { object } from "prop-types";
 
-import RecentRepos from "../components/recent-repos/index.jsx";
-import PostPreview from "../components/post/preview.jsx";
-import Pagination from "../components/footer/Pagination.jsx";
+import { RecentRepos } from "../components/recent-repos/";
+import { Preview as PostPreview } from "../components/post/";
+import { Pagination } from "../components/footer/";
 
 const IndexPage = ({ pathContext: { index, group, ...ctx } }) => {
   const prevUrl = `${index - 1 === 1 ? `` : index - 1}`;

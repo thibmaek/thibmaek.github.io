@@ -1,14 +1,14 @@
 import React from 'react';
 import { object } from 'prop-types';
 
-import Helmet from '../components/helmet/page';
+import { PageHelmet } from '../components/helmet/';
 
-const Publications = ({ data }) => {
+const About = ({ data }) => {
   const { title, body } = data.contentfulPage;
 
   return (
     <section>
-      <Helmet title={title} />
+      <PageHelmet title={title} />
       <header>
         <h1>{title}</h1>
       </header>
@@ -17,17 +17,19 @@ const Publications = ({ data }) => {
   );
 };
 
-Publications.propTypes = {
+About.propTypes = {
   data: object.isRequired,
 };
 
 export const query = graphql`
-  query UsesPageQuery {
-    contentfulPage(slug: { eq: "uses" }) {
+  query AboutPageQuery {
+    contentfulPage(slug: {eq: "about"}) {
       title
-      body { childMarkdownRemark { html } }
+      body {
+        childMarkdownRemark { html }
+      }
     }
   }
 `;
 
-export default Publications;
+export default About;

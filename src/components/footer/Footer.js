@@ -3,7 +3,7 @@ import { string, array } from 'prop-types';
 
 import pickRandom from '../../lib/pickRandom';
 
-import './index.css';
+import './Footer.css';
 
 const Footer = ({ author, oneliners }) => (
   <footer className='main-footer'>

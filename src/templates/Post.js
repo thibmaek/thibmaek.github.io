@@ -1,10 +1,10 @@
 import React from 'react';
 import { object } from 'prop-types';
 
-import Comments from '../components/comments/comments';
-import Tags from '../components/post/tags';
+import { Comments } from '../components/comments/';
+import { Tags } from '../components/post/';
 
-import Helmet from '../components/helmet/post';
+import { PostHelmet } from '../components/helmet/';
 
 import './post.css';
 
@@ -18,7 +18,7 @@ const PostPage = ({ data, location }) => {
 
   return (
     <section className='post-section-container'>
-      <Helmet
+      <PostHelmet
         meta={{ name: `og:image`, content: ogImageSrc }}
         title={title}
       />

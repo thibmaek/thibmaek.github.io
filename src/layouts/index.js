@@ -1,10 +1,10 @@
 import React from 'react';
 import { func, object } from 'prop-types';
 
-import Helmet from '../components/helmet/';
-import Header from '../components/header/';
-import Nav from '../components/nav/';
-import Footer from '../components/footer/';
+import { Helmet } from '../components/helmet/';
+import { Header } from '../components/header/';
+import { Navbar } from '../components/nav/';
+import { Footer } from '../components/footer/';
 
 import sortByProperty from '../lib/sortByProperty';
 
@@ -28,7 +28,7 @@ const IndexLayout = ({ children, data }) => {
     <div className='main-container'>
       <Helmet siteMetadata={siteMetadata} />
       <Header title={siteMetadata.author}>
-        <Nav links={links} />
+        <Navbar links={links} />
       </Header>
       <main className='main-content'>
         {children()}
