@@ -1,5 +1,5 @@
-import React from 'react';
-import { func, object } from 'prop-types';
+import * as React from 'react';
+import { TGatsbySite, TContentfulEdges, TContentfulList } from '../types';
 
 import { Helmet } from '../components/helmet/';
 import { Header } from '../components/header/';
@@ -12,7 +12,17 @@ import 'normalize.css';
 import '../styles/index.css';
 import 'prismjs/themes/prism.css';
 
-const IndexLayout = ({ children, data }) => {
+type Props = {
+  children: Function | React.Node,
+  data: {
+    allContentfulPage: TContentfulEdges,
+    allContentfulList: TContentfulEdges,
+    contentfulList: TContentfulList,
+    site: TGatsbySite,
+  },
+}
+
+const IndexLayout = ({ children, data }: Props) => {
   const { siteMetadata } = data.site;
 
   const links = sortByProperty([
@@ -40,11 +50,6 @@ const IndexLayout = ({ children, data }) => {
       />
     </div>
   );
-};
-
-IndexLayout.propTypes = {
-  children: func.isRequired,
-  data: object.isRequired,
 };
 
 export const query = graphql`

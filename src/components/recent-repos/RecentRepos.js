@@ -5,7 +5,18 @@ import { Repo } from './';
 
 import './index.css';
 
-class RecentRepos extends Component {
+type State = {
+  repos: Array<{
+    name: string,
+    description?: string,
+    primaryLanguage?: {
+      name: string,
+    },
+    url: string,
+  }>
+}
+
+class RecentRepos extends Component<*, State> {
 
   state = {
     repos: [],

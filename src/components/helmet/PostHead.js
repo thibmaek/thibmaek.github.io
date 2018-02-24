@@ -1,8 +1,14 @@
 import React from 'react';
-import { string, object } from 'prop-types';
 import Helmet from 'react-helmet';
 
-const Head = ({ title, meta }) => (
+import { TMetaContent } from './';
+
+type Props = {
+  title: string,
+  meta?: TMetaContent,
+}
+
+const Head = ({ title, meta }: Props) => (
   <Helmet meta={[
     { content: `article`, name: `og:type` },
     ...meta,
@@ -13,11 +19,6 @@ const Head = ({ title, meta }) => (
 
 Head.defaultProps = {
   meta: {},
-};
-
-Head.propTypes = {
-  meta: object,
-  title: string.isRequired,
 };
 
 export default Head;

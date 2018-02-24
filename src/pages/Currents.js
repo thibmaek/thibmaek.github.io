@@ -1,9 +1,15 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { TContentfulNode } from '../types/';
 
 import { PageHelmet } from '../components/helmet/';
 
-const Currents = ({ data }) => {
+type Props = {
+  data: {
+    contentfulList: TContentfulNode,
+  }
+}
+
+const Currents = ({ data }: Props) => {
   const { title, description, list } = data.contentfulList;
 
   return (
@@ -20,10 +26,6 @@ const Currents = ({ data }) => {
       </article>
     </section>
   );
-};
-
-Currents.propTypes = {
-  data: object.isRequired,
 };
 
 export const query = graphql`

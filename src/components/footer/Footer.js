@@ -1,11 +1,16 @@
+// @flow
 import React from 'react';
-import { string, array } from 'prop-types';
 
 import pickRandom from '../../lib/pickRandom';
 
 import './Footer.css';
 
-const Footer = ({ author, oneliners }) => (
+type Props = {
+  author: string,
+  oneliners: Array<string>,
+}
+
+const Footer = ({ author, oneliners }: Props) => (
   <footer className='main-footer'>
     <div>
       <p>Copyright &copy; {new Date().getFullYear()} {author} All Rights Reserved.</p>
@@ -20,10 +25,5 @@ const Footer = ({ author, oneliners }) => (
     </a>
   </footer>
 );
-
-Footer.propTypes = {
-  author: string.isRequired,
-  oneliners: array.isRequired,
-};
 
 export default Footer;

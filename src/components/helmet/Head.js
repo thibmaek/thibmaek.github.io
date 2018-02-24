@@ -1,10 +1,23 @@
 import React from 'react';
-import { object } from 'prop-types';
 import Helmet from 'react-helmet';
+
+import { TMetaContent } from './';
 
 import { favicon16, favicon32, favicon96 } from '../../assets/img/icons/favicons';
 
-const Head = ({ siteMetadata, meta }) => (
+type Props = {
+  siteMetadata: {
+    siteUrl: string,
+    title: string,
+    description: string,
+    keywords: string,
+    author: string,
+    author: string,
+  },
+  meta?: TMetaContent,
+}
+
+const Head = ({ siteMetadata, meta }: Props) => (
   <Helmet
     link={[
       { href: `${siteMetadata.siteUrl}/feed.xml`, rel: `alternate`, title: siteMetadata.title, type: `application/rss+xml` },
@@ -28,11 +41,6 @@ const Head = ({ siteMetadata, meta }) => (
 
 Head.defaultProps = {
   meta: {},
-};
-
-Head.propTypes = {
-  meta: object,
-  siteMetadata: object.isRequired,
 };
 
 export default Head;

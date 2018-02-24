@@ -1,5 +1,5 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { TContentfulNode } from '../types/';
 
 import { Comments } from '../components/comments/';
 import { Tags } from '../components/post/';
@@ -11,7 +11,14 @@ import './post.css';
 import computeDateFormat from '../lib/computeDateFormat';
 import getFirstImageFromHTML from '../lib/getFirstImageFromHTML';
 
-const PostPage = ({ data, location }) => {
+type Props = {
+  data: {
+    contentfulPost: TContentfulNode,
+  },
+  location: Object,
+}
+
+const PostPage = ({ data, location }: Props) => {
   const { title, date, slug, body, tags } = data.contentfulPost;
   const { childMarkdownRemark: post } = body;
   const ogImageSrc = getFirstImageFromHTML(post.html);
@@ -33,11 +40,6 @@ const PostPage = ({ data, location }) => {
       <Comments location={location} slug={slug} title={title} />
     </section>
   );
-};
-
-PostPage.propTypes = {
-  data: object.isRequired,
-  location: object.isRequired,
 };
 
 export const query = graphql`

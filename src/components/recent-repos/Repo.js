@@ -1,11 +1,19 @@
 import React from 'react';
-import { string, object } from 'prop-types';
 
 import './index.css';
 
 const getRepoLangMod = lang => lang ? `is-${lang.name.toLowerCase()}` : ``;
 
-const Repo = ({ name, description, url, primaryLanguage }) => (
+type Props = {
+  name: string,
+  description?: string,
+  primaryLanguage?: {
+    name: string,
+  },
+  url: string,
+}
+
+const Repo = ({ name, description, url, primaryLanguage }: Props) => (
   <a href={url} rel='noopener noreferrer nofollow' target='_blank'>
     <div className='recent-repos-repo'>
       <h3 className='recent-repos-repo-title'>{name}</h3>
@@ -20,16 +28,8 @@ const Repo = ({ name, description, url, primaryLanguage }) => (
 Repo.defaultProps = {
   description: `No description…`,
   primaryLanguage: {
-    color: ``,
     name: ``,
   },
-};
-
-Repo.propTypes = {
-  description: string,
-  name: string.isRequired,
-  primaryLanguage: object,
-  url: string.isRequired,
 };
 
 export default Repo;

@@ -1,10 +1,15 @@
-import React from 'react';
-import { string, node } from 'prop-types';
+// @flow
+import * as React from 'react';
 import Link from 'gatsby-link';
 
 import './header.css';
 
-const Header = ({ title, children }) => (
+type Props = {
+  title: string,
+  children: React.Node,
+}
+
+const Header = ({ title, children }: Props) => (
   <header className='main-header'>
     <Link to='/'>
       <div className='main-header-profile'>
@@ -15,14 +20,5 @@ const Header = ({ title, children }) => (
     {children}
   </header>
 );
-
-Header.defaultProps = {
-  children: ``,
-},
-
-Header.propTypes = {
-  children: node,
-  title: string.isRequired,
-};
 
 export default Header;

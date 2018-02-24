@@ -1,8 +1,16 @@
+// @flow
 import React from 'react';
-import { object, string } from 'prop-types';
 import Disqus from 'react-disqus-comments';
 
-const Comments = ({ slug, title, location }) => (
+type Props = {
+  location: {
+    pathname: string,
+  },
+  slug: string,
+  title: string,
+}
+
+const Comments = ({ slug, title, location }: Props) => (
   <Disqus
     category_id=''
     identifier={slug}
@@ -12,11 +20,5 @@ const Comments = ({ slug, title, location }) => (
     url={location.pathname}
   />
 );
-
-Comments.propTypes = {
-  location: object.isRequired,
-  slug: string.isRequired,
-  title: string.isRequired,
-};
 
 export default Comments;

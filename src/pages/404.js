@@ -1,11 +1,17 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import { TContentfulEdges } from '../types/';
 
 import { Preview as PostPreview } from '../components/post/';
 
 import random from '../lib/pickRandom';
 
-const NotFoundPage = ({ data }) => {
+type Props = {
+  data: {
+    allContentfulPost: TContentfulEdges,
+  }
+}
+
+const NotFoundPage = ({ data }: Props) => {
   const { node: post } = random(data.allContentfulPost.edges);
 
   return (

@@ -1,9 +1,15 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { TContentfulNode } from '../types/';
 
 import { PageHelmet } from '../components/helmet/';
 
-const Weird = ({ data }) => {
+type Props = {
+  data: {
+    contentfulList: TContentfulNode,
+  },
+}
+
+const Weird = ({ data }: Props) => {
   const { title, list, description } = data.contentfulList;
 
   return (
@@ -20,10 +26,6 @@ const Weird = ({ data }) => {
       </article>
     </section>
   );
-};
-
-Weird.propTypes = {
-  data: object.isRequired,
 };
 
 export const query = graphql`

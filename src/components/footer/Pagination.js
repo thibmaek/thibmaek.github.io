@@ -1,8 +1,17 @@
+// @flow
 import React from 'react';
-import { string, bool, number } from 'prop-types';
 import Link from 'gatsby-link';
 
 import './Pagination.css';
+
+type Props = {
+  first?: boolean,
+  index: number,
+  last?: boolean,
+  nextUrl: string,
+  pageCount: number,
+  prevUrl: string,
+}
 
 const Pagination = ({
   nextUrl,
@@ -11,7 +20,7 @@ const Pagination = ({
   last,
   index,
   pageCount,
-}) => (
+}: Props) => (
   <div className='pagination-container'>
     {!first && (
       <Link className='post-preview-continue previous' to={prevUrl}>
@@ -28,15 +37,6 @@ const Pagination = ({
     )}
   </div>
 );
-
-Pagination.propTypes = {
-  first: bool,
-  index: number.isRequired,
-  last: bool,
-  nextUrl: string.isRequired,
-  pageCount: number.isRequired,
-  prevUrl: string.isRequired,
-};
 
 Pagination.defaultProps = {
   first: true,

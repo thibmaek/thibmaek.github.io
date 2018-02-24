@@ -1,9 +1,15 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { TContentfulNode } from '../types/';
 
 import { PageHelmet } from '../components/helmet/';
 
-const About = ({ data }) => {
+type Props = {
+  data: {
+    contentfulPage: TContentfulNode,
+  }
+};
+
+const About = ({ data }: Props) => {
   const { title, body } = data.contentfulPage;
 
   return (
@@ -15,10 +21,6 @@ const About = ({ data }) => {
       <article dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
     </section>
   );
-};
-
-About.propTypes = {
-  data: object.isRequired,
 };
 
 export const query = graphql`
