@@ -1,1 +1,2 @@
-export default arr => arr[Math.floor(Math.random() * arr.length)];
+// @flow
+export default (arr: Array<any>): Array<any> => arr[Math.floor(Math.random() * arr.length)];
