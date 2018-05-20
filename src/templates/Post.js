@@ -1,10 +1,10 @@
 import React from 'react';
 import { object } from 'prop-types';
 
-import Comments from '../components/comments/comments';
-import Tags from '../components/post/tags';
+import { Comments } from '../components/comments/';
+import { Tags } from '../components/post/';
 
-import Helmet from '../components/helmet/post';
+import { PostHelmet } from '../components/helmet/';
 
 import './post.css';
 
@@ -18,8 +18,8 @@ const PostPage = ({ data, location }) => {
 
   return (
     <section className='post-section-container'>
-      <Helmet
-        meta={{ name: `og:image`, content: ogImageSrc }}
+      <PostHelmet
+        meta={{ content: ogImageSrc, name: `og:image` }}
         title={title}
       />
       <header className='post-header-container'>
@@ -30,7 +30,7 @@ const PostPage = ({ data, location }) => {
       </header>
       <article className='post-article-container' dangerouslySetInnerHTML={{ __html: post.html }} />
       {tags ? <Tags tags={tags} /> : null}
-      <Comments title={title} slug={slug} location={location} />
+      <Comments location={location} slug={slug} title={title} />
     </section>
   );
 };

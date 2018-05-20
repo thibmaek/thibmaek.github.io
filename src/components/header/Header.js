@@ -8,7 +8,7 @@ const Header = ({ title, children }) => (
   <header className='main-header'>
     <Link to='/'>
       <div className='main-header-profile'>
-        <img src='//github.com/thibmaek.png' alt='Profile picture' />
+        <img alt='Profile picture' src='//github.com/thibmaek.png' />
         <h1>{title}</h1>
       </div>
     </Link>

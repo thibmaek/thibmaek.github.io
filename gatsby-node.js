@@ -1,8 +1,6 @@
 const path = require(`path`);
 const createPaginatedPages = require(`gatsby-paginate`);
 
-const postTemplate = path.resolve(`./src/templates/post.jsx`);
-
 exports.createPages = ({ graphql, boundActionCreators: { createPage } }) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -47,7 +45,7 @@ exports.createPages = ({ graphql, boundActionCreators: { createPage } }) => {
 
       data.allContentfulPost.edges.forEach(({ node: { id, slug } }) => {
         createPage({
-          component: postTemplate,
+          component: path.resolve(`./src/templates/Post.js`),
           context: {
             id, slug,
           },

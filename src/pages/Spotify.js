@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Helmet from '../components/helmet/page';
+import { PageHelmet } from '../components/helmet/';
 
 import './styles/spotify.css';
 
@@ -39,17 +39,17 @@ const PLAYLISTS = [
 
 const Spotify = () => (
   <section>
-    <Helmet title='🔊 Spotify' />
+    <PageHelmet title='🔊 Spotify' />
     <header>
       <h1>Spotify</h1>
     </header>
     <article className='playlist-list'>
       {PLAYLISTS.map(({ name, image, url }) => (
-        <div key={name} className='row-container'>
+        <div className='row-container' key={name}>
           <h2>{name}</h2>
           <div className='playlist-item'>
             <img src={image} />
-            <iframe className='spotify-embed' src={url} frameBorder='0' allowTransparency='true' />
+            <iframe allowTransparency='true' className='spotify-embed' frameBorder='0' src={url} />
           </div>
         </div>
       ))}

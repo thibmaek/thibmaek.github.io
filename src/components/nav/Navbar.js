@@ -2,28 +2,24 @@ import React from 'react';
 import { array } from 'prop-types';
 import Link from 'gatsby-link';
 
-import './index.css';
+import './Navbar.css';
 
-const Nav = ({ links }) => (
+const Navbar = ({ links }) => (
   <nav className='main-nav'>
     <ul>
       {links.map(ln =>
-        <li key={ln.title}>
+        (<li key={ln.title}>
           <Link to={`/${ln.slug}`}>
             {ln.title}
           </Link>
-        </li>
+        </li>)
       )}
     </ul>
   </nav>
 );
 
-Nav.propTypes = {
+Navbar.propTypes = {
   links: array.isRequired,
 };
 
-Nav.defaultProps = {
-  links: [],
-};
-
-export default Nav;
+export default Navbar;

@@ -4,8 +4,7 @@ import Link from 'gatsby-link';
 
 import computeDateFormat from '../../lib/computeDateFormat';
 
-import Tags from './tags';
-import ContinueReadingButton from './continue-reading-btn';
+import { ContinueReadingButton, Tags } from './';
 
 import './styles/preview.css';
 
@@ -38,8 +37,8 @@ PostPreview.propTypes = {
   slug: string.isRequired,
   summary: string,
   tags: array,
-  title: string.isRequired,
   timeToRead: number,
+  title: string.isRequired,
 };
 
 export default PostPreview;

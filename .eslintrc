@@ -1,10 +1,6 @@
 {
-  "extends": "devine/react",
+  "extends": "thibmaek/react",
   "globals": {
-    "graphql": true,
-  },
-  "rules": {
-    "comma-dangle": ["error", "always-multiline"],
-    "babel/object-curly-spacing": ["error", "always"],
+    "graphql": true
   }
 }

@@ -8,16 +8,12 @@ import './styles/tag.css';
 const Tags = ({ tags }) => (
   <ul className='post-preview-tags'>
     {tags.map(tag =>
-      <Link key={tag} to={`/tag/${tag}`}>
+      (<Link key={tag} to={`/tag/${tag}`}>
         <li>{tag.toLowerCase()}</li>
-      </Link>
+      </Link>)
     )}
   </ul>
 );
-
-Tags.defaultProps = {
-  tags: [],
-};
 
 Tags.propTypes = {
   tags: array.isRequired,
