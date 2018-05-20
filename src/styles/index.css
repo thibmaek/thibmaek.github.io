@@ -1,11 +1,11 @@
-/* COSTANTS */
-@import 'constants/colors';
-@import 'constants/fonts';
-@import 'constants/sizes';
+/* CONSTANTS */
+@import './constants/colors.css';
+@import './constants/fonts.css';
+@import './constants/sizes.css';
 
 /* PARTIALS */
-@import 'partials/text-styles';
-@import 'partials/code';
+@import './partials/text-styles.css';
+@import './partials/code.css';
 
 :root {
   background-color: var(--lightGray);

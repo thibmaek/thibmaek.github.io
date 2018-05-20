@@ -2,5 +2,8 @@
   "extends": "thibmaek/react",
   "globals": {
     "graphql": true
+  },
+  "rules": {
+    "react/no-did-mount-set-state": "off"
   }
 }

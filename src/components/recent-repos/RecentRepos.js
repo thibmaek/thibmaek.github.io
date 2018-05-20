@@ -11,7 +11,7 @@ class RecentRepos extends Component {
     repos: [],
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     const repos = await fetch(process.env.GATSBY_RECENT_REPOS_URL).then(r => r.json());
     this.setState({ repos: repos.reverse() });
   }

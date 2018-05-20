@@ -1,11 +1,11 @@
-@import '../../styles/constants/sizes';
+@import '../../styles/constants/sizes.css';
 
 :root {
   --nolang: gray;
   --javascript: #f1e05a;
   --shell: #89e051;
 
-  /* stylelint-disable*/
+  /* stylelint-disable */
 
   --islanguage {
     background-color: var(--nolang);

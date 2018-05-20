@@ -1,5 +1,5 @@
-@import '../styles/constants/sizes';
-@import '../styles/mixins';
+@import '../styles/constants/sizes.css';
+@import '../styles/mixins.css';
 
 .post-header-container {
   text-align: center;
