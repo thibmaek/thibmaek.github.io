@@ -19,6 +19,7 @@
     "lint": "npm run eslint && npm run stylelint",
     "packages:update": "npm-check -u -E",
     "precommit": "lint-staged",
+    "serve": "serve public/",
     "start": "gatsby develop",
     "stylelint:fix": "npm run stylelint -- --fix",
     "stylelint": "stylelint \"src/**/*.css\"",
@@ -34,6 +35,7 @@
     "lint-staged": "^6.0.1",
     "npm-check": "^5.5.2",
     "prettier": "1.10.2",
+    "serve": "^6.5.7",
     "stylelint": "8.4.0",
     "stylelint-config-devine": "1.1.6",
     "stylelint-order": "0.8.0"
