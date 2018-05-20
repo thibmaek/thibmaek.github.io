@@ -1,6 +1,6 @@
-@import '../constants/colors';
-@import '../constants/fonts';
-@import '../constants/sizes';
+@import '../constants/colors.css';
+@import '../constants/fonts.css';
+@import '../constants/sizes.css';
 
 pre, code {
   border: 1px solid var(--semiMediumGray);
@@ -14,7 +14,7 @@ pre, code {
 /* stylelint-disable */
 
 pre {
-  background: var(--lightGray) !important; 
+  background: var(--lightGray) !important;
 }
 /* stylelint-enable */
 

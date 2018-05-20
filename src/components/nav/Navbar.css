@@ -1,4 +1,4 @@
-@import '../../styles/constants/sizes';
+@import '../../styles/constants/sizes.css';
 
 .main-nav {
   display: flex;

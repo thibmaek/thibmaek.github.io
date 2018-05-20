@@ -1,4 +1,4 @@
-@import '../../../styles/mixins';
+@import '../../../styles/mixins.css';
 
 .post-preview-tags {
   align-items: center;
