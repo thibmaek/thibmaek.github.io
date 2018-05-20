@@ -1,5 +1,5 @@
-@import '../../../styles/constants/colors';
-@import '../../../styles/constants/sizes';
+@import '../../../styles/constants/colors.css';
+@import '../../../styles/constants/sizes.css';
 
 .post-preview-container {
   background-color: white;
