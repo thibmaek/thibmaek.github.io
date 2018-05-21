@@ -2,18 +2,16 @@ import React from 'react';
 import { array } from 'prop-types';
 import Link from 'gatsby-link';
 
-import './Navbar.css';
+import styles from './Navbar.module.css';
 
 const Navbar = ({ links }) => (
-  <nav className='main-nav'>
-    <ul>
-      {links.map(ln =>
-        (<li key={ln.title}>
-          <Link to={`/${ln.slug}`}>
-            {ln.title}
-          </Link>
-        </li>)
-      )}
+  <nav className={styles.container}>
+    <ul className={styles.navItems}>
+      {links.map(({ title, slug }) => (
+        <li className={styles.navItem} key={title}>
+          <Link to={`/${slug}`}>{title}</Link>
+        </li>
+      ))}
     </ul>
   </nav>
 );

@@ -1,7 +1,7 @@
-@import '../../../styles/constants/colors.css';
-@import '../../../styles/constants/sizes.css';
+@import '../../styles/constants/colors.css';
+@import '../../styles/constants/sizes.css';
 
-.post-preview-continue {
+.container {
   border: 1px solid var(--mainAccent);
   border-radius: .3rem;
   color: var(--mainAccent);
@@ -11,6 +11,11 @@
   text-decoration: none;
   transition: all .2s ease-in-out;
 
+  &:hover {
+    background-color: #214244;
+    color: white;
+  }
+
   @media (--large-viewport) {
     text-align: left;
     width: 10rem;
@@ -19,10 +24,5 @@
       content: '☞';
       margin-right: .5rem;
     }
-  }
-
-  &:hover {
-    background-color: #214244;
-    color: white;
   }
 }
