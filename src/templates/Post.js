@@ -6,7 +6,7 @@ import { Tags } from '../components/post/';
 
 import { PostHelmet } from '../components/helmet/';
 
-import styles from './Post.module.css';
+import './post.css';
 
 import computeDateFormat from '../lib/computeDateFormat';
 import getFirstImageFromHTML from '../lib/getFirstImageFromHTML';
@@ -17,18 +17,18 @@ const PostPage = ({ data, location }) => {
   const ogImageSrc = getFirstImageFromHTML(post.html);
 
   return (
-    <section>
+    <section className='post-section-container'>
       <PostHelmet
         meta={{ content: ogImageSrc, name: `og:image` }}
         title={title}
       />
-      <header className={styles.header}>
-        <h1>{title}</h1>
+      <header className='post-header-container'>
+        <h1 className='post-header-title'>{title}</h1>
         <time>
           {computeDateFormat(date)} — {post.timeToRead} min. read
         </time>
       </header>
-      <article className={styles.articleContainer} dangerouslySetInnerHTML={{ __html: post.html }} />
+      <article className='post-article-container' dangerouslySetInnerHTML={{ __html: post.html }} />
       {tags ? <Tags tags={tags} /> : null}
       <Comments location={location} slug={slug} title={title} />
     </section>

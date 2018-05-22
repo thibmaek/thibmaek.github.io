@@ -2,7 +2,7 @@ import React from 'react';
 import { string, bool, number } from 'prop-types';
 import Link from 'gatsby-link';
 
-import styles from './Pagination.module.css';
+import './Pagination.css';
 
 const Pagination = ({
   nextUrl,
@@ -12,15 +12,17 @@ const Pagination = ({
   index,
   pageCount,
 }) => (
-  <div className={styles.container}>
+  <div className='pagination-container'>
     {!first && (
-      <Link className={`${styles.btn} ${styles.prevBtn}`} to={prevUrl}>
+      <Link className='post-preview-continue previous' to={prevUrl}>
         Previous
       </Link>
     )}
-    <span>Page {index} of {pageCount}</span>
+    <span>
+      Page {index} of {pageCount}
+    </span>
     {!last && (
-      <Link className={`${styles.btn} ${styles.nextBtn}`} to={nextUrl}>
+      <Link className='post-preview-continue next' to={nextUrl}>
         Next
       </Link>
     )}

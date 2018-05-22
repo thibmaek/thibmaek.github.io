@@ -1,7 +1,7 @@
 @import '../../styles/constants/colors.css';
 @import '../../styles/constants/sizes.css';
 
-.footer {
+.main-footer {
   color: var(--mediumGray);
   font-size: .8rem;
   margin: 2rem 0;
@@ -12,7 +12,7 @@
   }
 }
 
-.contentful {
+.contentful-attribution {
   max-width: 100px;
-  width: 100%;
+  width: `100%`;
 }

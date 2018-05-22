@@ -1,11 +1,11 @@
 @import '../styles/constants/sizes.css';
 @import '../styles/mixins.css';
 
-.header {
+.post-header-container {
   text-align: center;
 }
 
-.articleContainer {
+.post-article-container {
 
   & h1 { margin-top: 4rem; }
 
