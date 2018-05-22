@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import { PageHelmet } from '../components/helmet/';
+import { PageHelmet } from "../components/helmet/";
 
-import styles from './Spotify.module.css';
+import styles from "./Spotify.module.css";
 
 const PLAYLISTS = [
   {
@@ -60,8 +60,14 @@ const Spotify = () => (
         <div className={styles.playlistItemContainer} key={name}>
           <h2>{name}</h2>
           <div className={styles.playlistItem}>
-            <img src={image} />
-            <iframe allowTransparency='true' className={styles.spotifyEmbed} frameBorder='0' src={url} />
+            <img alt='Spotify Cover' src={image} />
+            <iframe
+              allowTransparency='true'
+              className={styles.spotifyEmbed}
+              frameBorder='0'
+              src={url}
+              title='Spotify Playlist embed'
+            />
           </div>
         </div>
       ))}

@@ -12,7 +12,7 @@ const NotFoundPage = ({ data }) => {
     <div>
       <header>
         <h1>
-          🤷🏼‍ There doesn&apos;t seem to be a page here…
+          <span aria-label='Woman shrugging' role='img'>🤷🏼‍</span> There doesn&apos;t seem to be a page here…
         </h1>
         <p>But check out this cool article:</p>
       </header>
