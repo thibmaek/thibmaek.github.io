@@ -8,7 +8,13 @@ import styles from './Footer.module.css';
 const Footer = ({ author, oneliners }) => (
   <footer className={styles.footer}>
     <div>
-      <p>Copyright &copy; {new Date().getFullYear()} {author} All Rights Reserved.</p>
+      <p>
+        Copyright
+        <span aria-label='Copyright' role='img'>&copy;</span>
+        {new Date().getFullYear()}
+        {author}
+        All Rights Reserved.
+      </p>
       <p>Made with {pickRandom(oneliners)}</p>
     </div>
     <a href='https://www.contentful.com/' rel='nofollow noopener noreferrer' target='_blank'>
