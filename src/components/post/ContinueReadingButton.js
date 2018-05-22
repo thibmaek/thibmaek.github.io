@@ -2,10 +2,10 @@ import React from 'react';
 import { string } from 'prop-types';
 import Link from 'gatsby-link';
 
-import './styles/ContinueReadingButton.css';
+import styles from './ContinueReadingButton.module.css';
 
 const ContinueReadingButton = ({ slug }) => (
-  <Link className='post-preview-continue' to={`/post/${slug}`}>
+  <Link className={styles.container} to={`/post/${slug}`}>
     Continue reading
   </Link>
 );
