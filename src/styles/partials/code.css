@@ -28,3 +28,18 @@ pre > code {
   border: 0;
   padding: 0;
 }
+
+.gatsby-highlight::before {
+  background: #f7f9fa;
+  border: 1px solid #dde3e7;
+  border-radius: 5px 5px 0 0;
+  bottom: -4px;
+  color: #8491a6;
+  content: 'Code';
+  font-size: .8rem;
+  font-weight: 500;
+  margin: 0;
+  padding: .2rem .5rem;
+  position: relative;
+  text-transform: uppercase;
+}
