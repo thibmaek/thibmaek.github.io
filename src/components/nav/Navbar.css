@@ -1,10 +1,24 @@
 @import '../../styles/constants/sizes.css';
 
-.container {
+.main-nav {
   display: flex;
 }
 
-.navItems {
+.main-nav ul {
+
+  & li {
+    display: inline;
+    margin-right: 1rem;
+
+    & a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   @media (--small-viewport) {
     display: flex;
     flex-flow: row wrap;
@@ -15,13 +29,4 @@
       padding: .5rem 0;
     }
   }
-}
-
-.navItem {
-  display: inline;
-  margin-right: 1rem;
-
-  & a { text-decoration: none; }
-
-  & a:hover { text-decoration: underline; }
 }

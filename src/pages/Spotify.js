@@ -2,7 +2,7 @@ import React from 'react';
 
 import { PageHelmet } from '../components/helmet/';
 
-import styles from './Spotify.module.css';
+import './styles/spotify.css';
 
 const PLAYLISTS = [
   {
@@ -35,18 +35,6 @@ const PLAYLISTS = [
     name: `🇧🇪 Big from Belgium`,
     url: `https://open.spotify.com/embed/user/thibault.maekelbergh/playlist/3GNcIkMbPXDXdlDUYbLvwV`,
   },
-  {
-    id: `barbecue`,
-    image: `https://pl.scdn.co/images/pl/default/2b3dda57459e8ea6d62d0bafc572b48c1ba63ef2`,
-    name: `🔥 Barbeque`,
-    url: `https://open.spotify.com/embed/user/thibault.maekelbergh/playlist/6y5VMqiqhJOTh0cBdQiCnn`,
-  },
-  {
-    id: `discoveries`,
-    image: `https://pl.scdn.co/images/pl/default/04ceabbd8a153ebc793dbf82ad4039b75b44bbe1`,
-    name: `🌈 Discoveries`,
-    url: `https://open.spotify.com/embed/user/thibault.maekelbergh/playlist/3wzp44GiNDwiCdHtlINgRW`,
-  },
 ].sort((a, b) => a.id > b.id);
 
 const Spotify = () => (
@@ -55,13 +43,13 @@ const Spotify = () => (
     <header>
       <h1>Spotify</h1>
     </header>
-    <article className={styles.playlistItems}>
+    <article className='playlist-list'>
       {PLAYLISTS.map(({ name, image, url }) => (
-        <div className={styles.playlistItemContainer} key={name}>
+        <div className='row-container' key={name}>
           <h2>{name}</h2>
-          <div className={styles.playlistItem}>
+          <div className='playlist-item'>
             <img src={image} />
-            <iframe allowTransparency='true' className={styles.spotifyEmbed} frameBorder='0' src={url} />
+            <iframe allowTransparency='true' className='spotify-embed' frameBorder='0' src={url} />
           </div>
         </div>
       ))}

@@ -2,17 +2,16 @@ import React from 'react';
 import { array } from 'prop-types';
 import Link from 'gatsby-link';
 
-import styles from './Tag.module.css';
+import './styles/tag.css';
 
+// TODO: Add a link which goes to the tag-group page
 const Tags = ({ tags }) => (
-  <ul className={styles.tagItems}>
-    {tags.map(tag => (
-      <Link key={tag} to={`/tag/${tag}`}>
-        <li className={styles.tagItem}>
-          {tag.toLowerCase()}
-        </li>
-      </Link>
-    ))}
+  <ul className='post-preview-tags'>
+    {tags.map(tag =>
+      (<Link key={tag} to={`/tag/${tag}`}>
+        <li>{tag.toLowerCase()}</li>
+      </Link>)
+    )}
   </ul>
 );
 

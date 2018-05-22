@@ -6,17 +6,17 @@ import computeDateFormat from '../../lib/computeDateFormat';
 
 import { ContinueReadingButton, Tags } from './';
 
-import styles from './Preview.module.css';
+import './styles/preview.css';
 
 const PostPreview = ({ title, summary, date, tags, slug, excerpt, timeToRead }) => (
-  <article className={styles.container}>
+  <article className='post-preview-container'>
     <Link to={`/post/${slug}`}>
-      <h2>{title}</h2>
+      <h2 className='post-preview-title'>{title}</h2>
     </Link>
-    <time className={styles.date}>
+    <time className='post-preview-date'>
       {computeDateFormat(date)} ({timeToRead} min. read)
     </time>
-    <summary className={styles.summary}>
+    <summary className='post-preview-summary'>
       {summary || excerpt}
     </summary>
     <ContinueReadingButton slug={slug} />

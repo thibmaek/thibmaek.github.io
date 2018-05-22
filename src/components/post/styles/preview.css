@@ -1,7 +1,7 @@
-@import '../../styles/constants/colors.css';
-@import '../../styles/constants/sizes.css';
+@import '../../../styles/constants/colors.css';
+@import '../../../styles/constants/sizes.css';
 
-.container {
+.post-preview-container {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, .09);
   border-radius: 3px;
@@ -11,8 +11,6 @@
   margin: 2rem 0;
   padding: .5rem 2rem;
 
-  & a { text-decoration: none; }
-
   @media (--small-viewport) {
     margin: 1rem 0;
   }
@@ -20,12 +18,16 @@
   @media (--xl-viewport) {
     width: 45%;
   }
+
+  & a {
+    text-decoration: none;
+  }
 }
 
-.date {
+.post-preview-date {
   margin-bottom: .5rem;
 }
 
-.summary {
+.post-preview-summary {
   margin: 1rem 0;
 }

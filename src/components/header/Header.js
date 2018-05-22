@@ -2,12 +2,12 @@ import React from 'react';
 import { string, node } from 'prop-types';
 import Link from 'gatsby-link';
 
-import styles from './Header.module.css';
+import './header.css';
 
 const Header = ({ title, children }) => (
-  <header className={styles.container}>
+  <header className='main-header'>
     <Link to='/'>
-      <div className={styles.profileContainer}>
+      <div className='main-header-profile'>
         <img alt='Profile picture' src='//github.com/thibmaek.png' />
         <h1>{title}</h1>
       </div>
