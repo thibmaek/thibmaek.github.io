@@ -1,7 +1,7 @@
 @import '../../styles/constants/colors.css';
 @import '../../styles/constants/sizes.css';
 
-.main-header {
+.container {
   background-color: var(--mainAccent);
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .2);
   color: white;
@@ -17,25 +17,23 @@
   }
 }
 
-.main-header h1 {
-  font-size: 1.2rem;
-}
-
-.main-header-profile {
+.profileContainer {
   align-items: center;
   display: flex;
   justify-content: space-between;
 
   & h1 {
+    font-size: 1.2rem;
+
     @media (--small-viewport) {
       display: none;
     }
   }
-}
 
-.main-header-profile img {
-  border-radius: .3rem;
-  height: 3rem;
-  margin-right: 1rem;
-  width: 3rem;
+  & img {
+    border-radius: .3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    width: 3rem;
+  }
 }

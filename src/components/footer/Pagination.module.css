@@ -1,0 +1,30 @@
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.btn {
+  /* TODO: abstract to own color & composed style */
+  border: 1px solid #214244;
+  border-radius: .3rem;
+  color: #214244;
+  margin: 1rem 0;
+  max-width: 6rem;
+  padding: .5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+}
+
+.prevBtn::before {
+  content: '👈';
+  margin-right: .5rem;
+}
+
+.nextBtn::after {
+  content: '👉';
+  margin-left: .5rem;
+}
