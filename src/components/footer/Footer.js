@@ -9,11 +9,7 @@ const Footer = ({ author, oneliners }) => (
   <footer className={styles.footer}>
     <div>
       <p>
-        Copyright
-        <span aria-label='Copyright' role='img'>&copy;</span>
-        {new Date().getFullYear()}
-        {author}
-        All Rights Reserved.
+        Copyright <span aria-label='Copyright' role='img'>&copy;</span> {new Date().getFullYear()} {author} All Rights Reserved.
       </p>
       <p>Made with {pickRandom(oneliners)}</p>
     </div>
