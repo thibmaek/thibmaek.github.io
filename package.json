@@ -25,7 +25,7 @@
     "test:ci": "npm run lint"
   },
   "devDependencies": {
-    "dotenv": "5.0.1",
+    "dotenv": "6.0.0",
     "eslint": "4.19.1",
     "eslint-config-thibmaek": "1.0.4",
     "eslint-plugin-babel": "5.1.0",
@@ -35,7 +35,7 @@
     "lint-staged": "7.1.1",
     "npm-check": "5.7.1",
     "prettier": "1.12.1",
-    "serve": "^6.5.7",
+    "serve": "8.1.2",
     "stylelint": "9.2.1",
     "stylelint-config-devine": "1.1.6",
     "stylelint-order": "0.8.1"
