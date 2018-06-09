@@ -1,7 +1,7 @@
 {
   "name": "blog.thibmaekelbergh.be",
   "description": "A nice blog about development, Raspberry Pi, plants and probably records",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "author": "Thibault Maekelbergh",
   "license": "MIT",
   "engines": {
