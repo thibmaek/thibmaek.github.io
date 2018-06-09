@@ -36,7 +36,7 @@ pre > code {
   border-radius: 5px 5px 0 0;
   bottom: -4px;
   color: #8491a6;
-  content: 'Code';
+  content: attr(data-language);
   font-size: .8rem;
   font-weight: 500;
   margin: 0;
