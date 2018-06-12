@@ -1,5 +1,6 @@
-const path = require(`path`);
-const createPaginatedPages = require(`gatsby-paginate`);
+const createTagPages = require(`./gatsby/createTagPages`);
+const createPostPages = require(`./gatsby/createPostPages`);
+const createPaginatedPages = require(`./gatsby/createPaginatedPages`);
 
 exports.createPages = ({ graphql, boundActionCreators: { createPage } }) => {
   return new Promise(async (resolve, reject) => {
@@ -32,31 +33,20 @@ exports.createPages = ({ graphql, boundActionCreators: { createPage } }) => {
         }
       `);
 
-      if (errors) reject(errors);
+      if (errors) {
+        return reject(errors);
+      } else {
+        const posts = data.allContentfulPost.edges;
 
-      createPaginatedPages({
-        edges: data.allContentfulPost.edges,
-        createPage: createPage,
-        pageTemplate: `src/templates/index.js`,
-        pageLength: 10, // This is optional and defaults to 10 if not used
-        pathPrefix: ``, // This is optional and defaults to an empty string if not used
-        context: {}, // This is optional and defaults to an empty object if not used
-      });
+        createPaginatedPages(posts, createPage);
+        createPostPages(posts, createPage);
+        createTagPages(posts, createPage);
 
-      data.allContentfulPost.edges.forEach(({ node: { id, slug } }) => {
-        createPage({
-          component: path.resolve(`./src/templates/Post.js`),
-          context: {
-            id, slug,
-          },
-          path: `/post/${slug}/`,
-        });
-      });
-
-      resolve();
+        return resolve(posts);
+      }
     } catch (e) {
       console.error(e);
-      reject(e);
+      return reject(e);
     }
   });
 };
