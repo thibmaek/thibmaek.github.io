@@ -10,6 +10,8 @@
     "graphql": true
   },
   "rules": {
+    "sort-keys": "off",
+    "import/no-commonjs": "off",
     "react/no-did-mount-set-state": "off"
   }
 }
