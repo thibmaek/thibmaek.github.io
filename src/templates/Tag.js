@@ -1,18 +1,26 @@
 import React from "react";
 import { shape, string, array } from 'prop-types';
-
 import Link from "gatsby-link";
 
 const Tag = ({ pathContext, data }) => {
-  const { tag } = pathContext;
-
   return (
     <div>
-      <h1>{tag}</h1>
-      <ul>
-        {console.log(data.allContentfulPost.edges)}
-      </ul>
-      <Link to='/tags'>All tags</Link>
+      <header>
+        <h1>{pathContext.tag.replace(`-`, ` `)}</h1>
+      </header>
+      <section>
+        <article>
+          <ul>
+            {data.allContentfulPost.edges.map(({ node: post }) => (
+              <li key={post.id}>
+                <Link to={`/post/${post.slug}`}>
+                  {post.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </article>
+      </section>
     </div>
   );
 };
@@ -39,7 +47,7 @@ export const pageQuery = graphql`
       }
     ) {
       edges {
-        node { title, slug }
+        node { title, slug, id }
       }
     }
   }
