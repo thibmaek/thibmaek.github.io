@@ -6,7 +6,7 @@ module.exports = {
     keywords: `thibault maekelbergh, thibmaek, blog`,
     title: `Thibault Maekelbergh`,
     description: `A nice blog about development, Raspberry Pi, plants and probably records`,
-    siteUrl: `https://blog.thibmaekelbergh.be`,
+    siteUrl: `https://thibmaek.com`,
     social: {
       github: `thibmaek`,
       twitter: `thibmaek`,
