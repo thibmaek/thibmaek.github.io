@@ -27,9 +27,14 @@ const PostPage = ({ data, location }) => {
         <time>
           {computeDateFormat(date)} — {post.timeToRead} min. read
         </time>
+        {tags ? (
+          <div className={styles.tags}>
+            <span>Filed under:</span>
+            <Tags tags={tags} />
+          </div>
+        ) : null}
       </header>
       <article className={styles.articleContainer} dangerouslySetInnerHTML={{ __html: post.html }} />
-      {tags ? <Tags tags={tags} /> : null}
       <Comments location={location} slug={slug} title={title} />
     </section>
   );

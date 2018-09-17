@@ -28,3 +28,14 @@
     }
   }
 }
+
+.tags {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  & span {
+    margin-right: 1rem;
+  }
+}
