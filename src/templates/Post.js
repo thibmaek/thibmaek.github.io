@@ -1,9 +1,7 @@
 import React from 'react';
 import { object } from 'prop-types';
 
-import { Tags } from '../components/post/';
-
-import { PostHelmet } from '../components/helmet/';
+import { PostHelmet, Tags, SubmitComment } from '../components';
 
 import styles from './Post.module.css';
 
@@ -16,25 +14,28 @@ const PostPage = ({ data }) => {
   const ogImageSrc = getFirstImageFromHTML(post.html);
 
   return (
-    <section>
-      <PostHelmet
-        meta={{ content: ogImageSrc, name: `og:image` }}
-        title={title}
-      />
-      <header className={styles.header}>
-        <h1>{title}</h1>
-        <time>
-          {computeDateFormat(date)} — {post.timeToRead} min. read
-        </time>
-        {tags ? (
-          <div className={styles.tags}>
-            <span>Filed under:</span>
-            <Tags tags={tags} />
-          </div>
-        ) : null}
-      </header>
-      <article className={styles.articleContainer} dangerouslySetInnerHTML={{ __html: post.html }} />
-    </section>
+    <div>
+      <section>
+        <PostHelmet
+          meta={{ content: ogImageSrc, name: `og:image` }}
+          title={title}
+        />
+        <header className={styles.header}>
+          <h1>{title}</h1>
+          <time>
+            {computeDateFormat(date)} — {post.timeToRead} min. read
+          </time>
+          {tags ? (
+            <div className={styles.tags}>
+              <span>Filed under:</span>
+              <Tags tags={tags} />
+            </div>
+          ) : null}
+        </header>
+        <article className={styles.articleContainer} dangerouslySetInnerHTML={{ __html: post.html }} />
+      </section>
+      <SubmitComment />
+    </div>
   );
 };
 
