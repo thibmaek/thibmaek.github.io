@@ -48,7 +48,11 @@ export default class SubmitComment extends React.Component {
           Email
           <input name='email' onChange={this.handleChange} type='email' />
         </label>
-        <textarea className={styles.comment} onChange={this.handleChange} placeholder='Let me know what you think…' />
+        <textarea
+          className={styles.comment}
+          onChange={evt => this.handleChange({ ...evt, target: { ...evt.target, name: `comment` } })}
+          placeholder='Let me know what you think…'
+        />
         <button className={styles.button} type='submit'>
           Comment
         </button>
