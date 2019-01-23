@@ -17,22 +17,18 @@ export default class SubmitComment extends React.Component {
     ];
   }
 
-  handleSubmitComment = async evt => {
+  handleSubmitComment = evt => {
     evt.preventDefault();
     const form = evt.target;
 
-    try {
-      await fetch(`/`, {
-        method: `POST`,
-        headers: { "Content-Type": `application/x-www-form-urlencoded` },
-        body: encode({
-          "form-name": form.getAttribute(`name`),
-          ...this.state,
-        }),
-      });
-    } catch (error) {
-      console.error(`Error posting comment: ${error.toString()}`);
-    }
+    fetch(`/`, {
+      method: `POST`,
+      headers: { "Content-Type": `application/x-www-form-urlencoded` },
+      body: encode({
+        "form-name": form.getAttribute(`name`),
+        ...this.state,
+      }),
+    }).catch(error => console.error(`Error posting comment: ${error.toString()}`));
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
