@@ -9,7 +9,7 @@ import computeDateFormat from '../lib/computeDateFormat';
 import getFirstImageFromHTML from '../lib/getFirstImageFromHTML';
 
 const PostPage = ({ data }) => {
-  const { title, date, body, tags } = data.contentfulPost;
+  const { title, date, body, tags, slug } = data.contentfulPost;
   const { childMarkdownRemark: post } = body;
   const ogImageSrc = getFirstImageFromHTML(post.html);
 
@@ -34,7 +34,7 @@ const PostPage = ({ data }) => {
         </header>
         <article className={styles.articleContainer} dangerouslySetInnerHTML={{ __html: post.html }} />
       </section>
-      <SubmitComment />
+      <SubmitComment slug={slug} />
     </div>
   );
 };
@@ -49,6 +49,7 @@ export const query = graphql`
       title
       date
       tags
+      slug
       body {
         childMarkdownRemark {
           html

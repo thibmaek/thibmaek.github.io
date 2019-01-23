@@ -1,10 +1,15 @@
 import React from 'react';
+import { string } from 'prop-types';
 
 import encode from '../../lib/encode';
 
 import styles from './SubmitComment.module.css';
 
 export default class SubmitComment extends React.Component {
+  static propTypes = {
+    slug: string.isRequired,
+  }
+
   get Internal$HTMLSupport() {
     return [
       <input key='hiddenInput' name='form-name' type='hidden' value='contact' />,
@@ -26,6 +31,7 @@ export default class SubmitComment extends React.Component {
       headers: { "Content-Type": `application/x-www-form-urlencoded` },
       body: encode({
         "form-name": form.getAttribute(`name`),
+        slug: this.props.slug,
         ...this.state,
       }),
     }).catch(error => console.error(`Error posting comment: ${error.toString()}`));
@@ -34,6 +40,8 @@ export default class SubmitComment extends React.Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
+    if (!this.props.slug) return null;
+
     return (
       <form
         className={styles.container}
