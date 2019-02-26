@@ -52,6 +52,7 @@ export default class SubmitComment extends React.Component {
         onSubmit={this.handleSubmitComment}
       >
         {this.Internal$HTMLSupport}
+        <input name='slug' type='hidden' value={this.props.slug} />
         <label className={styles.email} htmlFor='email'>
           Email
           <input name='email' onChange={this.handleChange} type='email' />
