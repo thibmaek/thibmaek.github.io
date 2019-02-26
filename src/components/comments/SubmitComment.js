@@ -58,6 +58,7 @@ export default class SubmitComment extends React.Component {
         </label>
         <textarea
           className={styles.comment}
+          name='comment'
           onChange={evt => this.handleChange({ ...evt, target: { ...evt.target, name: `comment` } })}
           placeholder='Let me know what you think…'
         />
