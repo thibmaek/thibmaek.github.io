@@ -1,7 +1,7 @@
 import React from 'react';
 import { object } from 'prop-types';
 
-import { PostHelmet, Tags, SubmitComment } from '../components';
+import { PostHelmet, Tags, SubmitComment, Reactions, Comments } from '../components';
 
 import styles from './Post.module.css';
 
@@ -35,6 +35,8 @@ const PostPage = ({ data }) => {
         <article className={styles.articleContainer} dangerouslySetInnerHTML={{ __html: post.html }} />
       </section>
       <SubmitComment slug={slug} />
+      <Reactions />
+      <Comments />
     </div>
   );
 };
