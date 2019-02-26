@@ -31,7 +31,7 @@ export default class SubmitComment extends React.Component {
       headers: { "Content-Type": `application/x-www-form-urlencoded` },
       body: encode({
         "form-name": form.getAttribute(`name`),
-        // slug: this.props.slug,
+        slug: this.props.slug,
         ...this.state,
       }),
     }).catch(error => console.error(`Error posting comment: ${error.toString()}`));
