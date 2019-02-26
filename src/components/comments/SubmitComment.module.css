@@ -1,11 +1,36 @@
+@import '../../styles/constants/sizes.css';
+
 .container {
-  background-image: linear-gradient(0deg, transparent 7px, rgba(33, 66, 68, .2) 0);
   display: flex;
   flex-direction: column;
-  height: 15rem;
+  height: 17rem;
   justify-content: space-between;
   margin: 1rem 0;
   padding: 1rem;
+
+  & input,
+  & textarea {
+    border: 1px solid rgba(33, 66, 68, .1);
+    border-radius: 5px;
+    outline-color: rgba(33, 66, 68, .1);
+    padding: .5rem;
+  }
+}
+
+.header {
+  background: linear-gradient(0deg, transparent 7px, rgba(33, 66, 68, .2) 0);
+  background-position: left 0 top 12px;
+  background-repeat: no-repeat;
+  font-size: 1.3rem;
+  width: 30%;
+
+  @media (--small-viewport) {
+    width: 100%;
+  }
+
+  @media (--medium-viewport) {
+    width: 100%;
+  }
 }
 
 .email {

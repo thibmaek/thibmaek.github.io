@@ -43,30 +43,32 @@ export default class SubmitComment extends React.Component {
     if (!this.props.slug) return null;
 
     return (
-      <form
-        className={styles.container}
-        data-netlify='true'
-        data-netlify-honeypot='bot-field'
-        method='post'
-        name='submit-comment'
-        onSubmit={this.handleSubmitComment}
-      >
-        {this.Internal$HTMLSupport}
-        <input name='slug' type='hidden' value={this.props.slug} />
-        <label className={styles.email} htmlFor='email'>
+      <div>
+        <p className={styles.header}>Let me know what you think</p>
+        <form
+          className={styles.container}
+          data-netlify='true'
+          data-netlify-honeypot='bot-field'
+          method='post'
+          name='submit-comment'
+          onSubmit={this.handleSubmitComment}
+        >
+          {this.Internal$HTMLSupport}
+          <input name='slug' type='hidden' value={this.props.slug} />
+          <label className={styles.email} htmlFor='email'>
           Email
-          <input name='email' onChange={this.handleChange} type='email' />
-        </label>
-        <textarea
-          className={styles.comment}
-          name='comment'
-          onChange={evt => this.handleChange({ ...evt, target: { ...evt.target, name: `comment` } })}
-          placeholder='Let me know what you think…'
-        />
-        <button className={styles.button} type='submit'>
+            <input name='email' onChange={this.handleChange} type='email' />
+          </label>
+          <textarea
+            className={styles.comment}
+            name='comment'
+            onChange={evt => this.handleChange({ ...evt, target: { ...evt.target, name: `comment` } })}
+          />
+          <button className={styles.button} type='submit'>
           Comment
-        </button>
-      </form>
+          </button>
+        </form>
+      </div>
     );
   }
 }
