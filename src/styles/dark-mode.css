@@ -1,0 +1,13 @@
+.theme-dark {
+  background-color: var(--mediumDark);
+  color: var(--lightGray);
+  transition: .2s ease-in;
+}
+
+.theme-light {
+  transition: .2s ease-in;
+}
+
+.theme-dark .main-posts-list > article {
+  background: var(--dark);
+}

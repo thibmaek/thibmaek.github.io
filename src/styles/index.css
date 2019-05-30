@@ -6,6 +6,7 @@
 /* PARTIALS */
 @import './partials/text-styles.css';
 @import './partials/code.css';
+@import './dark-mode.css';
 
 :root {
   background-color: var(--lightGray);
@@ -90,4 +91,13 @@ blockquote {
   max-width: 50%;
   min-width: 10%;
   text-align: center;
+}
+
+.react-toggle .react-toggle-track {
+  background: black;
+}
+
+.react-toggle-track-check,
+.react-toggle-track-x {
+  top: auto;
 }
