@@ -1,0 +1,12 @@
+.container {
+  align-items: center;
+  display: flex;
+  margin-top: 2rem;
+  position: absolute;
+  right: 10rem;
+}
+
+.container span {
+  margin-right: 1rem;
+  text-transform: capitalize;
+}

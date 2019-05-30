@@ -5,47 +5,76 @@ import { Helmet } from '../components/helmet/';
 import { Header } from '../components/header/';
 import { Navbar } from '../components/nav/';
 import { Footer } from '../components/footer/';
+import { ThemeToggle } from '../components/toggle/';
 
 import sortByProperty from '../lib/sortByProperty';
 
 import 'normalize.css';
 import '../styles/index.css';
+// TODO: Replace with gatsby-browser API
 import 'prismjs/themes/prism.css';
 
-const IndexLayout = ({ children, data }) => {
-  const { siteMetadata } = data.site;
+class IndexLayout extends React.Component {
+  static propTypes = {
+    children: func.isRequired,
+    data: object.isRequired,
+  }
 
-  const links = sortByProperty([
-    ...data.allContentfulPage.edges.map(({ node }) => node),
-    ...data.allContentfulList.edges.map(({ node }) => node),
-    {
-      slug: `spotify`,
-      title: `🔊 Spotify`,
-    },
-  ], `slug`);
+  constructor(props) {
+    super(props);
+    const theme = localStorage.getItem(`theme`) || `light`;
+    this.state = { theme };
+  }
 
-  return (
-    <div className='main-container'>
-      <Helmet siteMetadata={siteMetadata} />
-      <Header title={siteMetadata.author}>
-        <Navbar links={links} />
-      </Header>
-      <main className='main-content'>
-        {children()}
-      </main>
-      <Footer
-        author={siteMetadata.author}
-        oneliners={data.contentfulList.list}
-        social={siteMetadata.social}
-      />
-    </div>
-  );
-};
+  get isDarkTheme() {
+    return localStorage.getItem(`theme`) === `dark`;
+  }
 
-IndexLayout.propTypes = {
-  children: func.isRequired,
-  data: object.isRequired,
-};
+  get links() {
+    const { data } = this.props;
+    return sortByProperty([
+      ...data.allContentfulPage.edges.map(({ node }) => node),
+      ...data.allContentfulList.edges.map(({ node }) => node),
+      {
+        slug: `spotify`,
+        title: `🔊 Spotify`,
+      },
+    ], `slug`);
+  }
+
+  handleSetTheme = evt => {
+    const mode = evt.target.checked ? `dark` : `light`;
+    this.setState({
+      theme: mode,
+    }, localStorage.setItem(`theme`, mode));
+  }
+
+  render() {
+    const { siteMetadata } = this.props.data.site;
+    return (
+      <div className={`main-container theme-${this.state.theme}`}>
+        <Helmet siteMetadata={siteMetadata} />
+        <Header title={siteMetadata.author}>
+          <Navbar links={this.links} />
+        </Header>
+        <ThemeToggle
+          className='toggle-theme'
+          defaultChecked={this.isDarkTheme}
+          onToggle={this.handleSetTheme}
+          value={this.state.theme}
+        />
+        <main className='main-content'>
+          {this.props.children()}
+        </main>
+        <Footer
+          author={siteMetadata.author}
+          oneliners={this.props.data.contentfulList.list}
+          social={siteMetadata.social}
+        />
+      </div>
+    );
+  }
+}
 
 export const query = graphql`
   query SiteMetadataQuery {
