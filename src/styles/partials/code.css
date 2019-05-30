@@ -20,8 +20,8 @@ pre {
 p > code {
   background-color: var(--lightGray) !important;
   color: var(--mediumRed) !important;
-  font-size: .75rem !important;
   padding: 0 .3rem !important;
+  vertical-align: middle;
 }
 /* stylelint-enable */
 
@@ -34,7 +34,7 @@ pre > code {
   background: #f7f9fa;
   border: 1px solid #dde3e7;
   border-radius: 5px 5px 0 0;
-  bottom: -4px;
+  bottom: -3px;
   color: #8491a6;
   content: attr(data-language);
   font-size: .8rem;
