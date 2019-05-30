@@ -1,18 +1,19 @@
 .container {
   align-items: center;
   display: flex;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  width: 70%;
+  justify-content: space-around;
+  text-align: center;
+  width: 100%;
 }
 
+.hidden { visibility: hidden; }
+
 .btn {
-  /* TODO: abstract to own color & composed style */
   border: 1px solid #214244;
   border-radius: .3rem;
   color: #214244;
   margin: 1rem 0;
-  max-width: 6rem;
+  min-width: 6.5rem;
   padding: .5rem;
   text-align: center;
   text-decoration: none;
