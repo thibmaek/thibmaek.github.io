@@ -22,12 +22,12 @@ class IndexLayout extends React.Component {
 
   constructor(props) {
     super(props);
-    const theme = localStorage.getItem(`theme`) || `light`;
+    const theme = window.localStorage.getItem(`theme`) || `light`;
     this.state = { theme };
   }
 
   get isDarkTheme() {
-    return localStorage.getItem(`theme`) === `dark`;
+    return window.localStorage.getItem(`theme`) === `dark`;
   }
 
   get links() {
@@ -46,7 +46,7 @@ class IndexLayout extends React.Component {
     const mode = evt.target.checked ? `dark` : `light`;
     this.setState({
       theme: mode,
-    }, localStorage.setItem(`theme`, mode));
+    }, window.localStorage.setItem(`theme`, mode));
   }
 
   render() {
