@@ -43,6 +43,7 @@
     "stylelint-order": "0.8.1"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "date-fns": "^1.29.0",
     "gatsby": "1.9.270",
     "gatsby-link": "1.6.44",

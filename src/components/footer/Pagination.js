@@ -1,6 +1,7 @@
 import React from 'react';
 import { string, bool, number } from 'prop-types';
 import Link from 'gatsby-link';
+import cn from 'classnames';
 
 import styles from './Pagination.module.css';
 
@@ -13,17 +14,19 @@ const Pagination = ({
   pageCount,
 }) => (
   <div className={styles.container}>
-    {!first && (
-      <Link className={`${styles.btn} ${styles.prevBtn}`} to={prevUrl}>
-        Previous
-      </Link>
-    )}
+    <Link
+      className={cn(styles.btn, styles.prevBtn, { [styles.hidden]: first })}
+      to={prevUrl}
+    >
+      Previous
+    </Link>
     <span>Page {index} of {pageCount}</span>
-    {!last && (
-      <Link className={`${styles.btn} ${styles.nextBtn}`} to={nextUrl}>
-        Next
-      </Link>
-    )}
+    <Link
+      className={cn(styles.btn, styles.nextBtn, { [styles.hidden]: last })}
+      to={nextUrl}
+    >
+      Next
+    </Link>
   </div>
 );
 
