@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, bool, number } from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import cn from 'classnames';
 
 import styles from './Pagination.module.css';

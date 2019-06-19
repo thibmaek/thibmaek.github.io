@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, array, number } from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
 import computeDateFormat from '../../lib/computeDateFormat';
 

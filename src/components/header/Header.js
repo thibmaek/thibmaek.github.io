@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, node } from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
 import styles from './Header.module.css';
 

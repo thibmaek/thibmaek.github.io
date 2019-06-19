@@ -46,7 +46,6 @@
     "classnames": "^2.2.6",
     "date-fns": "^1.29.0",
     "gatsby": "^2.9.11",
-    "gatsby-link": "^2.1.1",
     "gatsby-paginate": "^1.1.0",
     "gatsby-plugin-canonical-urls": "^2.0.13",
     "gatsby-plugin-feed": "^2.2.3",
