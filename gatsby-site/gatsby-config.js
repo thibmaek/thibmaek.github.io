@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-typescript',
     // TODO: include later
     // `gatsby-plugin-no-sourcemaps`,
     // `gatsby-plugin-netlify`,
