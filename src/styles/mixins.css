@@ -1,8 +1,0 @@
-:root {
-  --tagStyle: {
-    background-image: linear-gradient(0deg, transparent 7px, rgba(33, 66, 68, .2) 0);
-    background-position: left .3rem top .6rem;
-    background-repeat: no-repeat;
-    padding: .1rem .3rem .1rem .1rem;
-  }
-}
