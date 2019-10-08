@@ -1,3 +1,5 @@
+const env = require('./env.json');
+
 module.exports = {
   siteMetadata: {
     siteUrl: `https://thibmaek.com`,
@@ -15,6 +17,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-typescript',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        accessToken: env.contentful.token,
+        spaceId: env.contentful.spaceId,
+      },
+    },
     // TODO: include later
     // `gatsby-plugin-no-sourcemaps`,
     // `gatsby-plugin-netlify`,
