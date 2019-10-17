@@ -10,7 +10,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "format": "prettier \"src/**/*.{ts,tsx}\" --write",
-    "lint": "eslint \"./src/**/*.{ts,tsx}\""
+    "lint": "eslint \"./src/**/*.{ts,tsx}\"",
+    "generate:graphql-typescript": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "antd": "^3.23.6",
@@ -23,11 +24,13 @@
     "gatsby-plugin-typescript": "^2.1.11",
     "gatsby-source-contentful": "^2.1.46",
     "gatsby-transformer-sharp": "^2.2.20",
+    "idx": "^2.5.6",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.8.1",
     "@types/node": "^12.7.11",
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
@@ -36,9 +39,12 @@
     "eslint": "^6.5.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-react": "^7.16.0",
+    "graphql": "^14.5.8",
     "husky": "^3.0.8",
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "@graphql-codegen/typescript": "1.8.1",
+    "@graphql-codegen/typescript-operations": "1.8.1"
   }
 }
