@@ -9,3 +9,7 @@
 [[redirects]]
   from = "/dev"
   to = "https://stackoverflow.com/users/story/3029016"
+
+[[redirects]]
+  from = "/resume"
+  to = "https://www.notion.so/thibmaek/Thibault-Maekelbergh-6705f45098ee48d19a627d657fa9c67a"
