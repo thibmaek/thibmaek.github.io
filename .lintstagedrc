@@ -1,10 +1,7 @@
 {
-  "src/**/*.{js,jsx}": [
-    "npm run eslint:fix",
-    "git add"
-  ],
-  "src/**/*.css": [
-    "npm run stylelint:fix",
+  "src/**/*.{ts,tsx,js}": [
+    "prettier --write",
+    "eslint --fix",
     "git add"
   ]
 }

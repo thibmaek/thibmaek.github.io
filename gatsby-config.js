@@ -1,12 +1,12 @@
-const { canonicalUrls, feed, sourceContentful, transformRemark } = require(`./plugins`);
+const env = require('./env.json');
 
 module.exports = {
   siteMetadata: {
-    author: `Thibault Maekelbergh`,
-    keywords: `thibault maekelbergh, thibmaek, blog`,
+    siteUrl: `https://thibmaek.com`,
     title: `Thibault Maekelbergh`,
     description: `A nice blog about development, Raspberry Pi, plants and probably records`,
-    siteUrl: `https://thibmaek.com`,
+    author: `Thibault Maekelbergh`,
+    keywords: [`thibault maekelbergh`, 'thibmaek', 'blog'],
     social: {
       github: `thibmaek`,
       twitter: `thibmaek`,
@@ -14,11 +14,18 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-no-sourcemaps`,
-    sourceContentful,
-    transformRemark,
-    feed,
-    canonicalUrls,
-    `gatsby-plugin-netlify`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    'gatsby-plugin-typescript',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        accessToken: env.contentful.token,
+        spaceId: env.contentful.spaceId,
+      },
+    },
+    // TODO: include later
+    // `gatsby-plugin-no-sourcemaps`,
+    // `gatsby-plugin-netlify`,
   ],
-};
+}

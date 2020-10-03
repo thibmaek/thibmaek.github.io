@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    /* Basic Options */
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2017"
+    ],
+    "allowJs": true,
+    "jsx": "react",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

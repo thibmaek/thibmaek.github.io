@@ -1,12 +1,9 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4f3c5556-78f2-46cd-b819-fcd9c46b877c/deploy-status)](https://app.netlify.com/sites/blog-thibmaekelbergh/deploys)
+# This blog Uses
 
-## Installation
-```
-git clone https://github.com/thibmaek/thibmaek.github.io
-npm install
-npm run development
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thibmaek/thibmaek.github.io)
+- Gatsby for the static site part
+- Netlify for hosting + cloud stuff
+- Contentful as a CMS and CDN
+- [Ant Design](https://ant.design) for my component base
+- CSS Modules for quick and easy modular css/js + classnames
+- Date-fns for formatting time
+- New Browser APIs for cool stuff

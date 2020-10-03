@@ -1,52 +1,26 @@
-const createTagPages = require(`./gatsby/createTagPages`);
-const createPostPages = require(`./gatsby/createPostPages`);
-const createPaginatedPages = require(`./gatsby/createPaginatedPages`);
+const createPostOverview = require('./gatsby/createPostOverview');
 
-exports.createPages = ({ graphql, boundActionCreators: { createPage } }) => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const { errors, data } = await graphql(`
-        {
-          allContentfulPost(
-            limit: 1000,
-            sort: { fields: [date], order: DESC }
-          ) {
-            edges {
-              node {
-                id
-                slug
-                date
-                id
-                slug
-                summary
-                tags
-                title
-                body {
-                  childMarkdownRemark {
-                    excerpt
-                    timeToRead
-                  }
-                }
-              }
-            }
-          }
-        }
-      `);
-
-      if (errors) {
-        return reject(errors);
-      } else {
-        const posts = data.allContentfulPost.edges;
-
-        createPaginatedPages(posts, createPage);
-        createPostPages(posts, createPage);
-        createTagPages(posts, createPage);
-
-        return resolve(posts);
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
+exports.createPages = async ({ graphql, actions }) => {
+  const contentfulPosts = await graphql(`
+    {
+      allContentfulPost(
+        sort: { fields: [date], order: DESC }
+        limit: 1000
+      ) {
+        nodes { id }
       }
-    } catch (e) {
-      console.error(e);
-      return reject(e);
     }
-  });
+  `);
+
+  if (contentfulPosts.errors) {
+    console.log(contentfulPosts.errors);
+    throw 'Failed getting posts';
+  }
+
+  createPostOverview(actions.createPage)(contentfulPosts.data.allContentfulPost.nodes)
 };
