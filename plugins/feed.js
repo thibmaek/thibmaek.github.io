@@ -16,12 +16,14 @@ module.exports = {
         serialize: ({ query: { site, allContentfulPost } }) => {
           return allContentfulPost.edges.map(({ node }) => {
             return Object.assign({}, {
-              custom_elements: [{ "content:encoded": node.body.childMarkdownRemark.html }],
-              description: node.summary || node.body.childMarkdownRemark.excerpt,
               guid: node.id,
-              pubDate: node.date,
-              link: `${site.siteMetadata.siteUrl}${node.slug}`,
+              date: node.date,
               title: node.title,
+              description: node.summary || node.body.childMarkdownRemark.excerpt,
+              url: `${site.siteMetadata.siteUrl}${node.slug}`,
+              custom_elements: [{
+                "content:encoded": node.body.childMarkdownRemark.html,
+              }],
             });
           });
         },
@@ -47,6 +49,7 @@ module.exports = {
           }
         `,
         output: `/feed.xml`,
+        title: `Thibault Maekelbergh`,
       },
     ],
   },
