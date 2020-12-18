@@ -5,7 +5,6 @@ import { Helmet } from '../components/helmet/';
 import { Header } from '../components/header/';
 import { Navbar } from '../components/nav/';
 import { Footer } from '../components/footer/';
-import { ThemeToggle } from '../components/toggle/';
 
 import sortByProperty from '../lib/sortByProperty';
 
@@ -18,17 +17,6 @@ class IndexLayout extends React.Component {
   static propTypes = {
     children: func.isRequired,
     data: object.isRequired,
-  }
-
-  constructor(props) {
-    super(props);
-    let theme = `light`;
-
-    if (typeof window !== `undefined`) {
-      theme = window.localStorage.getItem(`theme`) || `light`;
-    }
-
-    this.state = { theme };
   }
 
   get isDarkTheme() {
@@ -51,18 +39,6 @@ class IndexLayout extends React.Component {
     ], `slug`);
   }
 
-  handleSetTheme = evt => {
-    const mode = evt.target.checked ? `dark` : `light`;
-    this.setState(
-      { theme: mode },
-      () => {
-        if (typeof window !== `undefined`) {
-          window.localStorage.setItem(`theme`, mode);
-        }
-      }
-    );
-  }
-
   render() {
     const { siteMetadata } = this.props.data.site;
     return (
@@ -71,12 +47,6 @@ class IndexLayout extends React.Component {
         <Header title={siteMetadata.author}>
           <Navbar links={this.links} />
         </Header>
-        <ThemeToggle
-          className='toggle-theme'
-          defaultChecked={this.isDarkTheme}
-          onToggle={this.handleSetTheme}
-          value={this.state.theme}
-        />
         <main className='main-content'>
           {this.props.children()}
         </main>
