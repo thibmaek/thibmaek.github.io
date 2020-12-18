@@ -19,14 +19,6 @@ class IndexLayout extends React.Component {
     data: object.isRequired,
   }
 
-  get isDarkTheme() {
-    if (typeof window !== `undefined`) {
-      return window.localStorage.getItem(`theme`) === `dark`;
-    }
-
-    return false;
-  }
-
   get links() {
     const { data } = this.props;
     return sortByProperty([
@@ -42,7 +34,7 @@ class IndexLayout extends React.Component {
   render() {
     const { siteMetadata } = this.props.data.site;
     return (
-      <div className={`main-container theme-${this.state.theme}`}>
+      <div className={`main-container theme-light`}>
         <Helmet siteMetadata={siteMetadata} />
         <Header title={siteMetadata.author}>
           <Navbar links={this.links} />
